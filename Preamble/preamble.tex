@@ -61,6 +61,7 @@
 
 \RequirePackage[labelsep=space,tableposition=top]{caption}
 \renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
+\renewcommand{\figureautorefname}{Fig.}
 
 
 % *************************** Graphics and figures *****************************
@@ -122,7 +123,7 @@
 
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
-\RequirePackage[backend=biber, backref, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
+\RequirePackage[backend=biber, backref, style=numeric-comp, citestyle=numeric, sorting=none, natbib=true,isbn=false,url=false,eprint=false]{biblatex}
 \bibliography{References/references} %Location of references.bib only for biblatex
 
 \fi
