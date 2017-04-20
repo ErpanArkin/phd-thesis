@@ -25,13 +25,20 @@
 \ifsetCustomFont
   % Set your custom font here and use `customfont' in options. Leave empty to
   % load computer modern font (default LaTeX font).
-  \RequirePackage{helvet} 
-  %\usepackage[cm]{sfmath}
-  %\usepackage{cmbright}
-  %\usepackage{arev}
-  \usepackage{sansmath}
+
   \renewcommand{\familydefault}{\sfdefault}
+  \RequirePackage[scaled=1]{helvet}
+  
+  %for math
+  \usepackage[helvet]{sfmath}  
+  %\usepackage{sansmathfonts}   
+  %\usepackage{sansmath}
+  %\everymath={\sf}
+   
+  %for dedication
   \usepackage{miama}
+   
+  
   % For use with XeLaTeX
   %  \setmainfont[
   %    Path              = ./libertine/opentype/,
