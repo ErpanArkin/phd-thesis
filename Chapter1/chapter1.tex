@@ -51,42 +51,31 @@ In 2004, the situation has changed completely for graphene with the successfully
 
 \subsection{Physical properties}
 
-As mentioned previously, graphene is the single atomic layer of graphite. It posses an interesting structure with high symmetry which many of its properties are attributed to. 
-
-To understand this symmetry, we first need to discuss the hybridization of bonds. C atom has six electron, where two of them strongly localized near the nuclei core, they are called core electrons, such that their interaction with other electrons from other C atoms are suppressed. This only left us with four valence electrons to interact with others and then form bonds. As shown in \autoref{fig:gra_sp2}, the $s$ orbital will hybrid with $p_x$ and $p_y$ orbitals and form three equivalent $sp2$ hybridized orbitals. They repel each other to have a maximum distance between one and the other. Therefore, an optimal angle between them is 120\textdegree, it will lead to the honeycomb structure of graphene. The $p_z$ orbital left unchanged. 
+As mentioned previously, graphene is the single atomic layer of graphite. It posses an interesting structure with high symmetry which many of its properties are attributed to. Each C atom has three neighbours to make chemical bonds. Because of this, C atoms are arranged in a honeycomb lattice\footnote{honeycomb lattice is not a bravais lattice.}, or a hexagonal bravais lattice with two atoms per site, see (a) \autoref{fig:gra_band}. Graphene has uniform bond lengths of 1.42\AA~ and uniform bond angles of 120\textdegree. The band structure which characterizes the electronic properties of graphene has been calculated by P. R. Wallace in 1947 \cite{Wallace1947}. He discovered that graphene is a semimetal with conduction band minimum (CBM) and valence band maximum (VBM) only touch each other at the $K$ and $K'$ points in the first Brillouin zone as shown in (b) and (c) in \autoref{fig:gra_band}. The energy dispersion is approximately linear in the vicinity of $K$ and $K'$ points. Due to this, the electron and hole in those states behave differently as they do in quadratic band. Several consequences of this can be concluded. First of all, considering the linear energy momentum relation, particles can be regard as Dirac particles and govern by relativistic Dirac equation\cite{Novoselov2005}, and they travel at constant speed of $10^6m/s$. Hence, the $K$ and $K'$ points are referred as Dirac points, its vicinities are called Dirac cone. Secondly, the carrier concentration can be tuned continuously from electron to hole with a perpendicular electric field\cite{Geim2007}. Thirdly, the carrier in graphene can tunnel through finite height potential it normally incident to without reflection--Klein tunneling\cite{Katsnelson2006}. Fourthly, under magnetic field, zero energy Landau level appears, and the large energy interval between zero to first level made it possible to observe quantum Hall effect at room temperature \cite{Novoselov1379}. 
 
 \begin{figure}[htbp!] 
 \centering  
-\includegraphics[width=\textwidth]{sphybird}
-\caption{The formation of $sp^2$ hybridized orbitals with unhydridized $p_z$ orbital. Image source: \cite{gra_sp2}. }  
-\label{fig:gra_sp2}
+\includegraphics[width=\textwidth]{gra_lat_band.eps}
+\caption[Graphene lattice and band structure.]{(a) Graphene honeycomb lattice composed of A and B hexagonal Bravais sublattices. (b) Band structure of graphene where CBM and VBM touch each other only at the $K$ and $K'$ points. (c) Approximately linear dispersion at $K$ and $K'$ point. Image source: \cite{Guttinger2012}. }  
+\label{fig:gra_band}
 \end{figure} 
 
-Now C atoms are ready for bonding. The results of bonding is shown in \autoref{fig:gra_bond}. One $sp2$ hybridized orbital with another one from adjacent atom form strong $\sigma$ bond, while $p_z$ orbitals form $\pi$ bonds. It may look like an alternative single and double bonds between atoms, actually the bond order in graphene is 4/3 and it is uniform. We will talk about how a delocalized $\pi$ bond is more stable than alternative single and double bonds in the later chapter where Clar's theory is discussed.
-
-\begin{figure}[htbp!] 
-\centering  
-\includegraphics[width=\textwidth]{double_bond}
-\caption{The formation of $sp^2$ $\sigma$ and $p_z$ $\pi$ double bond. Image source: \cite{gra_bond}. }  
-\label{fig:gra_bond}
-\end{figure} 
-
-Because of three-coordinated bonds, C atoms that are arranged in a honeycomb lattice\footnote{honeycomb lattice is not a bravais lattice.}, or a hexagonal bravais lattice with two atoms per site, see \autoref{fig:gra_lat}. Graphene has uniform bond lengths of 1.42\AA~ and uniform bond angles of 120\textdegree.
-
-\begin{figure}[htbp!] 
-\centering  
-\includegraphics[width=\textwidth]{gra_lat.eps}
-\caption{Graphene lattice and its Brillion zone. Image source: \cite{CastroNeto2009}. }  
-\label{fig:gra_lat}
-\end{figure} 
-
-Every atom has same local environment, however, adjacent atoms are not equivalent. They belong to different hexagonal sublattices $A$ and $B$ as indicated with blue and yellow colors in \autoref{fig:gra_lat}. $a_1$ and $a_2$ are the basis vectors in real space connecting equivalent sites. $b_1$ and $b_2$ are the basis vectors in reciprocal space connecting equivalent k-points. The hexagon in the reciprocal space is the first Brillouin zone where all inequivalent k-points are contained. These kpoints associate with different parallel lines of atoms and thus also indicate different directions in the real space. The k wave vectors near the $\Gamma$ point have longer wave length, while those at the boundary of the first Brillouin zone have wave length that is two times the unitcell dimension on that direction. For example, the most interesting k-point for graphene is the $K$ and $K'$ points. These directions correspond to the $a_1$ and $a_2$ directions in real space. It is only at these k-points in the Brioulloin zone, the antibinding and bonding $\pi$ band touch each other. Further, the energy $E$ dispersion with $\textbf{k}$ vector has a linear relation, $ E = \hbar \nu_F |\vec{k}|$, around these points, where $\hbar$ is reduced Planck constant and $\nu_F$ is Fermi velocity (in graphene it is $10^{-6}m/s)$).  Several consequences of this relationship can be summarized. First of all, electrons in graphene behave like photon, can be describe by Dirac equation for massless relativistic particles\cite{Novoselov2005}. For this reason, the $K$ and $K'$ points are referred as Dirac points, its vicinities are called Dirac cone, and electrons or holes can be described by relativistic. Secondly, the carrier concentration can be tuned continuously from electron to hole with a perpendicular electric field\cite{Geim2007}. Thirdly, the carrier in graphene can tunnel through finite height potential it normally incident to without reflection--Klein tunneling\cite{Katsnelson2006}. Fourthly, under magnetic field, zero energy Landau level appears, and the large energy interval between zero to first level made it possible to observe quantum Hall effect at room temperature \cite{Novoselov1379}. New phenomenon driven by the linear dispersion are not limited to these yet they are the most profound ones.
-
-\mynote{make the connection and finishing by listing other properties}
+Graphene delivers more than just an interesting electronic properties. For example, evidencing extraordinary mechanical properties graphene has a Young modulus $E = 1$Tpa and intrinsic strength of 130 Gpa\cite{Lee385}. This marks the strongest material ever measured. More than 300 times stronger than steel and four times harder than diamond. Carrier high mobility is another exciting feature that has more applicative importance in electronic devices. Free standing Graphene without subtract attached have been reported to have a highest mobility of 230,000 $cm^2/Vs$ at low temperature\cite{Bolotin2008a} and 120,000 $cm^2/Vs$ at 240 Kelvin, the latter value is higher than any known semiconductor\cite{Bolotin2008b}.
 
 
 
-As compared to $\pi$ bond, $\sigma$ bond originate from strong overlap of $sp^2$ orbitals. The interaction is strong and the splitting of bonding and antibonding orbitals are large. Which makes the $\sigma$ bonding orbitals deep in energy, or in other word, makes it strong and difficult to break. This feature contribute the most to the mechanical strength of graphene which has a Young modulus $E = 1$Tpa and intrinsic strength of 130 Gpa\cite{Lee385}. This marks the strongest material ever measured. More than 300 times stronger than steel and four times harder than diamond.On the other hand, $p_z$ orbitals are less overlapped. This makes the $pi$ bond energy close to Fermi level, i.e. the highest occupied state. Therefore, they contribute the most to the electronic properties of graphene.  
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 \section{Post-graphene Materials}
