@@ -11,23 +11,21 @@
     \graphicspath{{Chapter1/Figs/Vector/}{Chapter1/Figs/}}
 \fi
 
-
-
 A new field of research in material science and condensed matter physics was formed after the synthesis of graphene in 2004 \cite{Novoselov666,Novoselov26072005}. This field is named Two-dimensional (2D) material due to the fact that graphene is a single atomic-layer crystal. The synthesis itself together with the phenomenal properties of graphene has leaded to a Nobel Price in physics rewarded to A. K. Geim and K. S. Novoselov \cite{Geim2007}. Since then, the field is expanding with the involvement of researcher not only from young community, but also from experts who have been working on materials like graphite, fullerenes and carbon nanotubes which are strongly graphene related. In the last several years, researches focused on graphene and related topics increasing rapidly, see \autoref{fig:grpapers}. While a part of these effects have been making to explore more on the graphene itself and its applications, some other parts were put on discovering new 2D materials. It has been evidenced from graphene, same material having different dimensionality can have different properties. Therefore, many materials with hidden properties which will only manifest itself at other dimensions yet to be discovered. 
 
 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.7\textwidth]{graphene_papers.eps}
-\caption[Graphene publications]{Graphene related publications during the last decade. Data source: ISI Web of Science. \protect\footnotemark }  
+\caption[Graphene publications]{Graphene related publications and patents during the last decade. Data source: ISI Web of Science. \protect\footnotemark }  
 \label{fig:grpapers}
 \end{figure} 
 
 On the other hand, with the advent of powerful supercomputer facilities, calculations that seems impossible to finish in a reasonable time now has been made accessible. At the same time, given the accuracy of the calculations is the most crucial aspect of computational physics, especially when the results are related to the prediction the real properties of materials, researchers and programmers have been making important progress to make sure theories and its implementation are correct and the results they yield are within acceptable precision. Equipped with these tools, theoretical predictions on the structure and the properties of material have served well on discovering unexplored features. Moreover, detailed characterizations at atomic scale benefits the experimental results to make it more convincing, or even sometimes to explain the unexpected results.
 
-\footnotetext{This result is obtained by searching for "graphene" in the topic field of Web of Science.}
-
 Considering all mentioned, it is a sound approach to apply the state-of-the-art computational methods that accompanied with high-performance supercomputer facilities to investigate the physical properties of novel 2D materials. This thesis is a summary of several works which has accomplished during my PhD study and were initiated to this end. The thesis is organized as followed: For the rest of this chapter, I will first introduce graphene and some post-graphene materials that discovered right after graphene and, briefly, methods used to synthesis 2D materials. The following \autoref{chap:2} will present the computational methods, the theory behind and the implementations of them. In \autoref{chap:3}, I will discuss several general properties of 2D materials. The next two chapters will be the main results from my works. Starting from specific properties targeting at specific novel 2D materails in \autoref{chap:4}, and followed by modification of physical properties of 2D materials in \autoref{chap:5}. Conclusions for the thesis will be given in the last chapter.
+
+\footnotetext{Publication and patent result are obtained by searching for "graphene" in the topic and title field of Web of Science and PATENTSCOPE, respectively.}
 
 \section{Graphene}
 
@@ -62,18 +60,18 @@ As mentioned previously, graphene is the single atomic layer of graphite. It pos
 
 Graphene delivers more than just an interesting electronic property. For example, evidencing the extraordinary mechanical properties, graphene has a Young modulus E = 1Tpa and intrinsic strength of 130 Gpa\cite{Lee385}. This makes graphene the strongest material ever measured. More than 300 times stronger than steel and four times harder than diamond. Carrier high mobility is another exciting feature that has more applicative importance in electronic devices. Free standing graphene without subtract attached has been reported to has mobility of 230,000 \si{cm^2/Vs} at low temperature\cite{Bolotin2008a} and 120,000 \si{cm^2/Vs} at 240 Kelvin, the latter value is higher than any known semiconductor\cite{Bolotin2008b}. In addition, the thermal conductivity of graphene can reach up to 5000 \si{W/mK} at room temperature, which is 20 times higher than copper\cite{balandin2008}. However, having a zero band gap means the application of graphene in digital logic gates is limited. The current controlled by the gate bias can not be turned off completely which would othewise deliver distinct signal from when it is on. Efforts on band gap opening have been made, from substrate induction\cite{Ci2010,zhou2007}, bilayer graphene\cite{mccann2006,castro2007}, chemical adsorption\cite{Elias2009,Jeon2011}, and chemical doping\cite{zhou2008} to quantum confinements\cite{Nakada1996,Barone2006}.  While doping and adsorption usually come with a cost of reducing mobility by introducing scattering centres, non-destructive bilayer graphene and nanoribbon are thought to be promising approaches to open band gap as well as, to a great extend, preserve graphene's superior properties.
 
-\section{Post-graphene Materials}
+\section{Post-graphene materials and their general properties}
 
 Excitements in the exploration of graphene properties drive the force to discover more types of 2D materials. Researchers have taken different approaches to this end. On one hand, aiming to open a band gap in graphene, chemical functionalizations on graphene have been carried out with adsorption of hydrogen, fluorine and oxygen, and they results in graphane, fluorographene and graphene oxide, respectively; On the other hand, inspired by graphite's layer structure, layered materials are brought to the attention to isolate single layer just as it has done for graphene. In this section, I will introduce some of these early post-graphene materials and their physical properties in general.
 
-\subsection{Functionized Graphene}
+\subsection{Functionized graphene}
 
 \subsubsection{Graphane}
 
 The fully hydrogenation of graphene gives a 2-D hydrocarbon called graphane. It can synthesized either by reduction of graphite then hydrogenation of left product (graphene, carbon nanotubes or graphite oxide) with liquid-based\cite{Yang2012} or gas-based\cite{Burgess2011} environments, or grow by chemical vapor deposition\cite{wang2010}. 
 
 
-graphane is not flat as graphene. In fact, the bonding character changed from $sp^2$ hybridization to $sp^3$, which gives buckled structure, see \autoref{fig:gra_h}. Neighbouring H atoms locate at the different sides of graphane plane. Among different phases of graphane, chair structure is the ground state. Others phases are metastable state like: boat, twist-boat and twist-boat-chair\cite{Samarakoon2009}. The C-C bond length in the chair structure is 1.52 \AA lager than that in graphene. graphane is a semiconductor with 3.5 eV band gap in the chair form. Band gap are reported scale almost linearly with the hydrogen coverage\cite{Ilyin2011}. The 2D Young's modulus of graphane is estimated 245 \si{N/m}\cite{Munoz2010}, smaller than graphene' 340 \si{N/m}. The incomplete coverage of H atoms on graphene gives hydrogenated graphene. It has ferromagnetic magnetic state\cite{Zhou2009}, tunable band gap\cite{Shkrebtii2011} and reversible hydrogenation\cite{Elias2009}. 
+graphane is not flat as graphene. In fact, the bonding character changed from sp$^2$ hybridization to sp$^3$, which gives buckled structure, see \autoref{fig:gra_h}. Neighbouring H atoms locate at the different sides of graphane plane. Among different phases of graphane, chair structure is the ground state. Others phases are metastable state like: boat, twist-boat and twist-boat-chair\cite{Samarakoon2009}. The C-C bond length in the chair structure is 1.52 \AA lager than that in graphene. graphane is a semiconductor with 3.5 eV band gap in the chair form. Band gap are reported scale almost linearly with the hydrogen coverage\cite{Ilyin2011}. The 2D Young's modulus of graphane is estimated 245 \si{N/m}\cite{Munoz2010}, smaller than graphene' 340 \si{N/m}. The incomplete coverage of H atoms on graphene gives hydrogenated graphene. It has ferromagnetic magnetic state\cite{Zhou2009}, tunable band gap\cite{Shkrebtii2011} and reversible hydrogenation\cite{Elias2009}. 
 
 \begin{figure}[htbp!] 
 \centering  
@@ -84,7 +82,7 @@ graphane is not flat as graphene. In fact, the bonding character changed from $s
 
 \subsubsection{Fluorographene}
 
-More stronger binding between external atom and C atom can be realized using fluorine atom as agent. A full fluorinated graphene is called fluorographene, and it can be regards as a single layer of graphite fluoride. Actually, sonochemical exfoliation of fluorographene from graphite fluoride is one of the ways to synthesis it, see \autoref{fig:gra_f}\cite{Zhu2013}. Fluorographene has a similar structure as graphane due to same $sp^3$ hybridization, and also different isomers where the again the chair type is the ground state configuration\cite{samarakoon2011}. The unit cell of fluorographene around 1\% larger than that of graphene\cite{nair2010}. The formation energy of fluorographene is around 0.5 eV per fluorine atom lower than that of graphane per hydrogen atom\cite{Jeon2011}. The band gap of fluorographene is larger than 3 eV from optical measurement\cite{nair2010,Jeon2011}, and band structure similar to that of graphane with a band gap at the $\Gamma$ k-points. The 2D Young's modulus of Fluorographene is 100 \si{N/m} and the intrinsic strength is about 15 \si{N/m}. They both more than two times less than those for graphene due to weaker $sp3$ bonds in fluorographene\cite{nair2010}.
+More stronger binding between external atom and C atom can be realized using fluorine atom as agent. A full fluorinated graphene is called fluorographene, and it can be regards as a single layer of graphite fluoride. Actually, sonochemical exfoliation of fluorographene from graphite fluoride is one of the ways to synthesis it, see \autoref{fig:gra_f}\cite{Zhu2013}. Fluorographene has a similar structure as graphane due to same sp$^3$ hybridization, and also different isomers where the again the chair type is the ground state configuration\cite{samarakoon2011}. The unit cell of fluorographene around 1\% larger than that of graphene\cite{nair2010}. The formation energy of fluorographene is around 0.5 eV per fluorine atom lower than that of graphane per hydrogen atom\cite{Jeon2011}. The band gap of fluorographene is larger than 3 eV from optical measurement\cite{nair2010,Jeon2011}, and band structure similar to that of graphane with a band gap at the $\Gamma$ k-points. The 2D Young's modulus of Fluorographene is 100 \si{N/m} and the intrinsic strength is about 15 \si{N/m}. They both more than two times less than those for graphene due to weaker sp$3$ bonds in fluorographene\cite{nair2010}.
 
 \begin{figure}[htbp!] 
 \centering  
@@ -93,11 +91,64 @@ More stronger binding between external atom and C atom can be realized using flu
 \label{fig:gra_f}
 \end{figure} 
 
-\subsection{Silicene and Germanene}
+\subsection{Group IV 2D materials}
+
+In analogues to graphene, 2D material made of only single element from other members of Group IV have been also proposed and synthesized. They are silicene, germanene, stanene made of silicon (Si), germanium (Ge) and tin (Sn) atoms. They generally suffer from less stability with respect to graphene. For one example, the free standing form of these material are hard to make, instead they usually need ordered substrates to support them. Therefore, the measurements done on these type of system can not exclusively speak for the target material, the influence of the substrate is not negligible\cite{Lin2013,}. This will in turns hinder the accurate characterization of the properties. Despite these experimental difficulties, theoretical studies have more freedom to investigate their physical properties. One of the most important differences of these materials as compared to graphene is their not-flat buckled structure, see \autoref{fig:silicene}. The buckling parameters $\delta$ is defined as the interlayer distance of layers at different 2D atomic planes. According to calculations, $\delta$ is 0.45\AA~for silicene, 0.69\AA~for germanene and 0.85 \AA~for stanene\cite{matthes2013}. This change corresponds to more sp$^3$ character the orbitals have, and this degree increases with the atomic radius. 
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.7\textwidth]{silicene_structure.png}
+\caption{Buckled hexagonal crystal structures of 2D group IV materials (X = Si, Ge, and Sn). Different colors represent different 2D planes. Their distance is the buckling parameter $\delta$. Image adapted from:\cite{Balendhran2015}}  
+\label{fig:silicene}
+\end{figure} 
+
+
+Despite having a buckled structure, these materails also posses Dirac points with linear energy momentum dispersion around it\cite{Garcia2011}.  However, as stated before, the substrate where the materials are supported will induce symmetry broken which leads to the lost of Dirac character for $\pi$ electrons\cite{Lin2013}. Moreover, spin-orbit coupling (SOC) in these materials are predicted to be larger than that in graphene due to larger atomic weights. With inclusion of SOC, this corresponds to 1.9 meV band gap in silicene to 101 meV of that in stanene\cite{matthes2013}. The mechanical stiffness and strength are low as compared to graphene and has a reducing trend with atomic number in this group. This is partially due to the less energetically costly bond angle deformation in the buckled structure upon load rather than bond stretching\cite{Manjanath2014}. For example, silicene has a 2D Young's modulus around 62 \si{N/m}, that is four times smaller than graphene. Another important difference of these materials from graphene regards the realization of monolayer. The lack of layered bulk materials for the former ones made the mechanical exfoliation inapplicable for them, which is believed to produce the highest quality sample. Therefore, methods used in this case are either bottom-up decomposition techniques onto highly ordered substrates\cite{vogt2012,li2014}, or top-down methods like chemical exfoliation to isolate grown monolayer from substrate\cite{lin2012,kaloni2013}.
+
 
 \subsection{2D from layered materials}
+
+The layered structure of graphite contribute the most to the isolation of graphene. If the interlayer bonding were not weak vdW interaction rather a covalent type, even the concept of layers can not stand let alone to break bonds only in one direction and keep others in the other two directions. Therefore, exploring the possibility to discover other 2D materials can start from other layered materials, for example hexagonal boron nitrides (h-BN), transition metal dichalcogenides (TMDs). In this section, I will discuss general physical properties of these two material as examples for 2D materials from layered ones.
+
 \subsubsection{Boron Nitride}
+
+Among the multiple structural phases of BN, the layered hexagonal h-BN is the most stable one, see \autoref{fig:BN} for the structure. A single layer extracted from it gives 2D h-BN. Because of its structural similarity to graphene and its wide band gap it is often referred as the white graphene\cite{alem2009atomically}. 2D h-BN has a band gap of 6.1 eV according to calculations. A intuitive tight binding analysis reveals the band gap, in this case, is proportional to the difference of p$_z$ orbitals from B and N atoms. For silicene and graphene, this difference is zero thus so is the band gap. Moreover, as a result of different electronegativity, i.e. 2.0 for B and 3.0 for N, ionic character develops which further enlarge the band gap\cite{zhuang2012}. Several interesting features of this material are reported: strong mechanical stiffness and strength close to graphene\cite{Bosak2006}, a good thermal conductivity of 100-270 \si{\watt\per\meter\per\kelvin} for few-layer h-BN\cite{Jo2013} as an electrical insulator, a high oxidation resistance up to 700 \si{\celsius} as contrast to 400\si{\celsius} for graphene\cite{li2016atomically}, etc.. Benefit from its compatible bond length, i.e. 1. \AA, with graphene, it is a perfect partner for graphene to form heterostructure electronic device to serve as a dielectric substrate\cite{Lee2013}, the result is better than using SiO$_2$ substrate\cite{dean2010boron}. 
+
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.7\textwidth]{BN.png}
+\caption{Layered hexagonal crystal structures of BN. Image adapted from:\cite{Benjah2007}}  
+\label{fig:BN}
+\end{figure} 
+
+
 \subsubsection{Transition Metal Dichalcogenides}
 
-\section{0D and 1D from 2D: buckyballs, nanotubes and nanoribbons}
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.7\textwidth]{tmds.eps}
+\caption[Layered structures of TMDs]{Layered structures of TMDs. 2H: two layers per unit cell with hexagonal symmetry; 3R: three layers per unit cell with rhombohedral symmetry; 1T: one layer per unit cell with tetragonal symmetry. $a$ is the in-plane lattice constant with a range from 3.1 to 3.7 \AA. $c$ is the vertical lattice constant. The interlayer distance has a typical length of 6.5 \AA. Image source: \cite{Wang2012}}  
+\label{fig:tmds}
+\end{figure} 
+
+Transition metal dichalcogenides (TMDs) has a generalized formula of MX$_2$, where M stand for group 4-7 elements in the transition metal series in the periodic table, and X are the group VI elements. This is another type of layered materials, and single layer of some of them have been experimental realized.  These materials typical existing in three different structural phases as shown in \autoref{fig:tmds}, which at monolayer level can be either H or T phase. One of the most important differences in these two phases is lack of inversion symmetry in H phase while T phase has it. Therefore, spin orbit coupling (SOC) is much important in H to induce spin-splitting than that in T phase, for instance 456 meV spin splitting in WSe$_2$\cite{Zhu2011giant}. Note that, inversion symmetry is recovered in the layered bulk form hence suppresses SOC. Another important consequence of reduce dimensionality is the indirect-to-direct band gap transition from layered TMDs to its 2D counterpart, see for example in \autoref{fig:tmds_bands}. 2D-TMDs have a broad range of potential applications. Electrocatalysis\cite{kim2013enhanced,huang2014synthesis} benefit from adequate active sites, electronic devices\cite{RadisavljevicB2011,sun2014fabrication} benefit from typical band gap of 1-2 eV, Li or Na batteries\cite{chang2011cysteine,chen2013situ} benefit from high surface-to-volume ratio and short diffusion path, photocatalysis benefit from high stability under extreme light intensity\cite{Li2013,Parzinger2015}, and biomedicine benefit from enhancement of the physiological stability and biocompatibility of polymers on 2D-TMDs\cite{Cheng2014,Yin2014}. 
+
+
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.7\textwidth]{tmds_bands.eps}
+\caption{Band structure variation of MoS$_2$ from bulk to single layer. Image source: \cite{Chhowalla2013}}  
+\label{fig:tmds_bands}
+\end{figure} 
+
+
+\section{0D and 1D from 2D: fullerenes, nanotubes and nanoribbons}
+
+The reduction of dimensionality of the materials did not stop at the 2D level. Further lowing of it will result in 1D nanotubes or nanoribbons and 0D fullerene-like nanoparticles. Nanoribbons are a strip of 2D sheet with nano-scale width and micro-scale length and it is still flat. Whereas nanotubes are the rolling up of nanoribbons to have a tube structure. And fullerenes 
+
+
+However, in history graphene was the last oneWith confinements from other direction, physical properties of these are expected to be different than their higher dimension counterparts. For example, graphene nanoribbons have a finite band gap contrast to graphene and carbon nanotubes. 
+
 \section{Synthesis methods}

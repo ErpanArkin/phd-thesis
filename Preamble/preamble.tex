@@ -25,15 +25,21 @@
 \ifsetCustomFont
   % Set your custom font here and use `customfont' in options. Leave empty to
   % load computer modern font (default LaTeX font).
-
-  \renewcommand{\familydefault}{\sfdefault}
-  \RequirePackage[scaled=1]{helvet}
   
-  %for math
-  \usepackage[helvet]{sfmath}  
+%helvet
+  %\renewcommand{\familydefault}{\sfdefault}
+  %\RequirePackage[scaled=1]{helvet}
+  
+%carlito  
+  \usepackage[sfdefault,lf]{carlito}
+  \usepackage[T1]{fontenc}
+  \renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+  
+ %for math
+  \usepackage{sfmath}  
   %\usepackage{sansmathfonts}   
   %\usepackage{sansmath}
-  %\everymath={\sf}
+  \everymath={\sf}
    
   %for dedication
   \usepackage{miama}
