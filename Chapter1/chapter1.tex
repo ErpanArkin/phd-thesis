@@ -11,19 +11,20 @@
     \graphicspath{{Chapter1/Figs/Vector/}{Chapter1/Figs/}}
 \fi
 
-A new field of research in material science and condensed matter physics was formed after the synthesis of graphene in 2004 \cite{Novoselov666,Novoselov26072005}. This field is named Two-dimensional (2D) material due to the fact that graphene is a single atomic-layer crystal. The synthesis itself together with the phenomenal properties of graphene has leaded to a Nobel Price in physics rewarded to A. K. Geim and K. S. Novoselov \cite{Geim2007}. Since then, the field is expanding with the involvement of researcher not only from young community, but also from experts who have been working on materials like graphite, fullerenes and carbon nanotubes which are strongly graphene related. In the last several years, researches focused on graphene and related topics increasing rapidly, see \autoref{fig:grpapers}. While a part of these effects have been making to explore more on the graphene itself and its applications, some other parts were put on discovering new 2D materials. It has been evidenced from graphene, same material having different dimensionality can have different properties. Therefore, many materials with hidden properties which will only manifest itself at other dimensions yet to be discovered. 
+
+A new field of research crossing material science and condensed matter physics was formed after the synthesis of graphene in 2004 \cite{Novoselov666,Novoselov26072005}. Graphene is a single atomic-layer crystal of carbon, due to this the field is named two-dimensional (2D) material. The synthesis itself together with the phenomenal properties of graphene has leaded to a Nobel Price in physics rewarded to A. K. Geim and K. S. Novoselov \cite{Geim2007}. Since then, the field is expanding with the involvement of researcher not only from young community, but also from experts who have been working on graphene-related materials like graphite, fullerenes and carbon nanotubes. As a result, research focused on graphene and related topics increasing with unprecedented speed, see \autoref{fig:grpapers}. While a part of these effects have been making to explore more on the graphene itself and its applications, some other parts were put on discovering new 2D materials. It has been evidenced from graphene, same material having different dimensionality can have different properties. Therefore, many materials with hidden properties which will only manifest itself at other dimensions yet to be discovered. 
 
 
 \begin{figure}[htbp!] 
 \centering  
-\includegraphics[width=0.7\textwidth]{graphene_papers.eps}
-\caption[Graphene publications]{Graphene related publications and patents during the last decade. Data source: ISI Web of Science. \protect\footnotemark }  
+\includegraphics[width=0.8\textwidth]{graphene_papers.eps}
+\caption[Graphene publications]{Graphene related publications and patents during the last decade. Data source: ISI Web of Science and PATENTSCOPE. \protect\footnotemark }  
 \label{fig:grpapers}
 \end{figure} 
 
-On the other hand, with the advent of powerful supercomputer facilities, calculations that seems impossible to finish in a reasonable time now has been made accessible. At the same time, given the accuracy of the calculations is the most crucial aspect of computational physics, especially when the results are related to the prediction the real properties of materials, researchers and programmers have been making important progress to make sure theories and its implementation are correct and the results they yield are within acceptable precision. Equipped with these tools, theoretical predictions on the structure and the properties of material have served well on discovering unexplored features. Moreover, detailed characterizations at atomic scale benefits the experimental results to make it more convincing, or even sometimes to explain the unexpected results.
+On the other hand, with the advent of powerful supercomputer facilities, calculations that seems impossible to finish in a reasonable time now has been made possible. The accuracy of such calculations is the most crucial aspect of computational physics, especially when the results are related to the prediction the real properties of materials. To make the time spend on costly supercomputer valuable, researchers and programmers have been making important progress to make sure theories and its implementation are correct and the results they yield are within acceptable precision. Equipped with these tools, theoretical predictions on the structure and the properties of material have served well on discovering unexplored features. Moreover, detailed characterizations at atomic scale benefits the experimental results, or even to explain the unexpected results.
 
-Considering all mentioned, it is a sound approach to apply the state-of-the-art computational methods that accompanied with high-performance supercomputer facilities to investigate the physical properties of novel 2D materials. This thesis is a summary of several works which has accomplished during my PhD study and were initiated to this end. The thesis is organized as followed: For the rest of this chapter, I will first introduce graphene and some post-graphene materials that discovered right after graphene and, briefly, methods used to synthesis 2D materials. The following \autoref{chap:2} will present the computational methods, the theory behind and the implementations of them. In \autoref{chap:3}, I will discuss several general properties of 2D materials. The next two chapters will be the main results from my works. Starting from specific properties targeting at specific novel 2D materails in \autoref{chap:4}, and followed by modification of physical properties of 2D materials in \autoref{chap:5}. Conclusions for the thesis will be given in the last chapter.
+Considering all mentioned, it is a sound approach to apply the state-of-the-art computational methods that accompanied with high-performance supercomputer facilities to investigate the physical properties of novel 2D materials. This thesis is a summary of several works which has been accomplished during my PhD study and were initiated to this end. The thesis is organized as followed: For the rest of this chapter, I will first introduce graphene and some post-graphene materials that discovered right after graphene and, briefly, methods used to synthesis 2D materials. The following \autoref{chap:2} will present the computational methods, the theory behind and the implementations of them. In \autoref{chap:3}, I will discuss several general properties of 2D materials. The next two chapters will be the main results from my works. Starting from specific properties targeting at specific novel 2D materails in \autoref{chap:4}, and followed by modification of physical properties of 2D materials in \autoref{chap:5}. Overlapping of materials themselves and their properties is inevitable between chapters yet it will be minimized, such that each chapter will have unique topic. 
 
 \footnotetext{Publication and patent result are obtained by searching for "graphene" in the topic and title field of Web of Science and PATENTSCOPE, respectively.}
 
@@ -97,7 +98,7 @@ In analogues to graphene, 2D material made of only single element from other mem
 
 \begin{figure}[htbp!] 
 \centering  
-\includegraphics[width=0.7\textwidth]{silicene_structure.png}
+\includegraphics[width=0.9\textwidth]{silicene_structure.png}
 \caption{Buckled hexagonal crystal structures of 2D group IV materials (X = Si, Ge, and Sn). Different colors represent different 2D planes. Their distance is the buckling parameter $\delta$. Image adapted from:\cite{Balendhran2015}}  
 \label{fig:silicene}
 \end{figure} 
@@ -117,7 +118,7 @@ Among the multiple structural phases of BN, the layered hexagonal h-BN is the mo
 
 \begin{figure}[htbp!] 
 \centering  
-\includegraphics[width=0.7\textwidth]{BN.png}
+\includegraphics[width=0.9\textwidth]{BN.png}
 \caption{Layered hexagonal crystal structures of BN. Image adapted from:\cite{Benjah2007}}  
 \label{fig:BN}
 \end{figure} 
@@ -127,7 +128,7 @@ Among the multiple structural phases of BN, the layered hexagonal h-BN is the mo
 
 \begin{figure}[htbp!] 
 \centering  
-\includegraphics[width=0.7\textwidth]{tmds.eps}
+\includegraphics[width=0.9\textwidth]{tmds.eps}
 \caption[Layered structures of TMDs]{Layered structures of TMDs. 2H: two layers per unit cell with hexagonal symmetry; 3R: three layers per unit cell with rhombohedral symmetry; 1T: one layer per unit cell with tetragonal symmetry. $a$ is the in-plane lattice constant with a range from 3.1 to 3.7 \AA. $c$ is the vertical lattice constant. The interlayer distance has a typical length of 6.5 \AA. Image source: \cite{Wang2012}}  
 \label{fig:tmds}
 \end{figure} 
@@ -138,17 +139,70 @@ Transition metal dichalcogenides (TMDs) has a generalized formula of MX$_2$, whe
 
 \begin{figure}[htbp!] 
 \centering  
-\includegraphics[width=0.7\textwidth]{tmds_bands.eps}
+\includegraphics[width=0.9\textwidth]{tmds_bands.eps}
 \caption{Band structure variation of MoS$_2$ from bulk to single layer. Image source: \cite{Chhowalla2013}}  
 \label{fig:tmds_bands}
 \end{figure} 
 
 
-\section{0D and 1D from 2D: fullerenes, nanotubes and nanoribbons}
+\section{1D from 2D: nanotubes and nanoribbons}
 
-The reduction of dimensionality of the materials did not stop at the 2D level. Further lowing of it will result in 1D nanotubes or nanoribbons and 0D fullerene-like nanoparticles. Nanoribbons are a strip of 2D sheet with nano-scale width and micro-scale length and it is still flat. Whereas nanotubes are the rolling up of nanoribbons to have a tube structure. And fullerenes 
+The reduction of dimensionality of the materials did not stop at the 2D level. Further lowing it will result in 1D nanotubes or nanoribbons. 
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.8\textwidth]{chiral_vector.png}
+\caption{Chiral vector and different type of nanotubes. Image adapted from \cite{Prasek2011}}  
+\label{fig:chiral}
+\end{figure} 
+
+A nanoribbon is a strip of 2D sheet with nano-scale width and micro-scale length and it is still flat. Whereas nanotubes are the rolling up of nanoribbons to have a tube structure. Each nanotube, also each nanoribbon but with different definition, is associate with a chiral vector that uniquely define its structure parameters expect the length which is consider to be infinite in theory. In the \autoref{fig:chiral}, $a_1$ and $a_2$ are the unit lattice vectors in graphene.  Chiral vector, $\vec{C}$, is the superposition of these unit vectors with indices pair ($n$,$m$). Zigzag edge always has a ($n$,0) form and ($n$,$n$) is always armchair edge. Everything else is called chiral type edge.  This finite-length chiral vector also define the radius of the tube. Nanoribbons, on the other hand, have these three types of edges as well. However, in this case, edges have finite length. 
+
+With confinements from other directions, physical properties of these system are expected to be different than their higher dimension counterparts. For example, graphene nanoribbons have a finite band gap as contrast to zero badn gap in graphene\cite{Wang2008}. Moveover, control of this confinement will give tunable physical properties. For example, overall inverse band gap relation with the width of nanoribbon\cite{Han2007}. The zigzag edges in graphene nanoribbon form spin-polarized magnetic states give ferromagnetic ordering along the edge and anti-ferromagnetic ordering across edges\cite{Son2006}. 
+
+For nanotubes, those have same edges belong to the same class of chirality and have same electronic structure. For instance, armchair carbon nanotubes are metallic, other types are semiconductor. But small radius tubes can be exceptional due to large curvature\cite{Bandaru2007}.  The strong mechanical strength and high thermal conductivity of graphnene nanoribbon just as those in graphene.
 
 
-However, in history graphene was the last oneWith confinements from other direction, physical properties of these are expected to be different than their higher dimension counterparts. For example, graphene nanoribbons have a finite band gap contrast to graphene and carbon nanotubes. 
+
 
 \section{Synthesis methods}
+
+In this last section of this chapter I will briefly discuss some of the synthesis methods for 2D materials. In \autoref{fig:syn}, a overview of graphene production setups is displayed. 
+
+\subsubsection{Micromechanical cleavage}
+
+Micromechanical cleavage is also known as mechanical exfoliation, which was the method used to first successfully isolation of graphene by \citet{Novoselov26072005} in 2004 using a adhesive tape. It involves separating layers in layered materials by mechanical, electrostatic, or electromagnetic forces. This method gives high quality product and suitable for laboratory-scale sample for fundamental studies. Large scale productions are impractical through this method.  Room temperature mobility was measured up to 20,000 cm$^2$V$^{-1}$s$^{-1}$\cite{Ni2010} on graphene prepared with this method.
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=\textwidth]{synthesis.png}
+\caption{Graphene production setups. Image source \cite{Ferrari2015}}  
+\label{fig:syn}
+\end{figure} 
+
+\subsubsection{Liquid phase exfoliation}
+
+Liquid phase exfoliation is the extraction of layers using ultrasounds in a proper solvent. The cavitation-induced bubbles collapse around the graphite will generate compressive stress wave. As a primary result, this will cause a reflective tensile wave whose strength is proportional with the number of such bubbles. Intensive tensile stress is enough to break graphite into graphite flakes. Additionally, shear effect can be develop from unbalance lateral stress, and separate two adjacent layers. Liquid phase exfoliation is a promising method to synthesis cheap and scalable samples. 
+
+\subsubsection{Growth on SiC}
+
+Growth of graphene on SiC involves Sic sample annealing at high temperature ( > 1400\si{\celsius}) in vaccum or under atmospheric pressure. The sublimation of silicon atoms leave behind carbon atoms on the surface which will rearrange to form graphitic layer\cite{Mishra2016}, see \autoref{fig:sic}. Apart from high reproducibility and production of homogenous large-area sample of this method, it has an advantage that the graphene is available on semiconducting substrate for layer electronic device integration. 
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.6\textwidth]{gr-sic.png}
+\caption{Growth of graphene on SiC wafer. Image source \cite{mishra2016graphene}}  
+\label{fig:sic}
+\end{figure} 
+
+\subsubsection{Chemical vapor deposition}
+
+Chemical vapor deposition (CVD) is a popular method to grow amorphous or crystalline thin film from solid, gaseous or liquid precursors. It is the direct deposition of vaporized desire material onto a particular substrate. Various of CVD methods exist depending on their operating pressure, types of vapor and whether it is plasma-assisted etc.. Graphene grown on transtion metals deliver high quality. Carbon atoms from organic sources in the gas phase are deposited on metal (Ni, Ru, Ir etc.) and convert to graphene at high temperature. Then, for the characterization, graphene will transfer to a appropriate substrate. Typical mobility of such type of sample is around 1000-25000 cm$^2$V$^{-1}$s$^{-1}$\cite{Petrone2012}. A 30-inch graphene film have been produced from roll-to-roll production through CVD methods by \citet{Bae2010}, see \autoref{fig:30gr}. The product measured to be a better electrode than commercially available indium tin oxides.
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.7\textwidth]{30-inches-gr.jpg}
+\caption{A ultralarge-area graphene film. Image source \cite{Bae2010}}  
+\label{fig:30gr}
+\end{figure} 
+
