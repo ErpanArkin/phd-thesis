@@ -11,18 +11,18 @@
     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 \fi
 
-As mentioned in the last chapter, theories behind the calculations are the most crucial component in the material properties determination process. Its correctness, accuracy and implementation directly influence the quality of its prediction. In this chapter, I will introduction relevant theoretical models, approximation and their implementation in commonly used software packages.
+As mentioned in the last chapter, theories behind the calculations are the core component in the material properties determination process. Its correctness, accuracy and implementation directly influence the quality of its prediction. In this chapter, I will introduction relevant theoretical models, approximation and their implementation in commonly used software packages.
 
 \section{Theory}
 \subsection{Density Functional Theory}
 
-Density functional theory (DFT) is one of the most widely used method to calculation material properties. Its applicable length and time scale are in nanometre and picoseconds. This is higher than quantum Monte Carlo simulation and lower than semi- or full-empirical methods in both scales. This order is also valid in the accuracy verse number-of-atoms-in-simulation plot in \autoref{fig:dft_ac}. It is reported that much of the inaccuracy attributes to the uncertainty of the experimental results that the methods are compared with\cite{Kirklin2015}. For periodic bulk or nanostructure, DFT can be used to even quantitatively predict the properties of materials. DFT
+Density functional theory (DFT) is one of the most widely used quantum mechanical method to calculation the properties of materials. Its applicable length and time scale are in nanometre and picoseconds, respectively. This is higher than quantum Monte Carlo simulation and lower than semi- or full-empirical methods in both scales. This order is also valid in the accuracy verse number-of-atoms-in-simulation plot in \autoref{fig:dft_ac}. The accuracy can lower than that in the plot, since a large part of the inaccuracy attributes to the uncertainty of the experimental results that the methods are compared with\cite{Kirklin2015}. As I will discuss in the later section, if a DFT method compared with a highly accurate benchmark method, their difference are around 1 meV/atom. For periodic bulk or nanostructure, DFT can be used to even quantitatively predict the properties of materials. DFT
 is based on two main basis: Hohenberg-Kohn theorems\cite{Hohenberg1964} and Kohn-Sham equations\cite{Kohn1965}. Here we briefly overview these without put too much effect for the derivation which have been extensively documented in other textbooks. 
 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.7\textwidth]{dft1.jpg}
-\caption{ Comparison of accuracy and capability of electronic structure calculation methods. Image source: \cite{dft_ac}.}  
+\caption{ Comparison of the accuracy and the size of electronic structure calculation methods. Image source: \cite{dft_ac}.}  
 \label{fig:dft_ac}
 \end{figure} 
 
@@ -110,7 +110,7 @@ and ground-state density is
 n(\vec{r})=\sum_k^{occ.}\sum_\sigma|\mathit{\psi}_k(\vec{r}\sigma)|^2.
 \end{equation}
 
-This can be solved self-consistently. An initial guess on the density $n(\vec{r})$ determines the effective potential $V_{KS}(\vec{r})$, from \eqref{eq:1} a wave function $\mathit{\psi}_k(\vec{r}\sigma)$ can be calculate, which will give a new density through \eqref{eq:2}. This procedure is repeated until self-consistency is reached. 
+This can be solved self-consistently. An initial guess on the density $n(\vec{r})$ determines the effective potential $V_{KS}(\vec{r})$, from \autoref{eq:1} a wave function $\mathit{\psi}_k(\vec{r}\sigma)$ can be calculate, which will give a new density through \autoref{eq:2}. This procedure is repeated until self-consistency is reached. 
 
 \subsection{Exchange-correlation functional}
 
@@ -195,5 +195,45 @@ where $\Delta_{XC}$ is the orbital shift caused by adding an extra electron: $\v
 The $\Delta_{XC}$ is exclusively depend on the non-analyticity of EX potential $\frac{\delta E_{EX}[n]}{\delta n(\vec{r})}$, since the Hartree potential explicitly depends on the density. If the EX energy functional were analytic, the infinitesimal density variation would not introduce large potential change, hence $\Delta_{XC}$ is small or equals to zero. Therefore, $E_g \approx E^{KS}_g$. The band gap accuracy when compared with experiment would be only limited inherently by different functionals. However, non-zero $\Delta_{XC}$ has been concluded on many materials and it is responsible for 80\% of the LDA band gap error\cite{Godby1988}. 
 
 \section{Implementation}
-\subsection{Basis set, Plane wave energy cut-off, K-points}
+
+The implementations of the theory in the last section are crucially and not always straightforward. Many of the quantifies are represented with technically easy-implemented functions, and they have to be finite in size or quantity. Question rises on how much would be enough? This is equivalent to the convergence of those in computation term. Here we review two of the most important convergence parameters: k-points and cut-off energy of the basis set.
+
+\subsubsection{k-points}
+
+According to Bloch's theorem, the solution of Schr\"{o}dinger equation for a periodic system, e.g. crystal will well-defined unit cell, can be expressed through as following:
+
+\begin{equation}\label{imp:bloch}
+\phi_{\mathbf{k}}(\mathbf{r})=e^{i\mathbf{k}\cdot\mathbf{r}}u_{\mathbf{k}}(\mathbf{r}),
+\end{equation}
+
+where $\phi$ is the wave function, $u$ is a function having same periodicity as the crystal. The space of vector $\mathbf{r}$ and $\mathbf{k}$ are called real and reciprocal space ($\mathbf{k}$-space), respectively. Particularly, each point in the $\mathbf{k}$-space associates with an unique $\mathbf{k}$ vector and is usually called a $\mathbf{k}$-point. Making use of the symmetry of the system, all inequivalent $\mathbf{k}$-points are reside inside a finite sub-space of $\mathbf{k}$ space, called the first Brillouin zone (FBZ). Quantity evaluations are mostly done through the integration of wave functions, or other functions have $\mathbf{k}$ dependence, over the FBZ. This integration has to be done numerically since explicit relation of $\phi$ and $\mathbf{k}$ is unknown. In practice, the FBZ is discretized into a grid defined by the mesh of the k-points. This mesh has to be large for accurate sampling of FBZ yet it should small for less computational time and resource. This is one of the convergence test need to be done for reliable results. Usually, metal needs more k-pints than semiconductor. This is because the highest occupied valence band is crossed with Fermi energy in metal, hence the integration for all occupied states is done for a discontinuous function that excludes unoccupied states.  Whereas for a semiconductor or insulator, the highest occupied valence band is completely occupied, therefore it is a continuous function. Smearing is one of the ways to make discontinuous function in metal continuous by smearing out the edge using a smearing function, such as Fermi-Dirac function. The range of smearing has to compromise between the computation efficiency and correctness: Too large will give wrong integration results, while too small become useless and again needs more k-points.
+
+\subsubsection{basis set, cut-off energy }
+
+Now let us look back at \autoref{imp:bloch}, we can identify $e^{i\mathbf{k}\cdot\mathbf{r}}$ as a plane wave. $u_{\mathbf{k}}(\mathbf{r})$ is periodic in space and it can be expanded in terms of a set of plane wave as well:
+
+\begin{equation}
+u_{\mathbf{k}}(\mathbf{r})=\sum_{\mathbf{G}}c_{\mathbf{G}}e^{i\mathbf{G}\cdot\mathbf{r}},
+\end{equation}
+
+where $c_{\mathbf{G}}$ is the coefficient determines the magnitude of the plane wave $e^{i\mathbf{G}\cdot\mathbf{r}}$. \autoref{imp:bloch} can now exclusively represent with plane waves:
+
+\begin{equation}
+\phi_{\mathbf{k}}(\mathbf{r})=\sum_{\mathbf{G}}c_{\mathbf{k+G}}e^{i\mathbf{k+G}\cdot\mathbf{r}}.
+\end{equation}
+
+The summation in above equation can not and not necessary to go to infinite to give accuracy results. The truncation usually done for the kinetic energy of the $\phi$:
+
+\begin{equation}
+E=\frac{1}{2}|\mathbf{k+G}|^2.
+\end{equation}
+
+The maximum kinetic energy, $E_{cut}$, associates with a $\mathbf{G}$ vector to limit the summations. Here we arrive at another convergence parameter plane wave cut-off energy. Similar to k-points, it has to be large enough the convergence of the total energy, sometimes further requires that of the phonon frequency, is reached in an acceptable precision range.  While too large will only cost more computational resources without additional benefits.
+
+\subsubsection{pseudopotentials}
+
+Considering the chemically inertness of the core electrons and their highly oscillating wave functions, their impact on valence electrons and other nuclei generally approximated by pseudopotentials to have a optimal computational efficiency. It is a smooth function has the ability to reconstruct the original core electron properties. In practice, a pseudopotential is constructed for one isolated atom of one element. While being used in complex multi-elements system, the transferability of the pseudopotential is the key factor determine how well they will perform. Ultrasoft \cite{Vanderbilt1990} and projected augmented wave \cite{bloch1994,Kresse1999} are two types of the most popular pseudopotentials used in materials simulations. They are well-balanced between the accuracy and the computational cost. 
+
 \subsection{Software Packages}
+
+There are more than 70 different software packages capable of performing density functional theory calculations according to Wikipedia\cite{dft_sws}. They are mainly differ on whether include pseudopotential and which type, what type of basis set is used to the wave function expansion, in which programming language it is written and is it free or commercial etc.. \citet{Lejaeghereaad3000} have compared 40 different implementations and their accuracy by comparing their results to a highly accurate all-electron method. They concluded, all codes or methods yield generally consistent results. The accuracy of the codes which were developed in recent years is higher than order ones. The Vienna $Ab$ $initio$ Simulation Package (VASP) \cite{VASP1,VASP2} with its projected augmented wave method is one of the most accurate codes from this study. Its well-optimized performance on supercomputers gives good results in less time as compare with the others. This code will be used as the main tool for all the calculations done in this thesis.
