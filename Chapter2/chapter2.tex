@@ -11,13 +11,13 @@
     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 \fi
 
-As mentioned in the last chapter, theories behind the calculations are the core component in the material properties determination process. Its correctness, accuracy and implementation directly influence the quality of its prediction. In this chapter, I will introduction relevant theoretical models, approximation and their implementation in commonly used software packages.
+As mentioned in the last chapter, theories behind the calculations are the core component in the material properties determination process. Its correctness, accuracy and implementation directly influence the quality of its predictions. In this chapter, I will introduce relevant theoretical models, approximations and their implementations in commonly used software packages.
 
 \section{Theory}
 \subsection{Density Functional Theory}
 
-Density functional theory (DFT) is one of the most widely used quantum mechanical method to calculation the properties of materials. Its applicable length and time scale are in nanometre and picoseconds, respectively. This is higher than quantum Monte Carlo simulation and lower than semi- or full-empirical methods in both scales. This order is also valid in the accuracy verse number-of-atoms-in-simulation plot in \autoref{fig:dft_ac}. The accuracy can lower than that in the plot, since a large part of the inaccuracy attributes to the uncertainty of the experimental results that the methods are compared with\cite{Kirklin2015}. As I will discuss in the later section, if a DFT method compared with a highly accurate benchmark method, their difference are around 1 meV/atom. For periodic bulk or nanostructure, DFT can be used to even quantitatively predict the properties of materials. DFT
-is based on two main basis: Hohenberg-Kohn theorems\cite{Hohenberg1964} and Kohn-Sham equations\cite{Kohn1965}. Here we briefly overview these without put too much effect for the derivation which have been extensively documented in other textbooks. 
+Density functional theory (DFT) is one of the most widely used quantum mechanical method to calculate the properties of materials. Its applicable length and time scale are in nanometre and picoseconds, respectively. This is longer than quantum Monte Carlo simulations and lower than semi- or full-empirical methods in both scales. This order is also valid in the accuracy verse size-of-the-system plot in \autoref{fig:dft_ac}. The accuracy can be higher than that in the plot, since a large part of the inaccuracy attributes to the uncertainty of the experimental results that the methods are compared with\cite{Kirklin2015}. As I will discuss in the later section, if a DFT method is compared with a highly accurate theoretical benchmark method, DFT would have a precision around 1 meV/atom. For periodic bulk or nanostructure, DFT can be used to even quantitatively predict the properties of materials. DFT
+is based on two main basis: Hohenberg-Kohn theorems\cite{Hohenberg1964} and Kohn-Sham equations\cite{Kohn1965}. Here I will briefly overview these without putting too much stress on the derivation which have been extensively documented in textbooks. 
 
 \begin{figure}[htbp!] 
 \centering  
@@ -26,23 +26,23 @@ is based on two main basis: Hohenberg-Kohn theorems\cite{Hohenberg1964} and Kohn
 \label{fig:dft_ac}
 \end{figure} 
 
-Materials are made from electrons and nuclei. Type of nuclei and interaction between these components give rise to various materials and their properties. The interactions are mainly electrostatic or Coulombic. While electrons must be described with quantum mechanics, the nuclei can be treated as classical particles. The equation governs electrons behaviours is the Schrödinger equation, it can be written as following\footnote{equations in this chapter are written in cgs form, and the fundamental constants $\hbar$, $e^2$ and $m$ are set to unity}
+Materials are made from electrons and nuclei. Type of nuclei and the interactions between these components give rise to various materials and their properties. The interactions are mainly electrostatic or Coulombic. While electrons must be described with quantum mechanics, the nuclei can be treated as classical particles. The equation governing electron behaviour is the Schr\"{o}dinger equation. It can be written as follows:\footnote{Equations in this chapter are written in cgs form, and the fundamental constants $\hbar$, $e^2$ and $m$ are set to unity.}
 
 \begin{equation}
 \begin{aligned}
-\hat{H}\mathit{\Psi}_k(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N) &=\left[ -\frac{1}{2}\sum^N_{i=1}\nabla_i^2+\sum^N_{i=1}\upsilon(\vec{r}_i)+\frac{1}{2}\sum_{i=1}\sum_{j\neq i}\frac{1}{|\vec{r}_i-\vec{r}_j|}\right]\mathit{\Psi}_k(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N)  \\
-&=\left( \hat{T} + \hat{V}_{ext} + \hat{V}_{ee}\right)\mathit{\Psi}_k(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N) \\
-&=E_k\mathit{\Psi}_k(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N) .
+\hat{H}\mathit{\Psi}_\alpha(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N) &=\left[ -\frac{1}{2}\sum^N_{i=1}\nabla_i^2+\sum^N_{i=1}\upsilon(\vec{r}_i)+\frac{1}{2}\sum_{i=1}\sum_{j\neq i}\frac{1}{|\vec{r}_i-\vec{r}_j|}\right]\mathit{\Psi}_\alpha(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N)  \\
+&=\left( \hat{T} + \hat{V}_{ext} + \hat{V}_{ee}\right)\mathit{\Psi}_\alpha(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N) \\
+&=E_\alpha\mathit{\Psi}_\alpha(\vec{r_1}\sigma_1,\ldots,\vec{r_N}\sigma_N) .
 \end{aligned}
 \end{equation}
 
-$\hat{H}$ is the total Hamiltonian. $\hat{T}$ is the kinetic energy. $\hat{V}_{ext}$ is the interaction between electrons and nuclei. Here we already started with the first approximation: Born–Oppenheimer approximation\cite{Born1927}. Which neglect the dynamics of nuclei, instead electrons are moving in a static potential generated by their interaction with all nuclei. $\hat{V}_{ee}$ is interaction between electrons. The first two sum over all $N$-electrons, and the last sums over all unique pairs of $N$-electrons. $\vec{r}$ is the electron position. $\sigma$ is the z-component of spin on electron (+$\frac{1}{2}$,-$\frac{1}{2}$). $\mathit{\Psi}$ is the $N$-electron wave function, and it should be antisymmetric under interchange of two electron orbital and spin coordinates (fermionic character for electrons) and it should also satisfy boundary condition of the system (quantum confinement for low-dimensional system). $E$ is the total energy. $k$ is the complete set of $N$-electron quantum numbers. Following constrained search algorithm introduced by M. Levy\cite{Levy1979}, the ground-state energy $E$ can be found by minimizing the expected value of total Hamiltonian with respect to wave function:
+$\hat{H}$ is the total Hamiltonian. $\hat{T}$ is the kinetic energy. $\hat{V}_{ext}$ is the interaction between electrons and nuclei. Here we already started with the first approximation: Born–Oppenheimer approximation\cite{Born1927}. Which neglect the dynamics of nuclei, instead electrons are considered moving in a static potential generated by their interaction with all nuclei. $\hat{V}_{ee}$ is interaction between electrons. The first two sum over all $N$-electrons, and the last one sums over all unique pairs of $N$-electrons. $\vec{r}$ is the electron position. $\sigma$ is the z-component of spin on electron (+$\frac{1}{2}$,-$\frac{1}{2}$). $\mathit{\Psi}$ is the $N$-electron wave function, and it should be antisymmetric under interchange of two electron orbital and spin coordinates (i.e. fermionic character for electrons) and it should also satisfy boundary condition of the system (e.g. quantum confinement for low-dimensional system). $E$ is the total energy. $\alpha$ is the complete set of $N$-electron quantum numbers. Following constrained search algorithm introduced by M. Levy\cite{Levy1979}, the ground-state energy $E$ can be found by minimizing the expected value of total Hamiltonian with respect to wave function:
 
 \begin{equation}
 E=\min_\mathit{\Psi}\bra{\mathit{\Psi}}\hat{H}\ket{\mathit{\Psi}}.
 \end{equation}
 
-Here we take two steps for the minimization. For the first step, we minimize with respect to all wave functions gives the same density $n(\vec{r})$:
+Here we take two steps for the minimization. For the first step, we minimize with respect to all wave functions give the same density $n(\vec{r})$:
 
 \begin{equation}
 E=\min_{\mathit{\Psi}\rightarrow n}\bra{\mathit{\Psi}}\hat{T}+\hat{V}_{ee}\ket{\mathit{\Psi}}+\int dr^3\upsilon(\vec{r})n(\vec{r}).
@@ -60,7 +60,7 @@ As seen in this equation, a functional, $F[n(\vec{r})]$, is a function of a func
 E=\min_n \left\lbrace F[n(\vec{r})] + \int dr^3\upsilon(\vec{r})n(\vec{r}) \right\rbrace,
 \end{equation}
 
-where $\upsilon(\vec{r})$ is kept fix during minimization. The resulting density is the ground-state density that gives lowest ground state energy. This is known as density variational principle, also the main idea of the Hohenberg-Kohn theorems. For the completeness, they are present in the following:
+where $\upsilon(\vec{r})$ is kept fix during minimization. The resulting density is the ground-state density that gives lowest ground state energy. This is known as density variational principle, also the main idea of the Hohenberg-Kohn theorems. For the completeness, the theorems are present in the following:
 
 \begin{theorem}
 
@@ -74,10 +74,10 @@ The ground state energy of a system with an external potential $V_{ext}(\vec{r})
 
 \end{theorem}
 
-Now, the main problem is to define the approximated expression of $F[n(\vec{r})]$. Kohn-Sham equation is a elegant way to do that. It aim to construct a non-interacting system, where density can be calculated exactly, and add local external potential $V_{KS}(\vec{r})$. The $F[n]$ decomposed into following and define $E_{EX}[n]$ as exchange-correlation (EX) energy:
+Now, the main problem is to define the approximated expression of $F[n(\vec{r})]$. Kohn-Sham equation is a elegant way to do this. It aims to construct a non-interacting system, where kinetic energy can be calculated exactly, and add local external potential $V_{KS}(\vec{r})$. The $F[n]$ decomposed into following and define $E_{XC}[n]$ as exchange-correlation (XC) energy:
 
 \begin{equation}
-F[n]=T_s[n]+E_H[n]+E_{EX}[n],
+F[n]=T_s[n]+E_H[n]+E_{XC}[n],
 \end{equation}
 
 where $T_s[n]$ is the non-interacting kinetic energy functional, and $E_H[n]$ is the Hartree energy functional:
@@ -86,7 +86,7 @@ where $T_s[n]$ is the non-interacting kinetic energy functional, and $E_H[n]$ is
 E_H[n]=\frac{1}{2}\int d^3r\int d^3r\prime\frac{n(\vec{r})n(\vec{r\prime})}{|\vec{r}-\vec{r\prime}|}.
 \end{equation}
 
-Apart from the last term, $E_{EX}[n]$, everything else can be exactly calculated for non-interacting system for given density. By imposing a normalisation constraint on the electron density, $\int n(\vec{r})d\vec{r}=N$, we have
+Apart from the last term, $E_{XC}[n]$, everything else can be exactly calculated for non-interacting system for given density. By imposing a normalisation constraint on the electron density, $\int n(\vec{r})d\vec{r}=N$, we have
 
 \begin{equation}
 \frac{\delta F[n]}{\delta n(\vec{r})}=-\upsilon(\vec{r}).
@@ -95,42 +95,42 @@ Apart from the last term, $E_{EX}[n]$, everything else can be exactly calculated
 Therefore, the effective local potential, $V_{KS}(\vec{r})$, will be
 
 \begin{equation}
-V_{KS}(\vec{r})=\upsilon(\vec{r})+\frac{\delta E_H[n]}{\delta n(\vec{r})}+\frac{\delta E_{EX}[n]}{\delta n(\vec{r})},
+V_{KS}(\vec{r})=\upsilon(\vec{r})+\frac{\delta E_H[n]}{\delta n(\vec{r})}+\frac{\delta E_{XC}[n]}{\delta n(\vec{r})},
 \end{equation}
 
 and the Kohn-Sham equation reads
 
 \begin{equation}\label{eq:1}
-\left[ -\frac{1}{2}\nabla_i^2+\upsilon(\vec{r})+\frac{\delta E_H[n]}{\delta n(\vec{r})}+\frac{\delta E_{EX}[n]}{\delta n(\vec{r})}\right]\mathit{\psi}_k(\vec{r}\sigma)=\varepsilon_k\mathit{\psi}_k(\vec{r}\sigma),
+\left[ -\frac{1}{2}\nabla_i^2+\upsilon(\vec{r})+\frac{\delta E_H[n]}{\delta n(\vec{r})}+\frac{\delta E_{XC}[n]}{\delta n(\vec{r})}\right]\mathit{\psi}_\alpha(\vec{r}\sigma)=\varepsilon_\alpha\mathit{\psi}_\alpha(\vec{r}\sigma),
 \end{equation}
 
 and ground-state density is 
 
 \begin{equation}\label{eq:2}
-n(\vec{r})=\sum_k^{occ.}\sum_\sigma|\mathit{\psi}_k(\vec{r}\sigma)|^2.
+n(\vec{r})=\sum_\alpha^{occ.}\sum_\sigma|\mathit{\psi}_\alpha(\vec{r}\sigma)|^2.
 \end{equation}
 
-This can be solved self-consistently. An initial guess on the density $n(\vec{r})$ determines the effective potential $V_{KS}(\vec{r})$, from \autoref{eq:1} a wave function $\mathit{\psi}_k(\vec{r}\sigma)$ can be calculate, which will give a new density through \autoref{eq:2}. This procedure is repeated until self-consistency is reached. 
+This can be solved self-consistently. An initial guess on the density $n(\vec{r})$ determines the effective potential $V_{KS}(\vec{r})$, from \autoref{eq:1} wave functions $\mathit{\psi}_\alpha(\vec{r}\sigma)$ can be calculated, which will give a new density through \autoref{eq:2}. This procedure is repeated until self-consistency is reached. 
 
 \subsection{Exchange-correlation functional}
 
-The EX energy functional needs to be approximate. The choice of this directly influence the accuracy of the results. Since, although it is often the small fraction of the total energy, its contribution to chemical bonding and formation energy usually exclusive. The generalized gradient approximation (GGA) has become popular in solid state calculations. It is a further upgrade of its previous version, the local density approximation (LDA). The LDA has the following form:
+The XC energy functional needs to be approximated. The choice of this directly influences the accuracy of the results. This is because, although it is often a small fraction of the total energy, its contribution to the chemical bonding and the formation energy is relatively important. The generalized gradient approximation (GGA) has become popular in solid state calculations. It is a further upgrade of its previous version, the local density approximation (LDA). The LDA has the following form:
 
 \begin{equation}
 E_{XC}^{LDA}[n]=\int n(\vec{r})\epsilon_{XC}[n(\vec{r})]d\vec{r}.
 \end{equation}
 
-$\epsilon_{XC}[n(\vec{r})]$ is the EX energy for homogeneous electron gas having density of $n(\vec{r})$, and it is usually taken from Quantum Monte Carlo calculations. Whereas the GGA further includes the derivative of density, $\nabla n(\vec{r})$, as an argument for $\epsilon_{XC}$, thus it reads
+$\epsilon_{XC}[n(\vec{r})]$ is the XC energy for homogeneous electron gas having density of $n$, and it is usually taken from quantum Monte Carlo calculations. Whereas the GGA further includes the derivative of density, $\nabla n(\vec{r})$, as an argument for $\epsilon_{XC}$, thus it reads
 
 \begin{equation}
 E_{XC}^{GGA}[n]=\int \epsilon_{XC}[n(\vec{r}),\nabla n(\vec{r})]d\vec{r}.
 \end{equation}
 
-Contrast to LDA, there is no unique input for $\epsilon_{XC}(n(\vec{r}),\nabla n(\vec{r})$. Different constructions for GGA usually named with the corresponding authors, e.g. PW91-GGA stands for Perdew and Wang's GGA construction in 1991\cite{Perdew1991,Perdew1992} and PBE-GGA stands for \citet{Perdew1996}'s construction. They are the most popular GGA approximations for solid systems. 
+Contrast to LDA, there is no unique input for $\epsilon_{XC}(n(\vec{r}),\nabla n(\vec{r})$. Different constructions for GGA usually named with the corresponding authors, e.g. PW91-GGA stands for Perdew and Wang's GGA construction in 1991\cite{Perdew1991,Perdew1992} and PBE-GGA stands for \citet{Perdew1996}'s construction. They are the most popular GGA approximations for solid state systems. 
 
-\subsubsection{Jocob's ladder}
+\subsubsection{Jacob's ladder}
 
-Jocob's ladder is a ladder connecting earth and heaven that biblical Patriach Jocob dreamed. Professor John P. Perdew, who is known for profound contribution to DFT and EX functionals, used it analogously to describe the hierarchy of density functional approximations in terms of their accuracies, see \autoref{fig:dft_jl}.  
+Jacob's ladder is a ladder connecting earth and heaven that biblical Patriarch Jacob dreamed about. Professor John P. Perdew, who is known for profound contribution to DFT and XC functionals, used it analogously to describe the hierarchy of density functional approximations in terms of their accuracies, see \autoref{fig:dft_jl}.  
 
 \begin{figure}[htbp!] 
 \centering  
@@ -148,10 +148,10 @@ E_{XC}^{PBE0}=\frac{1}{4}E_X^{HF}+\frac{3}{4}E_X^{PBE}+E_C^{PBE},
 and the HSE06 (Heyd-Scuseria-Ernzerhof)\cite{Jochen2003} take into account the screen Coulomb potential for the exact part:
 
 \begin{equation}
-E_{XC}^{HSE}=\alpha E_X^{HF,SR}(\omega)+(1-\alpha)E_X^{PBE,SR}(\omega)+E_X^{PBE,LR}(\omega)+E_C^{PBE},
+E_{XC}^{HSE}=\beta E_X^{HF,SR}(\omega)+(1-beta)E_X^{PBE,SR}(\omega)+E_X^{PBE,LR}(\omega)+E_C^{PBE},
 \end{equation}
 
-where $\alpha$ is the mixing parameter and $\omega$ is the parameter to control the range which defines the short-range, SR, and long-range, LR, parts. The values of $\alpha=1/4$ and $\omega=0.2$ corresponding to HSE06 functional which gives accurate band gaps and lattice constants, see the Mean absolute error (MAE) of different functionals in \autoref{fig:dft_ex}. 
+where $\beta$ is the mixing parameter and $\omega$ is the parameter to control the screening range which defines the short-range, SR, and long-range, LR, parts. The values of $\beta=1/4$ and $\omega=0.2$ corresponding to HSE06 functional which gives accurate band gaps and lattice constants, see the Mean absolute error (MAE) of different functionals in \autoref{fig:dft_ex}. 
 
 
 \begin{figure}[htbp!] 
@@ -165,13 +165,13 @@ The highest ranked funcionals are the double hybrid which includes the unoccupie
 
 \subsubsection{Band gap problem}
 
-As shown in \autoref{fig:dft_ex}, band gap estimation in LDA and GGA is quite poor. This can be attributed to the highly non-analytical and non-local behaviours of the EX energy functional. In other words, it means the energy increase by adding an extra electron in the extended system is of the order of 1 eV, even though, it is an infinitesimal density change. Let's look at the definite of band gap $E_{g}$:
+As shown in \autoref{fig:dft_ex}, band gap estimation in LDA and GGA is quite poor. This can be attributed to the highly non-analytical and non-local behaviours of the XC energy functional. In other words, it means the energy increase by adding an extra electron in the extended system is of the order of 1 eV, even though, it is an infinitesimal density change. Let's look at the definition of the band gap $E_{g}$:
 
 \begin{equation}
 E_{g}=I-A=\varepsilon_{N+1}^{KS,HOMO}-\varepsilon_N^{KS,HOMO},
 \end{equation}
 
-where $I$ is the ionization energy, the energy change by removing on one valence electron, $A$ is the electron affinity, the energy change by add one electron to a neutral system, $\varepsilon_N^{KS}$ Kohn-Sham orbital energy for N-electron system, and $HOMO$ stand for highest occupied molecular orbital. For a non-interacting Kohn-Sham system, $E_{g}^{KS}$ can be calculated as following:
+where $I$ is the ionization energy, the energy change by removing one valence electron; $A$ is the electron affinity, the energy change by adding one electron to a neutral system; $\varepsilon_N^{KS}$ Kohn-Sham orbital energy for N-electron system, and $HOMO$ stand for the highest occupied molecular orbital; The $LUMO$ below stands for the lowest unoccupied molecular orbital. For a non-interacting Kohn-Sham system, $E_{g}^{KS}$ can be calculated as following:
 
 \begin{equation}
 E_{g}^{KS}=\varepsilon_{N}^{KS,LUMO}-\varepsilon_{N}^{KS,HOMO}.
@@ -192,25 +192,25 @@ where $\Delta_{XC}$ is the orbital shift caused by adding an extra electron: $\v
 \label{fig:dft_eg}
 \end{figure} 
 
-The $\Delta_{XC}$ is exclusively depend on the non-analyticity of EX potential $\frac{\delta E_{EX}[n]}{\delta n(\vec{r})}$, since the Hartree potential explicitly depends on the density. If the EX energy functional were analytic, the infinitesimal density variation would not introduce large potential change, hence $\Delta_{XC}$ is small or equals to zero. Therefore, $E_g \approx E^{KS}_g$. The band gap accuracy when compared with experiment would be only limited inherently by different functionals. However, non-zero $\Delta_{XC}$ has been concluded on many materials and it is responsible for 80\% of the LDA band gap error\cite{Godby1988}. 
+The $\Delta_{XC}$ exclusively depends on the non-analyticity of XC potential $\frac{\delta E_{XC}[n]}{\delta n(\vec{r})}$, since the Hartree potential explicitly depends on the density. If the XC energy functional were analytic, the infinitesimal density variation would not introduce large potential change, hence $\Delta_{XC}$ is small or equals to zero, and $E_g \approx E^{KS}_g$. The band gap accuracy when compared with experiment would be only limited inherently by different functionals. However, non-zero $\Delta_{XC}$ has been concluded on many materials and it is responsible for 80\% of the LDA band gap error\cite{Godby1988}. 
 
 \section{Implementation}
 
-The implementations of the theory in the last section are crucially and not always straightforward. Many of the quantifies are represented with technically easy-implemented functions, and they have to be finite in size or quantity. Question rises on how much would be enough? This is equivalent to the convergence of those in computation term. Here we review two of the most important convergence parameters: k-points and cut-off energy of the basis set.
+The implementations of the theory in the last section are crucial and not always straightforward. Many of the quantities are represented with technically easy-implemented functions, and they have to be finite in size or quantity. Question rises on how much would be enough? This is equivalent to the convergence of those in computation term. Here we review two of the most important convergence parameters: $\mathbf{k}$ points and cut-off energy of the basis set.
 
-\subsubsection{k-points}
+\subsubsection{k points}
 
-According to Bloch's theorem, the solution of Schr\"{o}dinger equation for a periodic system, e.g. crystal will well-defined unit cell, can be expressed through as following:
+According to the Bloch's theorem, the solution of Schr\"{o}dinger equation for a periodic system, e.g. crystal will well-defined unit cell, can be expressed through the  following:
 
 \begin{equation}\label{imp:bloch}
 \phi_{\mathbf{k}}(\mathbf{r})=e^{i\mathbf{k}\cdot\mathbf{r}}u_{\mathbf{k}}(\mathbf{r}),
 \end{equation}
 
-where $\phi$ is the wave function, $u$ is a function having same periodicity as the crystal. The space of vector $\mathbf{r}$ and $\mathbf{k}$ are called real and reciprocal space ($\mathbf{k}$-space), respectively. Particularly, each point in the $\mathbf{k}$-space associates with an unique $\mathbf{k}$ vector and is usually called a $\mathbf{k}$-point. Making use of the symmetry of the system, all inequivalent $\mathbf{k}$-points are reside inside a finite sub-space of $\mathbf{k}$ space, called the first Brillouin zone (FBZ). Quantity evaluations are mostly done through the integration of wave functions, or other functions have $\mathbf{k}$ dependence, over the FBZ. This integration has to be done numerically since explicit relation of $\phi$ and $\mathbf{k}$ is unknown. In practice, the FBZ is discretized into a grid defined by the mesh of the k-points. This mesh has to be large for accurate sampling of FBZ yet it should small for less computational time and resource. This is one of the convergence test need to be done for reliable results. Usually, metal needs more k-pints than semiconductor. This is because the highest occupied valence band is crossed with Fermi energy in metal, hence the integration for all occupied states is done for a discontinuous function that excludes unoccupied states.  Whereas for a semiconductor or insulator, the highest occupied valence band is completely occupied, therefore it is a continuous function. Smearing is one of the ways to make discontinuous function in metal continuous by smearing out the edge using a smearing function, such as Fermi-Dirac function. The range of smearing has to compromise between the computation efficiency and correctness: Too large will give wrong integration results, while too small become useless and again needs more k-points.
+where $\phi$ is the wave function, $u$ is a function having same periodicity as the crystal. The space of vector $\mathbf{r}$ and $\mathbf{k}$ are called real and reciprocal space ($\mathbf{k}$ space), respectively. Particularly, each point in the $\mathbf{k}$ space associates with an unique $\mathbf{k}$ vector and is usually called a $\mathbf{k}$ point. Making use of the symmetry of the system, all inequivalent $\mathbf{k}$ points reside inside a finite sub-space of $\mathbf{k}$ space, called the first Brillouin zone (FBZ). Quantity evaluations are mostly done through the integration of wave functions, or other functions have $\mathbf{k}$ dependence, over the FBZ. This integration has to be done numerically since explicit relation of $\phi$ and $\mathbf{k}$ is unknown. In practice, the FBZ is discretized into a grid defined by the mesh of the k-points. This mesh has to be large for accurate sampling of FBZ yet it should be small for less computational time and resource. This is one of the convergence test need to be done for reliable results. Usually, metals needs more k-points than semiconductors. This is because the highest occupied valence band is crossed with Fermi energy in metals, hence the integration for all occupied states is done for a discontinuous function that excludes unoccupied states.  Whereas for a semiconductor or insulator, the highest occupied valence band is completely occupied, therefore it is a continuous function. Smearing is one of the ways to make discontinuous function in metal continuous by smearing out the edge using a smearing function, such as Fermi-Dirac function. The range of smearing has to compromise between the computation efficiency and correctness: Too large will give wrong integration results on the total energy, while too small become useless and again needs more k-points.
 
 \subsubsection{basis set, cut-off energy }
 
-Now let us look back at \autoref{imp:bloch}, we can identify $e^{i\mathbf{k}\cdot\mathbf{r}}$ as a plane wave. $u_{\mathbf{k}}(\mathbf{r})$ is periodic in space and it can be expanded in terms of a set of plane wave as well:
+Now let us look back at \autoref{imp:bloch}, we can identify $e^{i\mathbf{k}\cdot\mathbf{r}}$ as a plane wave. $u_{\mathbf{k}}(\mathbf{r})$ is periodic in space and it can be expanded in terms of a set of plane waves as well:
 
 \begin{equation}
 u_{\mathbf{k}}(\mathbf{r})=\sum_{\mathbf{G}}c_{\mathbf{G}}e^{i\mathbf{G}\cdot\mathbf{r}},
@@ -228,12 +228,12 @@ The summation in above equation can not and not necessary to go to infinite to g
 E=\frac{1}{2}|\mathbf{k+G}|^2.
 \end{equation}
 
-The maximum kinetic energy, $E_{cut}$, associates with a $\mathbf{G}$ vector to limit the summations. Here we arrive at another convergence parameter plane wave cut-off energy. Similar to k-points, it has to be large enough the convergence of the total energy, sometimes further requires that of the phonon frequency, is reached in an acceptable precision range.  While too large will only cost more computational resources without additional benefits.
+The maximum kinetic energy, $E_{cut}$, associates with a $\mathbf{G}$ vector to limit the summations. Here we arrive at another convergence parameter plane wave cut-off energy. Similar to $\mathbf{k}$ points, it has to be large enough for the convergence of the total energy, sometimes further requires that for the phonon frequency, is reached in an acceptable precision range.  While too large will only cost more computational resources without additional benefits.
 
 \subsubsection{pseudopotentials}
 
-Considering the chemically inertness of the core electrons and their highly oscillating wave functions, their impact on valence electrons and other nuclei generally approximated by pseudopotentials to have a optimal computational efficiency. It is a smooth function has the ability to reconstruct the original core electron properties. In practice, a pseudopotential is constructed for one isolated atom of one element. While being used in complex multi-elements system, the transferability of the pseudopotential is the key factor determine how well they will perform. Ultrasoft \cite{Vanderbilt1990} and projected augmented wave \cite{bloch1994,Kresse1999} are two types of the most popular pseudopotentials used in materials simulations. They are well-balanced between the accuracy and the computational cost. 
+Considering the chemically inertness of the core electrons and their highly oscillating wave functions, their impact on valence electrons and other nuclei generally approximated by pseudopotentials to have a optimal computational efficiency. It is a smooth function has the ability to reconstruct the original core electron properties. In practice, a pseudopotential is constructed for one isolated atom of one element. While being used in complex multi-elements system, the transferability of the pseudopotential is the key factor determine how well they will perform. Ultrasoft \cite{Vanderbilt1990} and projected augmented wave \cite{bloch1994,Kresse1999} are two types of the most popular pseudopotentials-based methods used in materials simulations. They are well-balanced between the accuracy and the computational cost. 
 
 \subsection{Software Packages}
 
-There are more than 70 different software packages capable of performing density functional theory calculations according to Wikipedia\cite{dft_sws}. They are mainly differ on whether include pseudopotential and which type, what type of basis set is used to the wave function expansion, in which programming language it is written and is it free or commercial etc.. \citet{Lejaeghereaad3000} have compared 40 different implementations and their accuracy by comparing their results to a highly accurate all-electron method. They concluded, all codes or methods yield generally consistent results. The accuracy of the codes which were developed in recent years is higher than order ones. The Vienna $Ab$ $initio$ Simulation Package (VASP) \cite{VASP1,VASP2} with its projected augmented wave method is one of the most accurate codes from this study. Its well-optimized performance on supercomputers gives good results in less time as compare with the others. This code will be used as the main tool for all the calculations done in this thesis.
+There are more than 70 different software packages capable of performing density functional theory calculations according to Wikipedia\cite{dft_sws}. They mainly differ in whether they include pseudopotentials and which type, what type of basis set is used to the wave function expansion, in which programming language it is written and is it free or commercial etc.. \citet{Lejaeghereaad3000} have compared 40 different implementations and their accuracy by comparing their results to a highly accurate all-electron method. They concluded, all codes or methods yield generally consistent results. The accuracy of the codes which were developed in recent years is higher than the order ones. The Vienna $Ab$ $initio$ Simulation Package (VASP) \cite{VASP1,VASP2} with its projected augmented wave method is one of the most accurate codes concluded from this study. Its well-optimized performance on supercomputers gives good results in less time as compared with the others. This code will be used as the main tool for all the calculations done in this thesis.

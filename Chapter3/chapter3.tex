@@ -11,33 +11,74 @@
     \graphicspath{{Chapter3/Figs/Vector/}{Chapter3/Figs/}}
 \fi
 
+In this thesis, the properties of materials are virtually divided into preliminary and advanced categories. In this chapter, we will focus on the preliminary properties of 2D materials, namely structural, electronic, vibrational and mechanical properties. These properties are considered as test calculations and knowledge which the advanced properties in the next chapter are closely related to. They are composed of both my original calculations and results from literatures. An emphasis will be made on the characteristic properties of 2D materials.
+
 \section{Structural properties}
 \subsection{Layer structure}
-\subsection{sp hybirdization}
-\subsubsection{Coulson’s theorem}
-\subsection{Isotropic v.s. Anisotropic monolayer}
-\subsection{Multiphase allotropes}
 
-\section{Electronic properties}
-\subsection{Polar bond}
-\subsection{Importance of crystal symmetry}
-
-To understand this symmetry, we first need to discuss the hybridization of bonds. C atom has six electron, where two of them strongly localized near the nuclei core, they are called core electrons, such that their interaction with other electrons from other C atoms are suppressed. This only left us with four valence electrons to interact with others and then form bonds. As shown in \autoref{fig:gra_sp2}, the $s$ orbital will hybrid with $p_x$ and $p_y$ orbitals and form three equivalent $sp2$ hybridized orbitals. They repel each other to have a maximum distance between one and the other. Therefore, an optimal angle between them is 120\textdegree, it will lead to the honeycomb structure of graphene. The $p_z$ orbital left unchanged. 
+As has seen in the \fullref{chap:1}, layered materials have a closest relationship with 2D materials. The strong anisotropic structure in the former results in the layer concept. This anisotropic nature attributes to the weak interlayer bonding and the strong intralayer bonding. The van der Waals interaction (vdWs)\cite{vdws} is the main type of this weak bonding. vdWs is the attraction and repulsion between atoms or molecules entities caused by dipole-dipole, dipole-induced dipole and instantaneous induced dipole-induced dipole forces. The definition is sometimes extended to include other weak forces between molecules as well.  For the 2D materials, vdWs interaction become important as the number of layers becomes larger than one: few-layer materials with typical number of layers less than ten. They also belong to the 2D materials family since the thickness of the materials still small such that quantum confinements still play role. As in its layered bulk part, a few-layer system is stacked of monolayers that hold together through vdWs. When no other bonding types are presented, interlayer vdWs determines all the change brought by going above single layer and its impact on the electronic structure will be significant. For example, as going from monolayer to bilayer, the linear dispersion relation of energy $E$ and momentum $k$ evolves into parabolic-like spectrum\cite{Partoens2006,Mak2010}. 
 
 \begin{figure}[htbp!] 
 \centering  
-\includegraphics[width=\textwidth]{sphybird}
-\caption{The formation of $sp^2$ hybridized orbitals with unhydridized $p_z$ orbital. Image source: \cite{gra_sp2}. }  
-\label{fig:gra_sp2}
+\includegraphics[width=0.8\textwidth]{gra_band.png}
+\caption{Energy-momentum dispersion relation of single layer and bilayer graphene as plane intersections of 3D graphite dispersion. Image adapted from: \cite{Mak2010}. }  
+\label{fig:gra_bands}
 \end{figure} 
 
-Now C atoms are ready for bonding. The results of bonding is shown in \autoref{fig:gra_bond}. One $sp2$ hybridized orbital with another one from adjacent atom form strong $\sigma$ bond, while $p_z$ orbitals form $\pi$ bonds. It may look like an alternative single and double bonds between atoms, actually the bond order in graphene is 4/3 and it is uniform. We will talk about how a delocalized $\pi$ bond is more stable than alternative single and double bonds in the later chapter where Clar's theory is discussed.
+In \autoref{fig:gra_bands} (a), the dispersion relation in graphite along the z direction, that is the HKH line in the Brillouin zone, is shown in blue plane. This direction is perpendicular to the graphite layers. Because of the interlayer interaction and quantum confinements, in few-layer system, the finite thickness limits the number of wave vectors that standing waves can take.  Therefore, if only the intralayer and interlayer interactions between nearest neighbour atoms were considered, the dispersion relations in few-layer systems could be considered as the dispersions on the corss-section of red planes that cut the graphite Brillouin zone, see \autoref{fig:gra_bands} (a).  These planes are perpendicular to the z direction and intersect with the HKH line at possible points. This is called the zone-folding of dispersion relations\cite{saito1998physical}. These points are illustrated in \autoref{fig:gra_bands} (b). Under the condition that quantum confinements at few-layer system require the wave functions vanish at the imaginary layer outside the surface of the system, the systems will have well-defined wave vectors. Then, the dispersion relations will be on the plane intersects at $k_z=\pi/c$ and at $kz=2(\pi/3c)$ for graphene and bilayer graphene, respectively.  Having the knowledge of 3D band structure of graphite, we can approximate the dispersion of few-layer systems in this way. As a result, as shown in red plane in \autoref{fig:gra_bands} (a) and their 3D version in \autoref{fig:gra_bands} (c), graphene has linear dispersion relations and bilayer graphene has parabolic-like two dispersion bands. Moreover, the bilayer structure will never pass through the H point where graphene has passed and have linear dispersion relation. This is because of standing waves in bilayer will have a wave vector $k=2(n \pi/3c)$, where $n$ is a positive integer: 1, 2, ... , n. This will not equal to $\pi/c$ for any number of $n$. More generally, systems with an even number of layers will not have linear dispersion; whereas systems with an odd number of layers always have linear dispersion relation. Further, if other interactions were considered, an overlap of bands those touch each other in (c) would happened\cite{Partoens2006}. This overlap increases with the number of layers. Eventually in graphite, maximum overlap is reached and that gives semimetallic behaviour.
+
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.8\textwidth]{mos2_band.png}
+\caption{Energy-momentum dispersion relation of single layer and bulk graphene as plane intersections of 3D graphite dispersion. Image adapted from: \cite{Mak2010b}. }  
+\label{fig:mos2_band}
+\end{figure} 
+
+Another example of the importance of interlayer interaction in the few-layer 2D materials will the MoS$_2$. As mentioned in the \fullref{chap:1}, as going from bulk to monolayer, MoS$_2$ transforms from an indirect band gap to a direct one. Here again we can make use of zone-folding to approximate the band structure of monolayer from layered bulk one. The monolayer and the layered structure of 2H phase is shown in \autoref{fig:mos2_band} (a). In (b) let us focus on the difference of dispersion relations on the planes parallel to the page passing through K$\Gamma$ and HA lines (simply call them K$\Gamma$ and HA planes below). Same as the graphite, 2H layered MoS$_2$ has two layers per unit cell. Therefore, according to the standing wave arguments that we have used for graphene above, HA plane represents monolayer. $E_g$ and $E\prime_g$ are the band gap of monolayer and layered bulk structures. Here not only the magnitude of band gap increased as going from bulk to monolayer, character of the band gap has changed as well. It is clear that this is because of the band extremes have changed. We will see these lowered or raised band extremes related to the symmetry broken in the system in the later section where we talk about the importance of the crystal symmetry. 
+
+\subsection{sp hybirdization}
+
+When atoms come together form bonds, the orientations of these bonds are decisive for the final structure. The sp hybridization is a good example of this.  It can mainly exist in three different variants: sp, sp$^2$ and sp$^3$, see \autoref{fig:sp_hybrid}. The hybridization index $n$ in sp$^n$ stands for the relative amount of p character in the hybridization. For example, sp$^2$ has 1/3 s character and 2/3 p character. Hybridized bonds  tend to maximized their distance to reduce the energy raised by the repulsion of electrons. As shown in \autoref{fig:sp_hybrid}, this results in tetrahedral structure of diamond that made of sp$^3$ bonds, trigonal planar structure of graphite or graphene that made of sp$^2$ and linear structure of ethyne molecules that made of sp bonds.  \citet{coulson1949} generalized the relation of bond angle and $n$ in the following way:
+
+\begin{equation}
+1=-\sqrt{n_1n_2}~cos\theta_{12}, 
+\end{equation}
+
+where $\theta_{12}$ is the bond angle between orbital 1 and 2. The bond angle can be measured in atomic simulations, yet we still need one more constrain to solve the equation for $n$ if orbital 1 and 2 have different $n$. This constrain is that, in the case of carbon atom, the total fractions of all s hybridized orbitals should equal 1, while it should be 3 for the sum of the p fractions. Consequently, each bond from one atom can be assigned with a unique $n$. This formula is useful to determine the s and p composition of bonds. For example, $\theta_{12}=90^o$ gives $n\rightarrow\infty$, which means it is pure p orbital; $\theta_{12}=120^o$ gives $n=2$, that is a sp$^2$ bond. Of course, this is more useful when the bond angle takes value other than those in above three types of hybridized bonds. Then we can use it to explain resulting geometrical structure.
+
+\begin{figure}[htbp!] 
+\centering  
+\includegraphics[width=0.8\textwidth]{sp_hybrid.png}
+\caption{Three types of sp hybridizaton. Image adapted from: \cite{sp_hybrid}. }  
+\label{fig:sp_hybrid}
+\end{figure} 
+
+
+\section{Electronic properties}
+
+Electronic properties is one of the first feature we usually like to know about the new materials. Not only it is because semiconductor and metal have different role in applications, but also because the details of the electronic structure set the direction towards which further exploration should be carried out. One example for this from my experience is that from monitoring the electronic structure variations we had predicted how the mobility of the carrier can be tuned. This will be discussed in the later chapter. Therefore, it is important to understand this property of a new material to fully reveal its potentials.
+
+Electronic properties usually characterized by band structure (BS) and density of states (DOS). These calculations are standard calculations in first-principles codes where all consequent calculations start. After solving the Kohn-Sham equation with proper cut-off energy, k points etc., we will have all eigenenergy of each state identified with k point in the Brillouin zone and band index.  DOS is a count of the number of states at specific energy. BS is the plot of eigenenergy verse the line in Brillouin zone that connects high symmetry k points. 
+
+2D material has vast variation of electronic properties. From semimetallic graphene to semiconducting MoS$_2$ and to insulating BN. We have already seen these in the introduction. The purpose of this section is to point out some of the interesting electronic properties of some 2D materials.
+
+\subsection{Dirac materials}
+
+We have seen that graphene, silicene and germanene have an interesting electronic structure: Dirac cone. We also have listed the consequences of having such fearture: high mobility, massless carrier etc.. In this section, we will try to discuss the condition for having a Dirac cone in 2D materials and their common characters. This knowledge is useful to find more materials of this type. 
+
+According to von Neumann-Wigner theorem, the space-time inversion symmetry is crucial for the existence and protection of Dirac cones\cite{Wang2015b}. It is a combination of space inversion and time reversal symmetries. These two are equally important and has to act simultaneously, one alone do not guarantee the formation of Dirac cones. 
+
+\subsection{Polar bond}
+\subsection{Importance of crystal symmetry}
+
+The number of valence electrons in C atom is four. Each C atom has three sp$^2$ bonds that lead to the honeycomb structure of graphene. The $p_z$ orbital left unchanged and have one electron. The results of bonding is shown in \autoref{fig:gra_bonds}. One $sp2$ hybridized orbital with another one from adjacent atom form strong $\sigma$ bond, while $p_z$ orbitals form $\pi$ bonds. It may look like an alternative single and double bonds between atoms, actually the bond order in graphene is 4/3 and it is uniform. We will talk about how a delocalized $\pi$ bond is more stable than alternative single and double bonds in the later chapter where Clar's theory is discussed.
 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=\textwidth]{double_bond}
 \caption{The formation of $sp^2$ $\sigma$ and $p_z$ $\pi$ double bond. Image source: \cite{gra_bond}. }  
-\label{fig:gra_bond}
+\label{fig:gra_bonds}
 \end{figure} 
 
 
