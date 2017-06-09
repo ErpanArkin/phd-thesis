@@ -75,6 +75,8 @@
 \RequirePackage[labelsep=space,tableposition=top]{caption}
 \renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
 \renewcommand{\figureautorefname}{Fig.}
+\def\equationautorefname~#1\null{equation (#1)\null}
+\renewcommand{\tableautorefname}{table}
 \usepackage{nameref} % cross reference with the name of the reference \nameref{label}
 \newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} %combine name and number \fullref{label}
 % *************************** math *****************************
