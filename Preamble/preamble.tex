@@ -14,8 +14,8 @@
 % Ragged bottom avoids extra whitespaces between paragraphs
 \raggedbottom
 % To remove the excess top spacing for enumeration, list and description
-%\usepackage{enumitem}
-%\setlist[enumerate,itemize,description]{topsep=0em}
+\usepackage{enumitem}
+\setlist[enumerate,itemize,description]{topsep=0em,nolistsep}
 
 % *****************************************************************************
 % ******************* Fonts (like different typewriter fonts etc.)*************
@@ -105,8 +105,8 @@
 
 %\usepackage{multicol}
 %\usepackage{longtable}
-%\usepackage{tabularx}
-
+\usepackage{tabularx}
+\newcolumntype{s}{>{\hsize=.5\hsize}X} %for small column width in tabularx
 
 % *********************************** SI Units *********************************
 \usepackage{siunitx} % use this package module for SI units
@@ -142,15 +142,16 @@
 
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
-\RequirePackage[backend=biber, backref, style=numeric-comp, citestyle=numeric, sorting=none, natbib=true,isbn=false,url=false,eprint=false]{biblatex}
-\bibliography{References/references} %Location of references.bib only for biblatex
-
+\RequirePackage[backend=biber, backref, style=numeric-comp,  sorting=none, natbib=true,isbn=false,url=false,eprint=false,defernumbers=true]{biblatex}
+%\bibliography{References/references} %Location of references.bib only for biblatex
+\addbibresource{References/references.bib}
 \fi
+
 
 % changes the default name `Bibliography` -> `References'
 \renewcommand{\bibname}{References}
-
-
+% line break for long url link
+\setcounter{biburlnumpenalty}{8000}
 % ******************************************************************************
 % ************************* User Defined Commands ******************************
 % ******************************************************************************

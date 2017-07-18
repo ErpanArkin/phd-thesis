@@ -136,8 +136,8 @@
 \include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
 \include{Chapter4/chapter4}
-%\include{Chapter5/chapter5}
-%\include{Chapter6/chapter6}
+\include{Chapter5/chapter5}
+\include{Chapter6/chapter6}
 
 
 % ********************************** Back Matter *******************************
@@ -163,8 +163,7 @@
 % specified in the preamble.tex file in the custombib section.
 % Comment out the lines related to natbib above and uncomment the following line.
 
-\printbibliography[heading=bibintoc, title={References}]
-
+\printbibliography[notkeyword=own,notkeyword=rev,heading=bibintoc, title={References}]
 
 \end{spacing}
 
@@ -178,5 +177,15 @@
 
 % *************************************** Index ********************************
 \printthesisindex % If index is present
+
+\printbibheading[title={List of Publications},heading=bibintoc]
+%
+%%first run without option prefixnumbers={P}, then add them in each bibliography and rerun.
+\makeatletter
+\begingroup
+\def\blx@prefixnumbers{P}
+\printbibliography[keyword=own,notkeyword=rev,heading=subbibliography,title={Published},resetnumbers]
+\printbibliography[keyword=rev,notkeyword=own,heading=subbibliography,title={Under Review}]
+\endgroup
 
 \end{document}
