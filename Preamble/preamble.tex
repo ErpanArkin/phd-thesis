@@ -62,7 +62,8 @@
 % *****************************************************************************
 % **************************** Custom Packages ********************************
 \usepackage{lipsum} %generate paragraphs of dummy lorem ipsum text
-
+\usepackage{adjustbox} %scale the contents only if it exceeds the \columnwidth
+\usepackage[flushleft]{threeparttable} %table with note right below it 
 % ************************* Algorithms and Pseudocode **************************
 
 %\usepackage{algpseudocode}
@@ -83,6 +84,11 @@
 \usepackage{amsmath}
 \usepackage{braket}
 \newtheorem{theorem}{Theorem}
+% *************************** circel numbers in Ca(OH)2 paper *****************************
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.2 pt] (char) {#1};}}
+            
 % *************************** Graphics and figures *****************************
 
 %\usepackage{rotating}
