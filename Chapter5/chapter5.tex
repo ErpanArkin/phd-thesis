@@ -17,52 +17,29 @@ This is the second part of the results of the thesis. Here we will discuss some 
 \section{Number of layers}
 \subsection[Few-layer of Calcium hydroxide]{Few-layer of Calcium hydroxide \footcite[This work is published in:][]{Aierken2015.porlandite}}
 
-We have seen several monolayer systems that exacted from layered materials, in this work we further explore this process for alkaline earth metal hydroxides (AEMHs), which pose a layered structure in the bulk form. In contrast to the abundant literature on graphenelike ultra-thin structures, few-layer AEMHs have not been investigated so far. Bulk forms of AEMHs are layered structures belonging to the $P\overline{3}m1$ space group\cite{structure1} and the crystal structure of a layered AEMHs comprises stacked sheets of MO$_6$ (M=alkaline earth metals) edge-sharing octahedra, see \autoref{fig:str_caoh2}. At each corner of an octahedron, each O atom binds one H atom and the latter interacts with three neighboring hydroxyl groups of the adjacent layer. Early studies on bulk AEMHs revealed that the application of temperature and pressure may result in dramatical changes in their crystal structure and their electronic properties\cite{amorphization1,amorphization2,amorphization3,amorphization4,transition1,transition2,transition3,transition4} . Moreover, early theoretical studies showed the reliability of the use of first principle calculations with a plane-waves basis set in combination with the generalized gradient approximation exchange-correlation functional for the investigation of structural and electronic properties of these materials\cite{Winkler1995,Baranek2001,Azuma2011,D'Arco1993} .
+We have seen several monolayer systems that exacted from layered materials such 2D-BN, 2D-MoS$_2$, in this work, we further explore this process for alkaline earth metal hydroxides (AEMHs), which pose a layered structure in the bulk form. It was exfoliated  to few-layer, the experiment and the theoretical modelling is reported in this section. In contrast to the abundant literature on graphenelike ultra-thin structures, few-layer AEMHs have not been investigated so far. Bulk forms of AEMHs are layered structures belonging to the $P\overline{3}m1$ space group\cite{structure1} and the crystal structure of a layered AEMHs comprises stacked sheets of MO$_6$ (M=alkaline earth metals) edge-sharing octahedra, see \autoref{fig:str_caoh2}. At each corner of an octahedron, each O atom binds one H atom and the latter interacts with three neighboring hydroxyl groups of the adjacent layer. Early studies on bulk AEMHs revealed that the application of temperature and pressure may result in dramatical changes in their crystal structure and their electronic properties\cite{amorphization1,amorphization2,amorphization3,amorphization4,transition1,transition2,transition3,transition4} . Moreover, early theoretical studies showed the reliability of the use of first principle calculations with a plane-waves basis set in combination with the generalized gradient approximation exchange-correlation functional for the investigation of structural and electronic properties of these materials\cite{Winkler1995,Baranek2001,Azuma2011,DArco1993}.
 
 \begin{figure}
 \centering
-\includegraphics[width=8.5cm]{str_caoh2.eps}
+\includegraphics[width=0.8\textwidth]{str_caoh2.eps}
 \caption{\label{fig:str_caoh2} Atomic structure of bulk Ca(OH)$_2$: (a)
 tilted view, (b) top view of one layer. }
 \end{figure}
 
 Although the structural and electronic properties of bulk AEMHs have been
 investigated before \cite{Azuma2011,Pishtshev,Pishtshev1} , single layers of 
-these materials have never been studied before and the stability of them is 
+these materials have never been studied before and their stability is 
 still an open question. However, advances 
 in experimental techniques made exfoliation and growth of such 
-structures possible.\cite{new1,new2} Especially the Portlandite material, 
-has been the 
-main product of hydration of Portland cement, is one of the most well-known 
+structures possible\cite{new1,new2}. Especially the Portlandite material, Ca(OH)$_2$,
+which has been the 
+main product of hydration of Portland cement, CaO, is one of the most well-known 
 AEHMs, characteristic properties of ultra-thin structures of Portlandite have 
-not been reported yet. In this study we, both experimentally and theoretically, 
-investigate structural, electronic, magnetic, vibrational and mechanical 
-characteristics of bulk, bilayer and monolayer Ca(OH)$_{2}$ and discuss possible 
-future applications.  
+not been reported yet. In this study we investigate, both experimentally and theoretically, 
+the structural, electronic, magnetic, vibrational and mechanical 
+characteristics of bulk, bilayer and monolayer Ca(OH)$_{2}$ and discuss how these properties change with the number of layers.  Particularly, the result of the phonon calculation is presented for the confirmation of the stability of the newly proposed 2D material.
 
-This paper is organized as follows: In \autoref{sec:comp_caoh2} we 
-give details of our computational methodology. Our comparison of different systems on the structural, electronic, mechanical properties are presented in \autoref{strcuture}, \autoref{sec:electronic} and \autoref{mechanical}, respectively.  Phonon dispersion and molecular dynamical calculation is presented in \autoref{stability}. Our results are discussed in \autoref{disc}.
-
-               
-
-
-\subsubsection{Computational details}
-
-\begin{footnotesize}
-\begin{description}
-\item[Simulation program:] VASP
-\item[Energy cut-off:] 500 eV
-\item[Pseudopotentials:] PBE-GGA(PAW)
-\item[k points (Monkhorst-Pack):] 35$\times$35$\times$1 and 25$\times$25$\times$11 for few-layer and bulk Ca(OH)$_{2}$, respectively 
-\item[Vacuum:] 25~\AA
-\item[Energy and force convergence criterion:] 10$^{-5}$ eV and 10$^{-2}$ eV/\AA, respectively
-\item[vdW corrections:] DFT-D2 method of Grimme \cite{Grimme}
-\item[Charge analysis:] Bader's charge analysis method\cite{Bader1,Bader2,Bader3}
-\end{description}
-\end{footnotesize}
-
-
-In addition to the elastic moduli that we have introduced in \autoref{chap:3}, here we calculate another useful parameter that closely related to the Young's modulus, which is called the in-plane stiffness of the materials. We 
+To assess the mechanical strength of the material, in addition to the elastic moduli that we have introduced in \autoref{chap:3}, here we calculate another useful parameter that closely related to the Young's modulus, which is called the in-plane stiffness of the materials. We 
 focused on the harmonic range of the elastic deformation, where the structure 
 responded linearly to strain $\epsilon$. The stretching of the Ca(OH)$_{2}$ is 
 achieved by increasing the equilibrium lattice constant a$_{0}$ by $\Delta$a, 
@@ -88,15 +65,24 @@ of the unit cell of Ca(OH)$_2$, $E_X$ is the single atom total energy of atom $X
 and $n$ is the number of Ca atoms for the corresponding unit cell, i.e.
 $n=1$, $n=2$ and $n=1$ for monolayer, bilayer and bulk, respectively. 
 
-In addition, the calculation of the desorption energies were performed on a 
-4$\times$4 supercell by considering the spin polarized ground state of the 
-single H atom and H-vacant site on the surface.
+\subsubsection{Computational details}
+
+\begin{footnotesize}
+\begin{description}
+\item[Simulation program:] VASP and PHON\cite{alfe}
+\item[Energy cut-off:] 500 eV
+\item[Pseudopotentials:] PBE-GGA(PAW)
+\item[k points (Monkhorst-Pack):] 35$\times$35$\times$1 and 25$\times$25$\times$11 for few-layer and bulk Ca(OH)$_{2}$, respectively 
+\item[Vacuum:] 25~\AA
+\item[Energy and force convergence criterion:] 10$^{-5}$ eV and 10$^{-2}$ eV/\AA, respectively
+\item[vdW corrections:] DFT-D2 method of Grimme \cite{Grimme}
+\item[Charge analysis:] Bader's charge analysis method\cite{Bader1,Bader2,Bader3}
+\end{description}
+\end{footnotesize}
 
 
 
-
-
-\subsubsection{Structure properties of C\lowercase{a}(OH)$_{2}$}\label{strcuture}
+\subsubsection{Experimental measurements}
 
 
 Before our theoretical investigation of few-layer Ca(OH)$_{2}$, first we 
@@ -159,6 +145,22 @@ their band gap is well beyond our detectors range and since the insulators
 cannot be excited with such high laser wavelength, PL measurements are 
 virtually impossible.
 
+\subsubsection{Structure properties of C\lowercase{a}(OH)$_{2}$}\label{strcuture}
+
+The bulk structure of Portlandite is formed by the stacking of individual Ca(OH)$_2$ monolayers on top of each other, see \autoref{fig:str_caoh2}. As we will exam and discuss the stacking in detail in the following paragraphs, we learned that the AA stacking is the ground state atomic configuration for bulk and multilayer structures of Ca(OH)$_2$. In \autoref{tab:str_caoh2}, optimized lattice parameters of the bulk structure together with experiments and other theoretical calculation are presented. Our results consist with reference \cite{Pishtshev} and together they have good agreement with experiments. This justify the reliability of our calculations. 
+
+In the 5-atomic hexagonal primitive unit cell of bulk Ca(OH)$_2$, the Ca atom sits at the geometrical
+center of the cell, i.e. $\left\lbrace 1/2a, 1/2b,
+1/2c \right\rbrace$. Two O and two H atoms form two hydroxyl groups 
+(-OH$^-$) located symmetrically with respect to the Ca atom. In this 
+arrangement, coordinates of H and O only differ by their positions along the 
+\textbf{c} lattice axis and their fractional coordinates can be given as
+$\left\lbrace1/6a, 1/6b, (1/2c-c_O) \right\rbrace$ and $\left\lbrace 
+1/6a, 1/6b, (1/2c-c_H) \right\rbrace$ for one hydroxyl,
+$\left\lbrace 5/6a, 5/6b, (1/2c+c_O) \right\rbrace$
+and $\left\lbrace 5/6a, 5/6b, (1/2c+c_H)
+\right\rbrace$ for the other one, where c$_O$ and c$_H$ are the vertical shifts
+of the positions of O and H atoms from the Ca plane in the unit of \AA~, respectively. 
 
 \begin{table*}
 \centering
@@ -180,37 +182,18 @@ $c/a$                       & 1.368 & 1.366 & 1.379 & 1.368 \\
 
 \end{tabularx}
 \begin{tablenotes}
+\begin{footnotesize}
 \item[a]Ref. \cite{exp.1}
 \item[b]Ref. \cite{exp.2}
 \item[c]Ref. \cite{Pishtshev}
+\end{footnotesize}
 \end{tablenotes}
 \end{threeparttable}
 \end{table*}
 
-The bulk structure of Portlandite is formed by the stacking of individual Ca(OH)$_2$ monolayers on top of each other, see \autoref{fig:str_caoh2}. As we will exam and discuss the stacking in detail in the following paragraphs, we learned that the AA stacking is the ground state atomic configuration for bulk and multilayer structures of Ca(OH)$_2$. In \autoref{tab:str_caoh2}, optimized lattice parameters of the bulk structure together with experiments and other theoretical calculation are presented. Our results consist with reference \cite{Pishtshev} and together they have good agreement with experiments. This justify the reliability of our calculations. 
-
-
-
-
-
-In the 5-atomic hexagonal primitive unit cell of bulk Ca(OH)$_2$, the Ca atom sits at the geometrical
-center of the cell, i.e. $\left\lbrace 1/2a, 1/2b,
-1/2c \right\rbrace$. Two O and two H atoms form two hydroxyl groups 
-(-OH$^-$) located symmetrically with respect to the Ca atom. In this 
-arrangement, coordinates of H and O only differ by their positions along the 
-\textbf{c} lattice axis and their fractional coordinates can be given as
-$\left\lbrace1/6a, 1/6b, (1/2c-c_O) \right\rbrace$ and $\left\lbrace 
-1/6a, 1/6b, (1/2c-c_H) \right\rbrace$ for one hydroxyl,
-$\left\lbrace 5/6a, 5/6b, (1/2c+c_O) \right\rbrace$
-and $\left\lbrace 5/6a, 5/6b, (1/2c+c_H)
-\right\rbrace$ for the other one, where c$_O$ and c$_H$ are the vertical shifts
-of the positions of O and H atoms from the Ca plane in the unit of \AA~, respectively. 
-
-
 In the optimized structure, the lattice constants $a$ and $c$ are 3.61 \AA~and 4.98 \AA~in the bulk structure, parameters c$_O$ and c$_H$ are calculated to be 1.15 \AA~and 2.12 \AA . Bond length of Ca-O and O-H are 2.36 \AA~ and 0.97 \AA . Interlayer distance which is defined as the distance between the uppermost H-layer of the underlying layer and the lowermost H-layer  of the top-lying layer is found to be 0.49 \AA~. Differing from other lamellar bulk crystal structures such as graphite (3.58 \AA) and MoS$_{2}$ (3.42 \AA)\cite{can} , Ca(OH)$_{2}$ layers are more closely stacked on top of each other. 
 
 Our calculations revealed that going from bulk to monolayer the in-plane lattice parameter $a$ change to 3.62 \AA~. In our calculations, the c lattice parameter in the hexagonal unit cell of the monolayer is set to 25 \AA~in order to avoid interlayer interaction between the adjacent layers. In the monolayer Ca(OH)$_2$, parameters c$_O$ and c$_H$ are calculated to be c$_O$=1.14 \AA~and c$_{H}$=2.10 \AA~, respectively. Ca-O and O-H bond distances are 2.38 \AA~and 0.97 \AA~in the monolayer, respectively. We observed only quite small change as the system going from bulk to monolayer, some of the structure parameters even left unchanged, from this we can conclude quite weak interlayer interaction in Ca(OH)$_2$. In order to study the interlayer interaction we further investigate their effect on stacking, and by including the vdW correction in the functional we are able to identify the nature of this interaction.
-
 
 \begin{table*}
 \centering
@@ -237,25 +220,17 @@ $E_{xx},E_{yy}$ &  $\nu_{xy}$ & $G_{xy}$ & $C$\\
 \hline\hline
 \end{tabular}}
 \begin{tablenotes}
+\begin{footnotesize}
 \item[a]Ref. \cite{Topsakal} 
 \item[b]B-N bond length
 \item[c]charge transfer from B to N
 \item[d]Ref. \cite{Peng}
 \item[e]Ref. \cite{silicene-prb}
+\end{footnotesize}
 \end{tablenotes}
 \end{threeparttable}
 \end{table*}
 
-\begin{figure}
-\centering
-\includegraphics[width=8.5cm]{stack_caoh2.eps}
-\caption{\label{fig:stack_caoh2} Different stacked bilayers (bottom layer is blurred)
-and their energy difference with respect to the AA stacking of Ca(OH)$_2$, i.e.
-$\Delta$E=E$_{\text{ABX}}$-E$_{\text{AA}}$, (X=1,2,...,5). Energies are given
-per formula of Ca(OH)$_2$. Blue, green and red circles are for Ca atom, 
-upper hydroxyl group and lower hydroxyl group, respectively. For clarity, the 
-bottom layer is shifted slightly.}
-\end{figure}
 
 Individual layers of lamellar structures such as graphite, hex-BN and TMDs 
 are held together mainly by the van der Waals force in order to form a bulk 
@@ -286,10 +261,20 @@ stacking. As depicted in \autoref{fig:stack_caoh2}, AA stacking is 96$\sim$137 m
 per formula more favorable than all other possible stacking types and hence it
 corresponds to the lowest energy configuration. 
 
-
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=8.5cm]{int_caoh2.eps}
+\includegraphics[width=0.7\textwidth]{stack_caoh2.eps}
+\caption{\label{fig:stack_caoh2} Different stacked bilayers (bottom layer is blurred)
+and their energy difference with respect to the AA stacking of Ca(OH)$_2$, i.e.
+$\Delta$E=E$_{\text{ABX}}$-E$_{\text{AA}}$, (X=1,2,...,5). Energies are given
+per formula of Ca(OH)$_2$. Blue, green and red circles are for Ca atom, 
+upper hydroxyl group and lower hydroxyl group, respectively. For clarity, the 
+bottom layer is shifted slightly.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{int_caoh2.eps}
 \caption{\label{fig:int_caoh2} Interlayer interaction energy per formula of
 AA-stacked bilayer Ca(OH)$_2$. Blue and red curves are for GGA calculations
 without and with vdW correction, respectively.}
@@ -306,21 +291,9 @@ exchange correlation; while another set considers both the GGA and vdW
 interaction. At the optimized interlayer distance for the bilayer structure, 
 almost 2/3 of the attractive interaction comes from the van der Waals 
 interaction, and this is consist with P. D$^\prime$Arco et al. (1993) 
-\cite{D'Arco1993} . They stated that
+\cite{DArco1993} . They stated that
 interlayer interaction of Brucite, one of the isomorphous of Portlandite, is
 mainly a dispersion-type interaction. The nature of interlayer interaction in Ca(OH)$_2$ is mainly vdW type weak interaction. Our GGA+vdW calculations revealed that the interlayer interaction between two layers of Ca(OH)$_2$ (149 meV per formula) is much stronger than that of bilayers of MoS$_2$ (76 meV per formula).
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \subsubsection{Electronic properties of C\lowercase{a}(OH)$_{2}$}\label{sec:electronic}
@@ -372,24 +345,16 @@ degeneracy of spin-up and spin-down states still remains, this is also confirmed
 by the results of our calculation.
 
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=8.5cm]{elec_caoh2.eps}
-\caption{\label{fig:elec_caoh2} (a) Electronic band dispersion, 
-(b) partial DOS and (c) band and $k$-point decomposed charge densities of the bulk Ca(OH)$_2$. The charge density are the band 
-edges indicated in (a), isovalues are kept constant. (d) electronic band structure, (e) partial
-density of states, (f) With (dashed line) and without
-(solid line) spin orbit coupling band structure around $\Gamma$ point and (g) band and $k$-point decomposed charge density for monolayer Ca(OH)$_2$.  The charge density at the 
-band gap edges indicating in (d), isovalues are kept constant and same as those 
-in (c).}
+\includegraphics[width=0.7\textwidth]{elec_caoh2.eps}
+\caption{\label{fig:elec_caoh2} (a) and (d) are the Band structures, 
+(b) and (e) are the partial DOS and (c) and (g) are the band and $k$-point decomposed charge densities of the bulk (c) and monolayer (g) Ca(OH)$_2$, respectively. The charge density are the band edges indicated in (a) and (d), isovalues are kept constant. (f) With (dashed line) and without (solid line) spin orbit coupling band structure around $\Gamma$ point}
 \end{figure}
 
-
-
-
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=8.5cm]{suf_caoh2.eps}
+\includegraphics[width=0.8\textwidth]{suf_caoh2.eps}
 \caption{\label{fig:suf_caoh2} Two lowest conduction band charge density of 
 monolayer and bilayer Ca(OH)$_2$ at the $\Gamma$ point.}
 \end{figure}
@@ -402,13 +367,9 @@ state parallel to the layer on both sides, see \autoref{fig:suf_caoh2}(a), this
 is also the case for the second lowest non-spin-resolved conduction band at the same
 $k$-point: $E_{c2}^{~\Gamma}$, see \autoref{fig:suf_caoh2}(b). These two states are 
 important due to their unique character and having energy right below ionization energy. Such exceptional states 
-having free-electron-like dispersion were reported before\cite{Posternak} for 
+having free-electron-like dispersion were reported before\cite{Posternak1,Posternak2} for 
 doped graphite. To study the trend in these states, the same states were plotted 
 for bilayer Ca(OH)$_2$, see (c) and (d) in \autoref{fig:suf_caoh2}. $E_{c1}^{~\Gamma}$ and $E_{c2}^{~\Gamma}$ have lower energies than ionization energy. Therefore, electrons are still close and bond to both sides of monolayers as seen from charge density. In the case of bilayer, interestingly, these states appear only on one side of bilayer.
-
-
-
-
 
 \subsubsection{Mechanical properties of C\lowercase{a}(OH)$_{2}$}\label{mechanical}
 
@@ -435,21 +396,11 @@ those for bilayer, and for BN, they are 0.22 and 113.5 N/m respectively. The
 calculated values of the in-plane stiffness of monolayer Ca(OH)$_{2}$ is 53.2 
 J$/$m$^{2}$. 
 
-
-
-
-
-
-
-
-
-
-
 \section{Vibrational Characteristics of Single Layer 
 C\lowercase{a}(OH)$_{2}$}\label{stability}
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=8.5cm]{vib_caoh2.eps}
+\includegraphics[width=0.7\textwidth]{vib_caoh2.eps}
 \caption{\label{fig:vib_caoh2} Phonon dispersion of monolayer Ca(OH)$_2$.}
 \end{figure}
 
@@ -457,7 +408,7 @@ Lastly, for the analysis of the vibrational spectrum and further examination of
 the dynamical stability of monolayer Ca(OH)$_2$, we performed a 
 calculation of the phonon spectrum using both the first-principles small 
 displacement methodology (SDM)\cite{alfe} and density functional perturbation 
-methodology (DFPT).\cite{baroni} Here the non-quadratic dispersion of the 
+methodology (DFPT)\cite{baroni}. Here the non-quadratic dispersion of the 
 flexural mode around the zone center is directly related to the insufficient 
 FFT grid along the vacuum direction. It is seen from Fig.\ref{fig:vib_caoh2} that 
 similar to the Raman shift measurements observed from the bulk crystal 
@@ -486,14 +437,13 @@ environmentally stable and their stable structures can be synthesized by
 experimental methods; (ii) Experimentally, we also demonstrated that Ca(OH)$_2$ 
 crystals can be grown in layered form and also be exfoliated on arbitrary 
 substrates; (iii) The dimensionality of Ca(OH)$_2$ will not change the 
-electronic, structural and magnetic properties  qualitatively, nevertheless 
+electronic, structural and magnetic properties qualitatively, nevertheless 
 intrinsic mechanical stiffness of each layer will become slightly stiffer as 
 the system go from monolayer to bilayer. (iv) Interlayer interaction is mainly 
 van der Waals dispersion-type force, and
 the strength of the interaction is stronger than that of similar layered
-materials (e.g MoS$_2$ and graphite). (v) Monolayer 
-Ca(OH)$_2$ remains dynamically stable even at high temperatures and (vi) The 
-conduction states which have a free-like character may be utilized for 
+materials (e.g MoS$_2$ and graphite). (v) The 
+conduction states which have a free-electron-like character may be utilized for 
 high-mobility electron transfer. 
 
 We believe that the stable structure and the unique electronic properties of ultra-thin 
