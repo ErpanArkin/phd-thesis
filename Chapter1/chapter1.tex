@@ -21,11 +21,10 @@ A new field of research related to both material science and condensed matter ph
 \caption[Graphene related publications and patents during the last decade]{Graphene related publications and patents during the last decade. Data source: ISI Web of Science and PATENTSCOPE. \protect\footnotemark }
 \label{fig:grpapers}
 \end{figure} 
-\footnotetext{Publication and patent data are obtained by searching for "graphene" in the topic field of Web of Science and the title field of PATENTSCOPE, respectively.}
 
 On the other hand, with the advent of powerful supercomputer facilities, calculations that seems impossible to finish in a reasonable time now has been made possible. The accuracy of such calculations is the most crucial aspect of computational physics, especially when the results are utilized to predict real materials properties. To make the time spent on costly supercomputer valuable, researchers and programmers have been making important progress in order to make sure theories and its implementation are correct and the results they yield are within acceptable precision. Equipped with these tools, theoretical predictions have served well on discovering unexplored properties and applications of the materials. Moreover, detailed characterizations at atomic scale benefit the experimental results as well, or even to explain the unexpected outcomes.
 
-
+\footnotetext{Publication and patent data are obtained by searching for "graphene" in the topic field of Web of Science and the title field of PATENTSCOPE, respectively.}
 
 Considering all mentioned, it is a sound approach to apply state-of-the-art computational methods that are accompanied with high-performance supercomputer facilities to investigate the physical properties of novel 2D materials. This thesis was initiated to this end, and it is a summary of several works which have been accomplished during my Ph.D. study. The thesis is organized as follows: For the rest of this chapter, I will first introduce graphene and some other 2D materials that were discovered right after graphene, and, briefly, several well-known methods used to synthesis 2D materials. The following \autoref{chap:2} will present the computational methods, the theory and the implementations of them in available software packages. In \autoref{chap:3}, I will discuss several general properties of 2D materials. The next two chapters will be the main results of the thesis. Starting from specific properties targeting at specific novel 2D materials in \autoref{chap:4}, and followed by the modification of physical properties of 2D materials in \autoref{chap:5}. Overlaps of materials themselves and their properties are inevitable between sections, yet it will be minimized such that each section will have a unique topic. 
 
@@ -38,7 +37,7 @@ Graphene is composed of carbon (C) atoms arranged on a honeycomb lattice in a si
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.7\textwidth]{gra_grap.eps}
-\caption[Relation of graphite, graphene, fullerene and nanotube]{Relation of graphite, graphene, fullerene and nanotube. Image source: the Nobel prize in physics 2010 \cite{gra_grap}. }  
+\caption[Relation of graphite, graphene, fullerene and nanotube]{Relation of graphite, graphene, fullerene and nanotube. Image source: the Nobel prize in physics 2010 \cite{gra_grap}}  
 \label{fig:gra_grap}
 \end{figure} 
 
@@ -58,7 +57,7 @@ As mentioned previously, graphene is a single atomic layer of graphite. It has a
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=\textwidth]{gra_lat_band.eps}
-\caption[Graphene lattice and band structure.]{(a) Graphene honeycomb lattice composed of A and B hexagonal Bravais sublattices. (b) Band structure of graphene where CBM and VBM touch each other only at the K and K' points. (c) Approximately linear dispersion around the K and K' points. Image source: \cite{Guttinger2012}. }  
+\caption[Graphene lattice and band structure.]{(a) Graphene honeycomb lattice composed of A and B hexagonal Bravais sublattices. (b) Band structure of graphene where CBM and VBM touch each other only at the K and K' points. (c) Approximately linear dispersion around the K and K' points. Image source: Ref. \cite{Guttinger2012} }  
 \label{fig:gra_band}
 \end{figure} 
 
@@ -79,7 +78,7 @@ Graphane is not flat as graphene. In fact, the bonding character changed from sp
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=1\textwidth]{graphane.eps}
-\caption[Atomic and electronic structure of graphane]{(a)The chair structure of graphane. The white balls are the H atoms and the grey ones are the C atoms. Image source: \cite{Sofo2007}. (b) Band structure of chair graphane. Image source: \cite{leenaerts2010}}  
+\caption[Atomic and electronic structure of graphane]{(a)The chair structure of graphane. The white balls are the H atoms and the grey ones are the C atoms. Image source: Ref. \cite{Sofo2007} (b) Band structure of chair graphane. Image source: Ref. \cite{leenaerts2010}}  
 \label{fig:gra_h}
 \end{figure} 
 
@@ -90,7 +89,7 @@ Stronger binding between an external atom and a C atom can be realized using flu
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=1\textwidth]{fluorographene.png}
-\caption[Graphite fluoride to fluorographene]{Graphite fluoride to fluorographene. Image source:\cite{Zhu2013}}  
+\caption[Graphite fluoride to fluorographene]{Graphite fluoride to fluorographene. Image source: Ref. \cite{Zhu2013}}  
 \label{fig:gra_f}
 \end{figure} 
 
@@ -101,7 +100,7 @@ Analogues to graphene, 2D materials made of only single elements from the other 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{silicene_structure.png}
-\caption[Group IV 2D materials]{Buckled hexagonal crystal structures of group IV 2D materials (X = Si, Ge, and Sn). Different colors represent different 2D atomic planes and their distance is the buckling parameter $\delta$. Image adapted from:\cite{Balendhran2015}}  
+\caption[Group IV 2D materials]{Buckled hexagonal crystal structures of group IV 2D materials (X = Si, Ge, and Sn). Different colors represent different 2D atomic planes and their distance is the buckling parameter $\delta$. Image is adapted from Ref. \cite{Balendhran2015}.}  
 \label{fig:silicene}
 \end{figure} 
 
@@ -121,7 +120,7 @@ Among the multiple structural phases of Boron Nitride, the layered hexagonal pha
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{BN.png}
-\caption[Layered hexagonal structures of h-BN]{Layered hexagonal crystal structures of h-BN. Image adapted from:\cite{Benjah2007}}  
+\caption[Layered hexagonal structures of h-BN]{Layered hexagonal crystal structures of h-BN. Image is adapted from Ref. \cite{Benjah2007}.}  
 \label{fig:BN}
 \end{figure} 
 
@@ -131,7 +130,7 @@ Among the multiple structural phases of Boron Nitride, the layered hexagonal pha
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{tmds.eps}
-\caption[Layered structures of TMDs]{Layered structures of TMDs. 2H: two layers per unit cell with hexagonal symmetry; 3R: three layers per unit cell with rhombohedral symmetry; 1T: one layer per unit cell with tetragonal symmetry. $a$ is the in-plane lattice constant with a range from 3.1 to 3.7 \AA~in TMDs. $c$ is the vertical lattice constant. The interlayer distance has a typical length of 6.5 \AA. Image source: \cite{Wang2012}}  
+\caption[Layered structures of TMDs]{Layered structures of TMDs. 2H: two layers per unit cell with hexagonal symmetry; 3R: three layers per unit cell with rhombohedral symmetry; 1T: one layer per unit cell with tetragonal symmetry. $a$ is the in-plane lattice constant with a range from 3.1 to 3.7 \AA~in TMDs. $c$ is the vertical lattice constant. The interlayer distance has a typical length of 6.5 \AA. Image source: Ref. \cite{Wang2012}}  
 \label{fig:tmds}
 \end{figure} 
 
@@ -142,7 +141,7 @@ Transition metal dichalcogenides (TMDs) have a general formula of MX$_2$, where 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{tmds_bands.eps}
-\caption[Band structure evolution of MoS$_2$ from bulk to single layer]{Band structure evolution of MoS$_2$ from bulk to single layer. Image source: \cite{Chhowalla2013}}  
+\caption[Band structure evolution of MoS$_2$ from bulk to single layer]{Band structure evolution of MoS$_2$ from bulk to single layer. Image source: Ref. \cite{Chhowalla2013}}  
 \label{fig:tmds_bands}
 \end{figure} 
 
@@ -156,7 +155,7 @@ Having confinements from other directions, physical properties of these systems 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=\textwidth]{chiral_vector.png}
-\caption[Chiral vector and different type of nanotubes as obtained by rolling them up in different directions]{Chiral vector and different types of nanotubes as obtained by rolling them up in different directions. Image adapted from \cite{Prasek2011}}  
+\caption[Chiral vector and different type of nanotubes as obtained by rolling them up in different directions]{Chiral vector and different types of nanotubes as obtained by rolling them up in different directions. Image is adapted from Ref. \cite{Prasek2011}.}  
 \label{fig:chiral}
 \end{figure} 
 
@@ -167,7 +166,7 @@ In this last section, I will briefly discuss some of the well-known synthesis me
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{synthesis.png}
-\caption[Graphene production setups]{Graphene production setups. Image source \cite{Ferrari2015}}  
+\caption[Graphene production setups]{Graphene production setups. Image source: Ref. \cite{Ferrari2015}}  
 \label{fig:syn}
 \end{figure} 
 \subsubsection{Micromechanical cleavage}
@@ -185,7 +184,7 @@ The growth of graphene on SiC involves Sic sample annealing at high temperature 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.6\textwidth]{gr-sic.png}
-\caption[The growth of graphene on SiC wafer]{The growth of graphene on SiC wafer. Image source \cite{Mishra2016}}  
+\caption[The growth of graphene on SiC wafer]{The growth of graphene on SiC wafer. Image source: Ref. \cite{Mishra2016}}  
 \label{fig:sic}
 \end{figure} 
 
@@ -196,7 +195,7 @@ Chemical vapor deposition (CVD) is a popular method to grow amorphous or crystal
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.7\textwidth]{30-inches-gr.jpg}
-\caption[An ultra-large-area graphene film]{An ultra-large-area graphene film. Image source \cite{Bae2010}}  
+\caption[An ultra-large-area graphene film]{An ultra-large-area graphene film. Image source: Ref. \cite{Bae2010}}  
 \label{fig:30gr}
 \end{figure} 
 

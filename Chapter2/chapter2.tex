@@ -21,7 +21,7 @@ Density functional theory (DFT) is one of the most widely used quantum mechanica
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{dft1.jpg}
-\caption[Comparison of different electronic structure calculation methods]{ Comparison of the accuracy and the size of different electronic structure calculation methods. Image source: \cite{dft_ac}.}  
+\caption[Comparison of different electronic structure calculation methods]{ Comparison of the accuracy and the size of different electronic structure calculation methods. Image source: Ref. \cite{dft_ac}}  
 \label{fig:dft_ac}
 \end{figure} 
 %
@@ -97,7 +97,7 @@ Jacob's ladder is a ladder connecting earth and heaven that biblical Patriarch J
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.7\textwidth]{jacobs.png}
-\caption[Jacob's ladder for DFT approximations]{ Jacob's ladder for DFT approximations. Image source: \cite{Peng2016}.}  
+\caption[Jacob's ladder for DFT approximations]{ Jacob's ladder for DFT approximations. Image source: Ref. \cite{Peng2016}}  
 \label{fig:dft_jl}
 \end{figure} 
 Each rung is a level of approximation constructed with different formalisms. From LDA and GGA as mentioned before to meta-GGA which includes the Kohn-Sham kinetic energy density. Next method higher in the ladder is the hybrid functionals which incorporates a part of the exact exchange from Hatree-Fock (HF) theory. For example, the PBE0 functional\cite{Carlo1999} has the following definition:
@@ -134,7 +134,7 @@ where $\Delta_{XC}$ is the orbital shift caused by adding an extra electron: $\v
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{Eg.eps}
-\caption[Schematic illustration of the relation between $E_g$ and $E^{KS}_g$]{ Schematic illustration of the relation between $E_g$ and $E^{KS}_g$. Image adapted from: \cite{fiolhais2008primer}.}  
+\caption[Schematic illustration of the relation between $E_g$ and $E^{KS}_g$]{ Schematic illustration of the relation between $E_g$ and $E^{KS}_g$. Image is adapted from Ref. \cite{fiolhais2008primer}.}  
 \label{fig:dft_eg}
 \end{figure} 
 The $\Delta_{XC}$ exclusively depends on the non-analyticity of the XC potential $\frac{\delta E_{XC}[n]}{\delta n(\vec{r})}$, since the Hartree potential explicitly depends on the density. In other words, it means the energy increase by adding an extra electron in the extended system is of the order of 1 eV, even though, it is an infinitesimal density change. If the XC energy functional were analytic, the infinitesimal density variation would not introduce a large potential change, hence $\Delta_{XC}$ is small or equals to zero, and $E_g \approx E^{KS}_g$. The accuracy of the band gap, when compared to experiment measurement, would be only limited by the error that is inherent to different functionals. However, $\Delta_{XC}$ usually is not zero and it is responsible for the 80\% of the LDA band gap error\cite{Godby1988}. 

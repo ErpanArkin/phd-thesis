@@ -148,14 +148,14 @@
 
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
-\RequirePackage[backend=biber, backref, style=numeric-comp,  sorting=none, natbib=true,isbn=false,url=false,eprint=false,defernumbers=true]{biblatex}
+\RequirePackage[backend=biber, backref, style=chem-angew,  sorting=none, natbib=true,isbn=false,url=false,eprint=false,defernumbers=true]{biblatex}
 %\bibliography{References/references} %Location of references.bib only for biblatex
 \addbibresource{References/references.bib}
 \fi
 
 
 % changes the default name `Bibliography` -> `References'
-\renewcommand{\bibname}{References}
+%\renewcommand{\bibname}{References}
 % line break for long url link
 \setcounter{biburlnumpenalty}{8000}
 % ******************************************************************************
