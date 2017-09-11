@@ -353,5 +353,191 @@ In this work, we proposed a new type of stable monolayer carbon allotrope compos
 
 
 \section[Battery related properties of MXenes/graphene heterostructure]{Battery related properties of MXenes/graphene heterostructure \footcite[This work will be published as:][]{Aierken2017.battery}}
+
+\subsection{Introduction}
+Lithium ion batteries (LIBs) are widely used for the electrochemical energy storage in electrical vehicles and portable electronic devices such as cell phones. In fact, the speed of the development in these state of the art products mostly hinges on the progress in battery technology. In current state, energy densities and rate capabilities of both LIBs and sodium ion batteries (NIBs) are insufficient to satisfy costumers' needs. Therefore, the demand for the metal based new generation batteries that have large reversible energy/power capacity, good cyclic stability and long life span is growing day by day. Recently, rechargeable batteries based on 2D materials have garnered great attention because of their promising potential as anode materials with enhanced gravimetric and volumetric energy densities which is a key challenge in current rechargeable ion battery technology. For instance Mo$_2$C was shown to exhibit much better electrochemical properties in lithium-ion battery applications,\cite{mo2c-ref8, mo2c-ref10}. Moreover, other 2D layered materials such as transition metal dichalcogenides,\cite{mo2c-ref11, mo2c-ref12}, black phosphorus\cite{mo2c-ref18, mo2c-ref20}, and MXenes (with M = Ti, V, Nb, Mo and X = C, N)\cite{mo2c-ref13, mo2c-ref17} were also widely investigated because of their high energy storage density and high rate capacity. However, experimental studies have shown that single type layered nanosheets inevitably restack during the cycling process, resulting in a rapid capacity fading and poor rate performance. 
+
+Therefore, current interest has been directed towards heterostructured\cite{C5CS00937E,Pomerantseva_Gogotsi_2017} 2D materials. A plausible design of vertical heterostructures from different 2D materials is expected to be beneficial for providing rapid electron transport and the acceleration of cation transport in the electrodes, and thus expected to improve the rate performance in current battery technology\cite{Pomerantseva_Gogotsi_2017}. In addition, the negligible volumetric changes of in particular TMDCs and MXenes under lithiation/de-lithiation processes, such that there is only 5\% in-plane lattice expansion in the Mo$_2$C lattice caused by Li intercalation\cite{C6TA01918H}, can minimize the intrinsic volumetric changes during charging/discharging processes and prolongs cycling lifetime of the rechargeable batteries. Also, combining different 2D materials is a promising way to adjust the interlayer distance to accommodate much larger (Na$^{+}$) and more polarized (Mg$^{2+}$) ions. For instance, lithium-ion capacity in excess of 750 mAh g$^{-1}$\cite{CELC:CELC201600059} has already been demonstrated for the batteries with MXene flakes electrodes, optimized with CNTs.
+
+To this end, we  systematically investigated Li intercalation in vertical (van der Waals) heterostructures of MXenes and graphene for rechargeable battery applications. We only considered functionalized MXenes with  OH and O, since the experimentally synthesized MXenes are often functionalized with various radicals due to the mainly used chemical exfoliation process in synthesis. In addition, MXenes with low formula weights, such as Ti$_2$C, Nb$_2$C, V$_2$C and Sc$_2$C have been found to be most promising\cite{doi:10.1021/ja405735d} materials for battery allocations due to their theoretically stated gravimetric capacity, which represents the amount of charge that can be stored per gram of material. Therefore, we considered olnly M$_2$CX$_2$ (where M=Sc, Ti, V and X=OH, O) monolayers in this study. V$_2$CX$_2$ is particularly important since it shows the highest Li$^+$ capacity of all MXenes tested under similar conditions\cite{doi:10.1021/ja508154e}. Another advantageous is that, compared to bilayer M$_2$CX$_2$, M$_2$CX$_2$/graphene hetorostructure has much smaller weight, offering much larger storage capacity. 
+
+We introduce the following nomenclatures in the following sections: M stands for the transition metal in MXenes; X stands for the functionalized group, i.e. OH or O; Gr stands for graphene; Li is intercalated Li atom (unless the concentration is stated it means only single Li atom intercalation); Monolayer and bilayer are denoted with mono- or bi- prefixes; For instance: bi-Ti$_2$CO$_2$+Li stands for bilayer Ti$_2$CO$_2$ with a single Li atom intercalation, and Ti$_2$CO$_2$+Gr+Li stands for heterostructure of Ti$_2$CO$_2$ on graphene with a single Li atom intercalation. 
+
+\subsection{Computational details\label{comp}}
+The physical properties of the considered systems were obtained by Density Functional Theory based simulations as implemented in the Vienna $ab$ $initio$ Simulation Package (VASP) \cite{VASP1,VASP2,VASP3,VASP4}. In these simulations, a plane-wave basis set with a 500 eV energy cut-off, the projected augmented wave (PAW) potentials\cite{PAW1,PAW2} with the generalized gradient approximation (GGA) within the Perdew-Burke-Ernzerhof (PBE) formulation \cite{GGA-PBE1,GGA-PBE2}, and a 7$\times$7$\times$1 up to 11$\times$11$\times$1 \textbf{k}-points mesh were used depending on the size of the supercell. Since we dealt with weakly interacting systems, weak van der Waals interactions were taken into account using DFT-D3 method \citet{Grimme2011} including Becke-Jonson damping. Lattice vectors perpendicular to the 2D plane were fixed as 30 {\AA} for all the simulations. A $10^{-5}$ eV energy and a $10^{-3}$ eV/{\AA} force convergence criteria were set to achieve the ground state structure and its energy. Charge transfer between Li  atom and the host systems were calculated via Bader analysis \cite{Bader1,Bader2,Bader3,Bader4}. 
+
+We calculated diffusion barriers for Li ions using the climbing-image nudge elastic (cNEB) method as implemented in the VASP transition state tools\cite{c-neb1,c-neb2}. The cNEB method is an efficient method to determine the minimum energy diffusion path between two given positions. We used at least 7 images, including initial and final positions, for cNEB calculations. The atomic positions and energy of the images were then relaxed until the largest norm of the force orthogonal to the path is smaller than 0.01 eV/{\AA}. 
+
+\subsection{Results}
+\subsubsection{heterostructure stacking types}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{stacking.eps}%
+\caption{An example structure of mono-Ti$_2$CO$_2$ presenting in (a) top view, (b) side view and (c) tilted view. (d)  Simplied example structure of M$_2$CX$_2$+Gr heterostructure in ground state stacking. \label{stacking}}
+\end{figure}
+
+First of all, we need to construct the heterostructure. To minimize the lattice mismatch between layers, we constructed the heterostructures with a 3$\times$3 supercell of Sc$_2$CO$_2$ or Sc$_2$C(OH)$_2$ with a 4$\times$4 supercell of graphene, a  4$\times$4 supercell of Ti$_2$CO$_2$ or Ti$_2$C(OH)$_2$ with a 5$\times$5 supercell of graphene, and a 5$\times$5 supercell of V$_2$CO$_2$ or V$_2$C(OH)$_2$ with a 6$\times$6 supercell of graphene, see Fig. \ref{stacking} as a representative example. In order to find out the ground state stacking type of M$_2$CX$_2$+Gr heterostructures, we calculated the binding energy of possible stacking configurations by shifting the M$_2$CX$_2$ layer over the unit cell of graphene on a uniform mesh, see the supplementary materials$^\dag$ for details. In the course of these simulations, each layer in the heterostructure is regarded rigid where only the interlayer distance is allowed to relax. The regarded binding energy per atom, $E_b$ was calculated as follows:
+\begin{equation}
+E_b=\frac{1}{N}[E(\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr})-E(\mathrm{M}_2\mathrm{C}\mathrm{X}_2)-E(\mathrm{Gr})]
+\end{equation}
+where $E$(M$_2$CX$_2$+Gr), $E$(M$_2$CX$_2$) and $E$(Gr) are the total energies of M$_2$CX$_2$+Gr, mono-M$_2$CX$_2$ and Gr, respectively. $N$ is the total number of atoms in the system. In Table~\ref{tableI}, the calculated $E_b$ and the interlayer distance for M$_2$CX$_2$+Gr are given, and they are system dependent. The results for graphene bilayer are also given for a reference. The interlayer binding energy and the distance of bilayer graphene are 20 meV/atom and 3.325 {\AA}, respectively. Our calculations agree very well with a recent work in which quantum Monte Carlo simulations predicted a 17.8 meV/atom binding energy and 3.384 {\AA} interlayer separation for bilayer graphene\cite{PhysRevLett.115.115501}.  The calculated binding energies (i.e. $E_b$) are negative for all the considered heterostructures, demonstrating the stability of each system against the phase separation. The magnitudes of the $E_b$ for the ground states stacking in MXene oxides/graphene are comparable to that of bilayer graphene, whereas the hydroxides/graphene are slightly stronger bonded due to the extra hydrogen bonds. The differences in the binding energies among different MXenes that have the same functionalized group are negligible. 
+
+\begin{table}[htb]
+\centering
+\caption{A comparison of different MXenes systems: monolayer, bilayer, heterostructure. $d$ is the interlayer distance and is defined as shown in Fig. \ref{inter-dist}. $E_b$ is binding energy of the system with respect to its components, e.g bilayer with respect to monolayers. Only the ground state stacking of M$_2$CX$_2$+Gr is reported.} 
+\label{tableI}
+\begin{tabularx}{\linewidth}{XXXX}
+\hline
+Material      & Structure                         & $d$               & $E_b$               \\
+              &                                    & \AA                & eV/atom \\ \hline
+\multirow{2}{*}{graphene}      & bi-Gr (AB)                                               & 3.277                    & -0.024                        \\
+              & bi-Gr (AA)                                                & 3.325                    & -0.020                         \\ \multicolumn{4}{c}{}\\
+\multirow{2}{*}{Sc$_2$CO$_2$}    & bi-Sc$_2$CO$_2$                                                   & 2.294                 & -0.029                         \\
+              & Sc$_2$CO$_2$+Gr                                                   & 3.067                   & -0.022                         \\
+\multicolumn{4}{c}{}\\              
+\multirow{2}{*}{Sc$_2$C(OH)$_2$} & bi-Sc$_2$C(OH)$_2$                                                   & 0.598                  & -0.025                         \\
+              & Sc$_2$C(OH)$_2$+Gr                                                     & 2.191                  & -0.027                         \\
+\multicolumn{4}{c}{}\\              
+\multirow{2}{*}{Ti$_2$CO$_2$}    & bi-Ti$_2$CO$_2$                                                & 2.396                   & -0.027                         \\
+              & Ti$_2$CO$_2$+Gr                                                   & 3.000                    & -0.018                         \\
+\multicolumn{4}{c}{}\\              
+\multirow{2}{*}{Ti$_2$C(OH)$_2$} & bi-Ti$_2$C(OH)$_2$                                               & 0.399                   & -0.024                         \\
+              & Ti$_2$C(OH)$_2$+Gr                                                  & 2.097                    & -0.034                         \\
+\multicolumn{4}{c}{}\\             
+\multirow{2}{*}{V$_2$CO$_2$}     & bi-V$_2$CO$_2$                                                 & 2.394                    & -0.025                         \\
+              & V$_2$CO$_2$+Gr                                                     & 2.867                    & -0.022                         \\
+\multicolumn{4}{c}{}\\              
+\multirow{2}{*}{V$_2$C(OH)$_2$}  & bi-V$_2$C(OH)$_2$                                              & 0.398                    & -0.011                         \\
+              & V$_2$C(OH)$_2$+Gr                                                 & 2.779                    & -0.035                         \\ \hline                     
+\end{tabularx}
+\end{table}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{inter_dist.eps}%
+\caption{The optimized locations of single Li atoms in different structures and the definition of interlayer distance $d$, which ignores the Li atom layer.\label{inter-dist}.}
+\end{figure}
+
+\subsubsection{Single Li intercalation and its binding energy}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{sites.eps}%
+\caption{The locations of Li atoms intercalation between Ti$_2$CO$_2$+Gr heterostructure as an example.  \label{sites}}
+\end{figure}
+
+Having the ground state stacking types of all the M$_2$CX$_2$+Gr heterostructures, we now investigate the Li intercalation in these systems. To uncover potential of M$_2$CX$_2$+Gr heterostructures in battery applications, we also considered Li intercalation on mono-M$_2$CX$_2$, within bi-M$_2$CX$_2$ and within bi-Gr reference systems. These systems are considered the same dimensions, or equivalently the same Li atoms concentration, as in the corresponding heterostructures.
+
+Previous studies\cite{Guo2015,Samad2016,Lee2012} have pointed out that the strongest binding for the Li atoms intercalated happens between bilayer heterostructure and reported a non-binding character of Li atoms on the surface of few-layer graphene, therefore, in this study, we limited our study considering only the intercalation between M$_2$CX$_2$ and graphene. In addition, inspired by the previous study\cite{doi:10.1063/1.4939745} for the Li absorption site in M$_2$CX$_2$ multilayer system, we discovered that intercalated Li atom bound close to the M$_2$CX$_2$ layer and far from graphene, and it resides itself between three O atoms, therefore each formula unit of M$_2$CX$_2$ in heterostructure can accommodate one Li atom. Additional Li atoms occupy same positions in other unit cells, as shown in Fig. \ref{sites}. Note that, because of resulted reflection symmetry for ground state stacking, Li position only on one side of the symmetry line [110] is studied for a single Li absorption.  Since a strong binding between Li and M$_2$CX$_2$+Gr bilayer is necessary to avoid the formation of metallic lithium, and therefore to improve the safety and reversibility of lithium-ion batteries, we need to make sure the reported Li binding energy is the largest one (that it is associated to the ground state adsorption site). Thus, we have calculated all the possible adsorption sites between two layers, see the supplementary materials$^\dag$ for details. 
+
+The binding energy, $E_{b}^{Li}$, for Li intercalated systems is defined through the following equation:
+\begin{equation}
+E_{b}^{Li}=\frac{1}{x}[E(\mathrm{with~}x\mathrm{Li})-E(\mathrm{without~Li})-xE(\mathrm{Li})],
+\end{equation}
+where $E(\mathrm{with~}x\mathrm{Li})$ and $E(\mathrm{without~Li})$ are the total energies of system with and without x Li atoms, respectively. $E(\mathrm{Li})$ is the total energy of a Li atom in its most stable bcc bulk structure. Here, a more negative binding energy indicates a more favourable exothermic binding of Li. 
+
+In Table \ref{my-label}, the results for different materials in three promising systems are shown. For comparison, we calculated Li intercalation in AA and AB stacked graphene bilayers. While the latter is more stable than the former for the pristine systems, the former is energetically more favourable for Li intercalation, consistent with previous calculations\cite{PhysRevB.93.245438}, see table \ref{my-label}.  The LiC$_{64}$ (4$\times$4 bilayer graphene) in AA configuration is energetically favorable to accommodate single Li between bilayer, while the Li atom will not bind at all in AB stack bilayer. However, the magnitude of binding energy generally is small as compared to the heterostructure due to the strong interaction of Li with M$_2$CO$_2$ layer.
+
+
+The following findings are concluded from the results: 
+(1) All systems related to Sc$_2$CO$_2$ experience severe structural distortion upon Li interactions. Two or three of the C atoms in the Sc$_2$CO$_2$ moving towards each other and showing the tendency to cluster. Therefore, this type of system is unstable for Li intercalation. 
+(2) The binding of Li atom on mono-M$_2$C(OH)$_2$ is not favorable. This can be attributed to the Columbic repulsion between positively charged Li ion and H atoms. 
+(3) As going from mono- to bi-M$_2$C(OH)$_2$+Li, Li adsorption is made stable again through the van der Waals interaction that competes with foregoing repulsive interaction.  
+(4) mono-M$_2$CO$_2$+Li,  bi-M$_2$CX$_2$+Li and M$_2$CX$_2$+Gr+Li exhibit the strongest adsorption for Li atoms. The calculated $E_{b}^{Li}$ value at the largest binding energy site is -1.87 eV/atom for the mono-Ti$_2$CO$_2$ and -2.97 eV/atom for the mono-V$_2$CO$_2$. In the case of M$_2$CX$_2$+Gr+Li, we observed that $E_{b}^{Li}$ slightly decreases for M=Ti and V and X=O.  This may be correlated to the reduced van der Waals interaction with respect to the pristine bilayers due to the increase in interlayer separation.  
+(5) We have identified three promising candidates with large Li atom adsorption energy, namely Sc$_2$C(OH)$_2$+Gr+Li, Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li. Therefore, for the rest of the paper, we will focus on these three systems and will study the kinetics of Li diffusion. 
+
+\begin{table*}[ht]
+\centering
+\caption{A comparison of different MXenes systems: monolayer, bilayer, heterostructure with Li intercalation. $d$ is the interlayer distance and is defined as shown in Fig. \ref{inter-dist}. $E_b^{Li}$ is the binding energy of a single Li atom. Only the largest binding energy of Li atom is reported, i.e. ground state adsorption site. $L_{min}$ is the shortest bond length of a Li atom with others. $e$ is the charge transfer from a Li atom to a heterostructure. For the consistence of the Li concentrations, all monolayer and bilayer system use the same dimensions as in the corresponding heterostructures. Three different size of bi-Gr are presented to compare with the hereostructures with corresponding size of Gr.} 
+\label{my-label}
+\begin{tabularx}{\textwidth}{XXXXXX}
+\hline
+Material      & Structure                         & $d$                & $E_b^{Li}$               & $L_{min}$ & Li charge transfer   \\
+              &                                   & \AA                       & eV/atom                             & \AA                       & e                \\ \hline
+\multirow{4}{*}{graphene}      & 4$\times$4 bi-Gr (AB)+Li                 & 3.591                    & 0.030                          & 2.060                     & 0.873                        \\
+              & 4$\times$4 bi-Gr (AA)+Li                 & 3.616                                                                            & -0.232                         & 2.344                     & 0.868                        \\
+              & 5$\times$5 bi-Gr (AA)+Li                  & 3.617                                                                          & -0.283                         & 2.344                     & 0.878                        \\
+              & 6$\times$6 bi-Gr (AA)+Li                  & 3.636                                                                         & -0.336                         & 2.352                     & 0.879                        \\ 
+& & & & \\              
+\multirow{3}{*}{Sc$_2$CO$_2$ (unstable)}    & mono-Sc$_2$CO$_2$+Li  & -  & -9.986  & 2.024  & 0.898 \\
+              & bi-Sc$_2$CO$_2$+Li   & 1.791              & -32.646 & 2.208  & 0.902 \\
+              & Sc$_2$CO$_2$+Gr+Li     & 2.874              & -19.885 & 1.958  & 0.887 \\ 
+              & & & & \\
+\multirow{3}{*}{Sc$_2$C(OH)$_2$} &mono-Sc$_2$C(OH)$_2$+Li                                            & -                        & 0.048                          & 1.918                     & 0.869                        \\
+              &bi-Sc$_2$C(OH)$_2$+Li                                              & 0.548                     & -0.309                         & 2.050                     & 0.885                        \\
+              &Sc$_2$C(OH)$_2$+Gr+Li                                                   & 2.278                   & -0.941                         & 1.953                     & 0.877                        \\ 
+              & & & & \\
+\multirow{3}{*}{Ti$_2$CO$_2$}    &mono-Ti$_2$CO$_2$+Li                                            & -                         & -1.870                         & 1.994                     & 0.912                        \\
+              &bi-Ti$_2$CO$_2$+Li                                                 & 2.480                   & -2.308                         & 2.047                     & 0.886                        \\
+              &Ti$_2$CO$_2$+Gr+Li                                                   & 2.976                   & -1.729                         & 1.993                     & 0.887                        \\ 
+              & & & & \\
+\multirow{3}{*}{Ti$_2$C(OH)$_2$} &mono-Ti$_2$C(OH)$_2$+Li                                              & -                                     & 0.146                          & 1.926                     & 0.792                        \\
+              &bi-Ti$_2$C(OH)$_2$+Li                                              & 0.599                   & -0.431                         & 2.004                     & 0.879                        \\
+              &Ti$_2$C(OH)$_2$+Gr+Li                                                  & 2.090                   & -0.229                         & 1.941                     & 0.875                        \\ 
+              & & & & \\
+\multirow{3}{*}{V$_2$CO$_2$}     &mono-V$_2$CO$_2$+Li                                              & -                        & -2.791                         & 1.975                     & 0.921                        \\
+              &bi-V$_2$CO$_2$+Li                                                 & 2.500               & -3.573                         & 2.009                     & 0.887                        \\
+              &V$_2$CO$_2$+Gr+Li                                                  & 2.779                  & -2.537                         & 1.957                     & 0.891                        \\ 
+              & & & & \\
+\multirow{3}{*}{V$_2$C(OH)$_2$}  &mono-V$_2$C(OH)$_2$+Li                                            & -                        & -0.175                         & 1.878                     & 0.860                       \\
+              &bi-V$_2$C(OH)$_2$+Li                                                 & 0.395                   & -1.336                         & 1.995                     & 0.878                        \\
+              &V$_2$C(OH)$_2$+Gr+Li                                                 & 2.080                  & -0.304                         & 1.912                     & 0.878  \\ \hline                     
+\end{tabularx}
+\end{table*}
+
+
+\subsubsection{Effect of Li concentration}
+
+As a next step, we investigated the effect of the Li ion concentration on the physical properties of M$_2$CX$_2$+Gr+Li heterostructures. Here, the concentration is defined as the ratio of the number of Li atoms and the number of formula unit of M$_2$CX$_2$ in the heterostructures (e.g. 100\% corresponds to one Li atom for each formula unit). Fig. \ref{concenration}(a) shows the variation of average $E_{b}^{Li}$ as a function of concentration of the Li ions (i.e. $x$). As the number of intercalated Li increases,  average $E_{b}^{Li}$ decreases gradually. The reduction in binding energy is due to two main factors; One is the weak electrostatic attraction between M$_2$CX$_2$+Gr host and Li cations, and the other one is the enhanced Li-Li repulsion at high Li concentrations. The former is correlated with the reduction of charge transfer from the Li atom to M$_2$CX$_2$+Gr complex at high concentrations, as shown in Fig. \ref{concenration}(b). Similarly, the latter is due to the reduction of interatomic distances between positively charged Li ions. Above a critical concentration value, namely 80\%,  $E_{b}^{Li}$ becomes positive for Sc$_2$C(OH)$_2$+Gr+Li, making this system energetically unstable for further Li insertion.  $E_{b}^{Li}$ is always negative for Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li, suggesting that these heterostructures are stable against Li intercalation, and thus we can safely disregard the phase separation into individual monolayers and bulk Li at high concentrations. In other words, the Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li structures has high stability even with high Li concentration. For V$_2$CO$_2$+Gr+Li (Ti$_2$CO$_2$+Gr+Li), $E_{b}^{Li}$ may vary by about 1 (0.5) eV as a function of Li concentration. Recently, Sun $et$ $al.$ \citet{doi:10.1021/acsami.5b03863}reported that V$_2$CO$_2$ undergoes a reversible structural transformation during the adsorption of Li. We also checked the possibility of such structural transformation for V$_2$CO$_2$+Gr bilayer and we found that presence of graphene prevents the transformation of V$_2$CO$_2$. Our results clearly demonstrated that Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li can be utilized as an anode material for high capacity Li ion batteries.
+
+Another important point is how the structural stability of Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li is affected as the Li ions coverage is increased. We found that an increase in the number of Li ions leads to a small expansion in in-plane lattice constants.  For instance, the in-plane lattice constant of both V$_2$CO$_2$+Gr+Li and Ti$_2$CO$_2$+Gr+Li expands less than 1\%.   Besides, we did not observe  severe  lengthening of the surface Ti/V-O bonds and
+shortening of Li-O bonds for both Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li heterostructures. For instance,
+Li-O bond length decreases at most 3\% with increasing Li concentration.   
+It is also found that Li intercalation slightly enlarges and later reduces the interlayer separation as Li concentration increased. The calculated interlayer separations suggested that we can have at most 0.5 {\AA} expansion as a result of Li intercalation. 
+These results clearly suggest that we can have a reversible reaction that is requested for rechargeable ion batteries. Thus, the layered M$_2$CX$_2$+Gr heterostructures can effectively defy the volume expansion problem faced by the electrode materials. However, Sc$_2$C(OH)$_2$+Gr is unstable against Li loading to higher concentration. 
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\linewidth]{Li_con.eps}%
+\caption{The average binding energy (a) and the average charge transger (b) of Li atoms and the voltage profile of M$_2$CX$_2$+Gr heterostructure as a function of Li concentration. \label{concenration}}
+\end{figure*}
+
+\subsubsection{Electrochemical properties}
+
+In order to gain insight into the electrochemical properties of the Li intercalation process into M$_2$CX$_2$+Gr heterostructure, the open-circuit-voltage was obtained by calculating the averaged half cell voltage over a range of metal ion concentrations $x$, where $x_1\leq x\leq x_2$, using,
+\begin{equation}
+V\approx\frac{E_{\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr}+\mathrm{x_1Li}}-E_{\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr}+\mathrm{x_2Li}}+(x_2-x_1)E_{\mathrm{Li}}}{(x_2-x_1)e}
+\end{equation}
+where $E_{\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr}+\mathrm{Li}_{x_1}}$ and $E_{\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr}+\mathrm{Li}_{x_2}}$ are the total energies of M$_2$CX$_2$+Gr heterostructure with $x_1$ and $x_2$ Li intercalated, respectively.  $E_{\mathrm{Li}}$ is the total energy of bulk bcc Li.  First of all, our calculations showed that the charging voltage for Li intercalation decreases with increase of Li atoms, as clearly seen in Fig. \ref{concenration}(c). The calculated average voltage corresponding to Sc$_2$C(OH)$_2$+Gr+Li is negative for the Li ion concentration $x$ larger than 55\%. As mentioned above, a phase transition should be expected for the concentrations larger than this critical value. Our results are consistent with a recent work reporting that H and/or OH should be avoided if possible since they result in a lower capacity and negative cell voltage\cite{Xie2014,Tang2012}. On the other hand, the available intercalation sites in Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li composites can be fully occupied.
+As we increase the Li concentration from $x$=50\% to 100\%, the open-circuit voltage decreases from 1.59 (1.94) V to 1.13 (1.38) V for Ti$_2$CO$_2$+Gr+Li (V$_2$CO$_2$+Gr+Li). The binding energy change (i.e $E_{b}^{Li}$) during Li intercalation can be correlated with the voltage value. Since V$_2$CO$_2$+Gr+Li has the largest Li binding energy, the calculated voltage value is also the largest. The calculated average voltage profile is 1.49 V for Ti$_2$CO$_2$+Gr+Li and 1.93 V for V$_2$CO$_2$+Gr+Li, which are higher than those of Mo$_2$C\cite{C6TA01918H}, graphite\cite{ceder4} and TiO$_2$ electrode \cite{tio2-voltage} and lower than phosphorene\cite{doi:10.1021/nl504336h}. Experimentally measured maximum voltages for pure V$_2$CO$_2$ and Ti$_2$CO$_2$ anodes are 3.0 V and 2.5 V, respectively\cite{doi:10.1021/ja405735d,gdgdgd}. Combining graphene with V$_2$CO$_2$ or Ti$_2$CO$_2$ reduces maximum voltages by around 0.5 V.  Approximately 50\% of capacity of V$_2$CO$_2$+Gr+Li (Ti$_2$CO$_2$+Gr+Li) is intercalated above 2 (1.6) V, with the rest intercalating at lower voltages. Our results clearly demonstrate that Ti$_2$CO$_2$+Gr+Li can be exploited in low voltage applications and V$_2$CO$_2$+Gr+Li are suitable for high charging voltage applications.
+
+\subsubsection{Diffusion properties}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{sites_path.eps}%
+\caption{Initial guessed and final resulted Lithium diffusion paths between Ti$_2$CO$_2$+G heterostructure as an example. }
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\linewidth]{path.eps}%
+\caption{The top view and the side view of Li diffusion paths along the lowest energy diffusion paths in Ti$_2$CO$_2$ related systems as examples. \label{path}}
+\end{figure}
+
+\begin{figure*}
+\centering
+\includegraphics[width=\linewidth]{Li_barrier.png}%
+\caption{Energy profiles of the Li diffusions in different systems composed of (a) Sc$_2$C(OH)$_2$, (b) Ti$_2$CO$_2$ and (c) V$_2$CO$_2$ along the lowest energy diffusion paths as indicated in Fig. \ref{path}. \label{barrier}}
+\end{figure*}
+
+A low diffusion barrier and high mobility are the requirements of an efficient electrode material. In particular, the mobility of a metal atom on an electrode material is a key factor determining the rate performance during charging and discharging of a battery. Following the thermodynamic consideration of Li intercalation, we investigated the single Li kinetics on mono-M+Li, within bi-M+Li and within M+Gr+Li heterostructures, where here M=(Sc$_2$C(OH)$_2$,Ti$_2$CO$_2$,V$_2$CO$_2$), by calculating the lowest energy Li atom diffusion path connecting two adjacent binding sites using cNEB method, see Fig. \ref{path}. The determined energy profiles of the paths are shown in Fig. \ref{barrier}. 
+Compared to the bilayer systems, Li displays relatively smaller diffusion barriers on the pristine monolayers. In other words, energy barriers of Li ions in M$_2$CX$_2$+Gr+Li heterostructure are always higher than those of monolayers. For instance, while energy barriers is calculated as 0.16 eV on the mono-V$_2$CO$_2$+Li, it is obtained as 0.6 eV for bi-V$_2$CO$_2$+Li and V$_2$CO$_2$+Gr+Li heterestructure. Since the multilayer system has the advantage of having higher capacity than the single monolayer system in given volume, and also the synthesized M$_2$CX$_2$+Gr will mostly be multilayered, we believe that the monolayer structures represent the lower limit for energy barriers. However, to obtain realistic kinetics properties we should consider diffusion of ions between layers not only on isolated monolayers. Another important point is that surface functionalization increases the barrier remarkably\cite{doi:10.1021/jp504493a}. Interestingly, energy barriers for Ti based systems are similar, varying in the range of 0.22-032 eV.  Our calculated energy barriers for mono-Ti$_2$CO$_2$+Li is consistent with a recent work\cite{doi:10.1021/jp504493a}. Energy barriers for Ti-based systems are lower than that of graphite (0.5 eV)\cite{Thinius2014} and high-capacity bulk silicon anode materials with a diffusion barrier around 0.57 eV, comparable to the commercially used anode materials based on TiO$_2$ with a barrier of 0.35-0.65 eV\cite{tio2-barrier,tio2-barrier-4,tio2-barrier-3}, suggesting that heterostructures of Ti-based MXenes with graphene are promising candidates for electrode materials in battery applications. The diffusion barriers can be reduced by weakening the interaction of Li ions with the constituent layers. This can be achieved by fabricated pillar structures in which the interlayer distance of graphene and MXenes is enlarged by the help of intercalated molecules \cite{Luo2017}. This method can also improve the storage capacity by multilayer absorption between the layers. 
+
+
+
+\subsection{Conclusion}
+We carried out first-principles calculations to systematically investigate the Li atoms intercalation in MXenes/graphene vertical bilayer heterostructure for Li battery application. Six members in Mxenes family were chosen to form heterostructures with graphene: M$_2$CX$_2$+Gr (where M=Sc, Ti, V and X=OH, O). The ground state stacking types of bilayer and the strongest binding sites of Li atoms are determined first. The strength of the binding of bilayer heterostructure is comparable to that of bilayer graphene, and it is stronger than MXenes bilayers. Due to a finite mismatch of lattice constant of MXenes and graphene, relative motion of bilayer in heterostructure require less energy as compared with the other two cases and giving low fiction between them. We identified two promising heterostructure for Li intercalation: Ti$_2$CO$_2$+Gr and V$_2$CO$_2$+Gr. The stability of the heterostructure upon Li intercalation is confirmed through 1) small variations of the structural parameters , e.g. in-plane lattice parameters ($<$1\%) and interlayer separation ($<$0.5 {\AA}); 2) Large negative binding energies of Li atoms, e.g. larger than that in bilayer graphene; 3) Li atom donates a significant amount of charge to the host materials and exists in the cationic state. We found that all possible Li absorption sites can be occupied without destroying stability, namely 100\% Li intercalation, leading an average open circuit voltage of 1.49 V for Ti$_2$CO$_2$+Gr and 1.93 V for V$_2$CO$_2$+Gr. Especially, Ti$_2$CO$_2$ MXene offers a compromise between capacity and kinetics since the calculated diffusion barriers are the lowest among other systems studied and lower than that of graphene.  It is suggested from the study that a balance between the storage capacity and kinetics for practical applications should be made when selecting a promising candidate. Due to their lower molecular weights as compared to bare MXenes bilayers,  MXene+Gr heterostructure offer higher storage density, they also have the advantage of their good electrical conductivity which is an essential property for a proper operation of a battery. 
+
 \subsection{Principle of Lithium battery}
 \subsection{Key quantities and their modelling}
