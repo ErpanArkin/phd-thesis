@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,customfont,custombib,custommargin,print]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,custombib,custommargin,online]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -101,7 +101,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
- \includeonly{Chapter4/chapter4}
+ \includeonly{Chapter1/chapter1}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -132,12 +132,12 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
-\include{Chapter1/chapter1}
-\include{Chapter2/chapter2}
-\include{Chapter3/chapter3}
+%\include{Chapter1/chapter1}
+%\include{Chapter2/chapter2}
+%\include{Chapter3/chapter3}
 \include{Chapter4/chapter4}
-\include{Chapter5/chapter5}
-\include{Chapter6/chapter6}
+%\include{Chapter5/chapter5}
+%\include{Chapter6/chapter6}
 
 
 % ********************************** Back Matter *******************************
@@ -180,7 +180,7 @@
 
 \printbibheading[title={List of Publications},heading=bibintoc]
 %
-%%first run without option prefixnumbers={P}, then add them in each bibliography and rerun.
+%for a list of publication, use the keyword "own"; for a list of unpublished works, use the keyword "rev".
 \makeatletter
 \begingroup
 \def\blx@prefixnumbers{P}

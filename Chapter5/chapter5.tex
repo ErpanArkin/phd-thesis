@@ -745,20 +745,133 @@ As a final property of the two different magnetic ground states, we study the en
 
 We discovered a strain-driven magnetic ground state transition from AFM to FM around  6\% compressive strain and 8\% tensile strain. An energy profile with different angles between two local magnetic moments is calculated to study the energy barrier for the transition between FM and AFM. While an energy barrier of about 13 meV/(magnetic atom) protecting the AFM ground state in the pristine case; it is protecting the FM ground state when the system is under 9\% tensile strain.  
 
-\section{Adatom adsorption}
-\subsection[Nitrogen edge-decorated graphene nanoribbon]{Nitrogen edge-decorated graphene nanoribbon \footcite[This work will be published as:][]{Aierken2017.GNR}}
-
 \section{Heterostructures}
 
 Another way to explore the property land of materials is to combine different composites to form heterostructurse\cite{Geim_Grigorieva_2013,Liu2016b,Pomerantseva2017}. They can be composites made by materials with complementary characters and perform better than each of the material individually, or materials those give new phenomenon and promising properties only when act together.  Given the obvious structure anisotropic in 2D materials, there are two types of heterostructures: vertical or lateral, see for example \autoref{fig:ver-lat-stru}. The vertical heterostructures composed of stacks of different 2D materials. They are held together via what holds graphite layers together: van der Waals force. Thus, this type of construction is referred as van der Waals heterostructures.  On the other hand, lateral heterostructure\cite{Jena2014,Chhowalla2015} is made by joining the edges of different 2D materials and the connection is mostly made through strong bonding, e.g. covalent or ionic. For this case, all the new properties results from the interface. In this section, I will present one for each type of the heterostructure and explore one properties. Comparisons will be made to illustrate the advantage of choosing these materials over the homo-structure. 
 
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.9\textwidth]{ver-lat-stru.png}
 \caption{ (a) and (d) vertical and (c) and (d) lateral WS$_2$/MoS$_2$ heterostructures. \label{fig:ver-lat-stru} Image adapted from: \cite{Gong_Lin2014}}
 \end{figure}
 
 \subsection[Electrical transport in 1T/2H/1T MoS2 lateral heterostructure]{Electrical transport in 1T/2H/1T MoS2 lateral heterostructure \footcite[This work is submitted as:][]{Aierken2017.transport}}
+
+\subsection{Introduction}
+Heterostructures are the essential components of a wide range of solid-state devices, such as transistors, solar cells, and sensors\cite{singh1993,agostini2011}. They are  fabricated by combining different type of materials, e.g. metal, semiconductor, and insulator. Therefore, the physical properties of the combined system are enhanced or become more controllable as compared to that of each material individually. These tailored properties are strongly related to the interface of two different materials where all interesting and new phenomenon occur. However, along with the emergence of nanostructured materials, dimensionality has become another major factor affecting the physical properties of materials and devices along with the interface. Thus, solid-state device fabrication with heterostructures based on low dimensional nanomaterials has attracted significant attention and a new research area in material design has been initiated where researchers are expecting unprecedented results, phenomenon and physics\cite{Gan2013,Wu2015c,DiBartolomeo2016}. Indeed, several advantages of two dimensional (2D) phase engineering over the three dimensional counterpart has already been demonstrated.\cite{Duerloo2015}
+
+In low dimensional heterostructure device architectures, there are usually two types of interfaces connecting different materials: top contact (vertical) and edge contact (lateral)\cite{Allain2015}. In top contacts, an overlapping portion of two materials are glued together mainly via interlayer van der Waals (vdWs) interaction, while in edge contacts one dimensional edges of two materials are contacted with covalent bonds without overlapping. The van der Waals interaction in top contact introduces a potential gap between the two layers which electrons have to tunnel through, and resulting in higher resistance due to the reduced carrier transmission probability. Naturally, this resistance is much lower in edge contacts owing to the formation of covalent bonds that provides a path for carriers to travel across the interfaces\cite{Matsuda2010,Kang2014}. Recently, Eda \textit{et al.}  has discovered the coexistence of multi-phase MoS$_2$ that is a promising material for heterostructure device fabrication due to their natural metal-semiconductor-metal structure with clear edge contacts\cite{Eda2012}. Considering the distinct electronic nature of these phases, physical properties of these heterostructures\cite{Kappera2014,Fan2015} can be tuned by phase engineering and novel solid-state device architectures can be realized for several different future applications.
+
+The same research group has synthesized two dimensional semiconducting heterostructure devices\cite{Huang2014,Zhang2015} by using metal contacts. As a result of their experimental analysis, they have particularly pointed out the vital importance of the geometry and electronic nature consistency between the metal contact and the heterostructure on the device performance\cite{Bai2013,Eda2012}. Considering this fact, Kappera \textit{et al.}\cite{Kappera2014} have locally induced 1T metallic phase of MoS$_2$ in the 1H semiconducting phase of it, and they measured that the edge resistance was lower than that of metal contacts by more than a factor of two. Subsequently, 1T$\mid$1H lateral heterostructure has been drawn peculiar attention as a promising contact structure having a higher carrier injection rate. Different arrangements of the interfaces between 1T and 1H phases was investigated through theoretical calculations\cite{Hu2015,Sivaraman2016} and the structure formed by the connection of armchair edges of 1T and 1H phases has been determined as an energetically more favorable configuration. However, in these calculations, the more stable metallic structure (1T$_d$), which arises with small distortion of 1T phase, was considered.
+
+The present paper aims to investigate the electronic transport properties of MoS$_2$ multi-phase lateral junctions when the more stable metallic phase of MoS$_2$ ( i.e. 1T$_d$) acts as the contact, which is compared with the 1T phase. Further to this, the paper mainly focuses on the effect of doping on the electrical transport properties. In the results section, we first construct three junction models and calculate their transmission without external bias . Then we calculate the electronic properties for different level of doping.
+
+
+
+\subsection{Computational details}
+The presented first-principles calculations are based on density function theory as implemented in the Vienna $ab$ $initio$ Simulation Package (VASP) \cite{VASP1,VASP2,VASP3,VASP4}. A plane-wave basis set based on the projected augmented wave (PAW) method \cite{PAW1,PAW2} are used to describe the wave functions. The cutoff energy of the basis is set to 400 eV. Exchange-correlation interactions are treated with the generalized gradient approximation (GGA) within the Perdew-Burke-Ernzerhof (PBE) formulation \cite{GGA-PBE1,GGA-PBE2}. A 25$\times$25$\times$ 1 $k$-points mesh is used to sample the Brillouin-zone for monolayer structures of 1H, 1T and 1T$_d$ MoS$_2$ and a 9$\times$1$\times$1 $k$-points grid is used for the structures shown in Fig. \ref{structure-1t}. A vacuum space of 15 \AA~ is incorporated to avoid interaction between the periodic images. The energy convergence criterion for the self-consistent calculations is set to $10^{-5}$ eV, while the force convergence criterion for the ionic steps is set to $10^{-2}$ eV/\AA.
+
+Electronic transport across the 1T$_d$/1T-MoS$_2\mid$1H-MoS$_2$ interfaces is calculated using the self-consistent non-equilibrium Green's functions (NEGF) technique as implemented in TranSIESTA\cite{transiesta} which is interfaced with the SIESTA code.\cite{siesta} Double-zeta (plus polarization) numerical orbital basis sets are used for all atoms. We employed norm-conserving pseudo-potentials\cite{tm}, the GGA/PBE functional, and an energy cutoff for the real-space mesh of 250 Ry.  In order to get accurate transmission spectra, the 2D Brillouin zone normal to the transport direction is sampled by meshes composed of  100 $k$-points in the periodic direction. While the SIESTA code uses a localized basis set and norm-conserving pseudopotentials, the calculated lattice parameters for different phases of MoS$_2$ agree well with those obtained from the VASP  code. 
+
+
+\subsection{Results}
+The use of metallic TMDCs as metal electrodes are expected to offer a breakthrough in the semiconductor industry as they have negligible heat dissipation and therefore are energy efficient. Among metallic TMDCs, metallic phases of MoS$_2$ (1T- and 1T$_d$-MoS$_2$) have attracted a growing interest due to its smooth interface with  the semiconductor phase of MoS$_2$ (1H-MoS$_2$). 
+However, 1H phase is thermodynamically more stable than both 1T and 1T$_d$ phases. Therefore, the stabilization of 1T and 1T$_d$  over 1H phase becomes an essential requirement for the successful experimental realization of device configurable structures such as 1T/T$_d$-MoS$_{2}\mid$1H-MoS$_2$. On the other hand, 1T MoS$_2$ is the meta-stable and undergoes a Peierls transition to a low-energy state 1T$_d$ (or distorted 1T) and thus, metal contacts with the 1T$_d$ structure are more stable than the one with the 1T phase. However, the MoS$_2$ 1T$_d$ phase retransforms to the 1H phase at room temperature. 
+As far as the relative stability is considered, choosing 1T$_d$ as metal contact further stabilized the junction.
+Therefore, understanding the effect of different physical mechanisms on the stability of multiple phases (H, T, T$_d$) of this material is of vital importance to develop a proper control on phase transitions. To this end we mainly focus on the effect of doping (either charge or atom) on the stability, electronic and transport properties of 1T/T$_d$-MoS$_2\mid$1H-MoS$_2$ interfaces.  For the 1T and 1H hexagonal unit cells, the optimized in-plane lattice constant is obtained as 3.18 {\AA} .  On the other hand, the optimized lattice constants are $a$=3.18 {\AA}  and  $b$=5.72 {\AA} for  the tetragonal 1T$_d$ unit cell. 
+These values are in good agreement with previous calculations\cite{C5NR07715J}. It was previously discovered the coexistence of 1T$_d$ phase with other two phases indicating their experimental stabilities, yet it is also possible to  relax the 1T$_d$ phase to to 1T phase using external source, such as electron beam irradiation\cite{Eda2012}. 
+In experiment, 1T and 1T$_d$ are indistinguishable, because the S atoms are the same in two cases, only the Mo form cluster which STM image is limited to differentiate.
+
+
+In this work, we systematically investigate the electronic and transport properties of three different device architectures, called as $\alpha$, $\beta$, and $\gamma$, denoted in Fig. \ref{structure-1t}.  In all device models, the semiconducting 1H-MoS$_2$ phase is sandwiched between two 1T$_d$ metal electrodes to create Schottky contacts at the interfaces. In the $\alpha$ structure, the metallic part consists of both 1T and 1T$_d$-MoS$_2$ phases. The size of metallic and semiconducting parts are larger than 20 {\AA} along the transport direction. The interface between the 1T$_d$-MoS2 and 1H-MoS$_2$ phases have either an armchair termination as in the case of   the $\alpha$ and $\beta$ structures, or a zigzag termination as in the case of the $\gamma$ structure in order to investigate the influence of the contact type on the calculated properties. We predict that the $\gamma$ structure significantly deviates from planar geometry after structural relaxation, see Fig. \ref{structure-1t}. To check whether such distortion is due to a calculation artifact, we started from a complete planar geometry and allowed both atomic coordinates and cell parameters relax to their equilibrium values (or lowest energy configuration). We observed that planar structure is not stable and structural relaxation brought back the original distorted structure. Indeed, such buckling or deviation from planar structure mainly restricts to the left interface, in line with a recent work that proposed a new crystal structure model for MoS$_2$\cite{C5NR07715J}.  Observed buckling helps to reduce repulsive interaction between S atoms at the left interface, thereby enhancing the stability of this interface.  
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{structure.eps}%
+\caption{\label{structure-1t}  Device models where 1H phase of MoS$_2$ is sandwiched between metallic MoS$_2$ electrodes. In (a) the $\alpha$-device, (b) the $\beta$-device, and (c)
+the $\gamma$-device. For the $\alpha$ and $\beta$ devices, 
+the interfaces between metallic and semiconducting MoS$_2$ have an armchair termination while a zigzag termination in the $\gamma$-device. }
+\end{figure}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{TRANSMISSION-ALL-STRUCTURES.eps}%
+\caption{\label{transport} The zero bias transmission spectra for (a) the $\alpha$-device, (b) the $\beta$ device, and (c) the $\gamma$-device. }
+\end{figure}
+
+The transmission spectra for all three  device models at zero bias are depicted in Fig.~\ref{transport}. In these plots, the Schottky barrier for holes (electrons) is defined as the difference between Fermi level and valence band maximum  (conduction band minimum) of the semiconductor 11HH phase of MoS$_2$. The first clear observation is that there is a large barrier height at the pristine interfaces and there is no transmission within an energy range of 1.8 eV around the Fermi level, corresponding to the band gap of 1H-MoS$_2$. The Schottky barrier heights for the $\alpha$, $\beta$ and $\gamma$ structures are predicted as 0.72,  0.80, and 0.63 eV for holes and 1.16, 0.99 and 1.19 eV for electrons, respectively. The estimated size of the scattering region along the transport direction is larger than 23 {\AA}, which is much smaller than the mean free path of electron in MoS$_2$\cite{mos2-trans} and therefore, the transport properties of these systems can be estimated with ballistic transport calculations. The $\beta$ structure has the largest transmission over the calculated energy range. The Mo atoms form a zigzag chain perpendicular to the interface (or along the transport direction) in the $\beta$ and also $\gamma$ structures which enhances the electrical transport in these systems. However, the non-symmetric Mo zigzag chain lying parallel  to the transport direction leads to scattering of electrons at the interface and gives rise to low transmission as compared to the $\alpha$ and $\beta$ structures. Similar anisotropic electron transport has also been  observed for ReS$_2$ where resistance is the lowest along the Re cluster direction\cite{doi:10.1021/acsnano.5b04851}. Comparing  the $\alpha$ and $\beta$ devices,  the coexistence of 1T and 1T$_d$ regions in the former device contributes to lowering of the transmission due to additional scattering at the 1T/1T$_d$ interface as compared to the latter device where we only have 1T$_d$ phase in the electrode region.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{dos-charge.eps}
+\caption{Projected density of states of the valence and conduction band of 1H-MoS$_2$ as a function of electron concentration for the $\beta$-device. Here, we only show the PDOS of the central part of 1H-MoS$_2$ where the effect of the interface is minimal.  The Fermi level marks the zero energy. Electron concentrations (per formula unit of 1T$_d$ phase) are given. }
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{Schottky-Charge.eps}
+\caption{\label{sch-chg}Variation of Schottky barrier for the $\beta$-device as a function of electron concentration (per formula unit of 1T$_d$ part) for both electrons (red) and holes (black).}
+\end{figure}
+
+We next turn to the calculations of the electronic properties as a function of doping.
+The central part of 1H-MoS$_2$ as the least affected from interface formation is considered to predict the band gap and the position of the band edges with respect to the Fermi level. The calculated band gap value, 1.75 eV,  clearly indicates that the size of the 1H part is large enough to achieve the monolayer limit and eliminates the electrode-electrode interaction. 
+In fact, the band gap of the pristine 1H-MoS$_2$ monolayer calculated with the same functional is around 1.7 eV. 
+In line with the transport calculations, the Fermi level appears within the band gap of the central region of 1H-MoS$_2$. The calculated Schottky barriers are 0.75 eV for holes and 0.99 eV for electrons in the $\beta$ structure. In the following discussion, we mainly focus on the $\beta$ structure due to its better transport properties as compared to the  $\alpha$ and  $\gamma$ devices. Other device models also exhibit similar properties. Our results contradicts experimental findings in the sense that, in experiments, it was shown that 1T (or 1T$_d$)$\mid$1H-MoS$_2$ interfaces exhibit a superior performance over the 3D metal-MoS$_2$ interfaces. However, we predict large Schottky barriers which give rise to a large contact resistance. In order to shed light on this contradiction, we calculate the electronic properties of the $\beta$ structure as a function of electron doping.   First of all, the electron doping stabilizes the 1T$_d$ phase over the 1H-MoS$_2$ and prevents the structural phase transition to the semiconducting 1H-MoS$_2$ phase\cite{doi:10.1021/jp4076355}. Also, the electron doping decreases the Schottky barrier height for electrons at the interface, leading to the formation of $n$-type Schottky barrier. This is attributed to the increase of the density of electrons in the $d$-orbital of the metallic 1T$_d$ MoS$_2$ phase.  Figure \ref{sch-chg} shows the variation of the Schottky barrier as a function of the electron concentration. We find that the Schottky barrier already diminishes for electron concentration larger than 0.1 electron (per 1T$_d$ MoS$_2$ formula unit). The Fermi level rises about 1 eV when only 0.28 electron is placed on the 1T$_d$ part. The direct electron doping can be achieved by using electron beams in experiments or Li/Na adsorption on the metallic phase\cite{doi:10.1021/acs.nanolett.6b01186,doi:10.1021/jp4076355} . Here, the considered alkali atoms donate their electron to the 1T$_d$ phase and enhance the stability and electronic properties of the metallic part\cite{doi:10.1021/jp4076355}. In addition, absorption of hydrogen atom on the 1T part of MoS$_2$ has been also shown to reduce the barrier at the interface of 1T-MoS$_2\mid$1H-MoS$_2$\cite{doi:10.1021/acs.nanolett.6b03999,doi:10.1021/acs.chemmater.5b00986}. 
+
+Another possible strategy to enhance stability of metallic phases and electrical conduction at the metal-semiconductor MoS$_2$ interface is to dope metallic phase with transition metal atoms. Most of the well known TMDCs are either in the 1H or 1T phase when in their ground state. However, the single layer ReS$_2$ has neither H nor T as ground state, it stabilizes in 1T$_d$ structure\cite{tongay-res2,res2-cakir}. Therefore, alloying MoS$_2$ with Re may stabilize the 1T$_d$ structure of MoS$_{2}$ and leads to $n$-type doping of the crystal as similarly proposed by Raffone \textit{et al.} for Sn doped 1T phase\cite{Raffone}.  Meanwhile, we have previously shown that doping of ReS$_2$ with Mo results in a $p$-type doping of ReS$_2$ monolayer\cite{res2-cakir}. Therefore, we investigate the effect of substitutional doping of Re at Mo sites of 1T$_d$-MoS$_2$ on the transport properties. Here, we also consider the group V element Ta since the pristine TaS$_2$ monolayer crystallizes in the 1T phase and results in  a $p$-type doped 1T$_d$ MoS$_{2}$ structure. Indeed, in a recent work, it was shown that distorted phase of MoS$_2$ becomes energetically stable over 1H phase when Re concentration exceeds 50\%\cite{doi:10.1021/acs.jpcc.5b10739}. In this work, we did not consider such large dopant concentrations because of two reasons. First of all, lattice mismatch between 1H-MoS$_2$ and doped 1T-MoS$_2$ phases can be kept minimal for small dopant concentrations. At large concentrations, the relaxation of cell parameters leads to artificial enlargement of lattice parameters of  1H-MoS$_2$.  Secondly, Re doped 1T$_d$-MoS$_2$ becomes a semiconductor. To show the effect of doping, we only considered concentrations smaller than 20\%.  In this work, we assumed that doping of 1T-MoS$_2$ with Re or Ta may avoid the structural transition to 1H phase due to, for instance, temperature effect.  Figure \ref{re-ta-bare-dos} shows the PDOS for the central part of 1H-MoS$_2$ for Re and Ta doped $\beta$ structure. In the case of Re doping, the Fermi level approaches the conduction band of 1H-MoS$_2$, accompanying a significant decrease in $n$-type Schottky barrier height. On the other hand Ta doping reduces the $p$-type Schottky barrier height as expected. For a concentration of 14\% (per electrode), the $n$-type Schottky barrier becomes 0.85 eV for Re and $p$-type Schottky barrier becomes 0.58 eV for Ta.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{Re1-Ta1-Bare.eps}
+\caption{\label{re-ta-bare-dos}Projected density of states of the valence and conduction band of the central part of 1H-MoS$_2$ for Re and Ta doped devices. In the top figure, gray region highlights  the central part of 1H phase for which PDOS is calculated.  For comparison, PDOS of bare device is also shown.}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{pn-doped.eps}
+\caption{\label{pn}Projected density of states of 1H-MoS$_2$ at the different position on 1H-MoS$_2$. 
+The Fermi level marks the zero energy.}
+\end{figure}
+
+Since Re and Ta doping give rise to different electronic properties, we can design metal-semiconductor
+junctions with different type of Schottky barrier heights (i.e. $n$- and -$p$ type) in the same device geometry. This allows us to design 
+optical and photovoltaic applications. While a Re doped junction effectively blocks holes, Ta doped junction hampers the easy passage of electrons across the junction. In this device geometry, we can separate  photo-generated charge carriers for instance. Figure \ref{pn} shows the device model and projected density of states as a function of position in 1H-MoS$_2$. While the left electrode is doped with Re, the right electrode is alloyed with Ta.  The central part of 1H-MoS$_2$ clearly has a PDOS similar to free standing 1H-MoS$_2$ monolayer with a band gap of 1.75 eV.  However, we have different electronic properties in the right and left side of the central region.
+Due to Re (Ta) doping, the left (right) part has a $n$ ($p$)-type Schottky barrier.  
+The presence of 1T$_d$-1H MoS$_2$ interfaces develops mid-gap states that mainly come from the atoms in the
+boundary region. The electronic properties gradually change from the metallic to the semiconductor when moving away from the interfaces.  For the atoms far away from the interface region (i.e. central region of 1H-MoS$_2$), we observe a clear band gap which is close to that of pristine 1H-MoS$_2$. While the mid-gap states appear below the Fermi level at the left interface (Re-doped side), they are unoccupied and reside above the Fermi level at the right interface (Ta-doped side).  About 3.2 {\AA} from the interface, the mid-gap states start to disappear.  
+
+Figure \ref{potential} shows the electrostatic potential along the heterojunction. We consider both pristine and doped $\beta$-devices. 
+For undoped heterojunction, the average potential is symmetric at the left and right interfaces.
+However, doped heterojunction has a  different electrostatic potential, especially, within 1H-MoS$_2$. 
+Due to its valence configuration, Re (Ta) acts as a donor (an acceptor). 
+This is reflected in the average effective potential shown in Fig.~\ref{potential}(b).
+The average electrostatic potential (EP) does not have a sharp variation at the 1T$_d$-1H interface, extending along the 2-3 atomic rows.  
+This is due to fact that we form interfaces between two different crystal structures of MoS$_2$ (i.e 1T$_d$ and 1H). EP converges to  the same value at the left and right electrodes. 
+If one considers a photovoltaic device using the  $\beta$ structure co-doped with Re and Ta, 
+an electron-hole pair is generated after absorbing a photon in the 1H part. 
+Re-doped interface has a higher potential as compared to Ta-doped interface, producing a driving force for dissociation of the electron-hole pair. 
+The electron flows along the potential decline (i.e. towards Ta-doped electrode)
+and the hole in the opposite direction (i.e. towards Re-doped electrode).
+In this way,  a photocurrent can be  generated by the photovoltaic effect. Thus, by proper control of doping and interface roughness, we 
+can control the quantum efficiency of electron-hole dissociation\cite{doi:10.1021/acs.jpclett.7b00518}. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{potential.eps}
+\caption{\label{potential}Self-consistent electrostatic potential profile along the interface of armchair (a) pristine and (b) doped 1T$_d$-1H-1T$_d$ MoS$_2$ heterostructure.  The right (left) 1T$_d$ MoS$_2$ is doped with Re (Ta). Blue curve denotes the plane average potential along the heterostructure. }
+\end{figure}
+
+\subsection{Conclusion}
+In this work, we explored the impact of doping on the electronic and charge transport properties across the 1T$_d$-1H MoS$_2$ interfaces by considering various device models. 
+Doping and alloying (with charge, atom or molecule) 
+appear as an effective method to tailor and improve the physical-chemical properties and stabilities of not 
+only 1T/1T$_d$ phases of MoS$_2$ but also other 2D materials. 
+The interface structure between 1T$_d$ and 1H phases is one of the decisive factors in the determination of the electrical transport across the heterojunction. 
+We found that the Schottky barrier height of electrons for  pristine heterojunctions  can even disappear as a result of electron doping. 
+While charge doping only reduces the Schottky barrier for electrons, co-doping is able to tune the barriers for
+hole and electrons at the same time.
+
 \subsection[Li storage and diffusion in MXenes/graphene vertial heterostructure]{Li storage and diffusion in MXenes/graphene vertial heterostructure \footcite[This work will be published as:][]{Aierken2017.battery}}
 
 \section{Defect induction}
