@@ -48,7 +48,7 @@ The thermal expansion is the expansion of material's volume at finite temperatur
 \end{equation}
 where $T$ is the temperature, $a_0(T)$ is the equilibrium lattice parameter corresponding to the minimum of the Helmholtz free energy.
 
-In order to describe the thermal expansion within DFT, one needs to go beyond the harmonic approximation that is used to calculate the phonon frequency as we discussed in \autoref{chap:3}. Harmonic approximation gives infinite thermal conductivity, infinite phonon lifetimes and temperature-independent vibrational and elastic properties, which are contradicted to experiment. Quasi-harmonic approximation (QHA)\cite{QHA1,QHA2,QHA3,Baroni39} is a way to include the approximated anharmonic effect through volume-dependent frequency within non-interacting phonons approximation. Although it is an implicitly inclusion of anharmonic effect, its dominant role in the thermal properties, that is two orders of magnitude larger than explicit anharmonic effect, make sure it can correctly describe the thermal properties up to melting point. Beyond this temperature, anharmonic effect will become important. QHA has been applied to a various compounds from semiconductors to metals and to Earth materials under extreme conditions\cite{Hamdi2006,QHA1,Grabowski2009,Karki2000} . In \autoref{fig:qha_gra}, the applications of QHA for graphite and graphene are shown. The agreement between experiment and QHA is good in a wide range of temperature up to 2000 K. Another interesting point is that the negative thermal expansion, where the $\alpha(T)$ is negative, is presented in both materials, especially, graphene persists such a feature up to 2000 K. This is a common character of layered materials where layers are weakly bonded. The origin of this related to the ZA mode in layered materials as discussed in \autoref{chap:3}. At low temperature, ZA mode will be excited and this out-of-plane vibration effectively shrinks the in-plane dimension of the materials thus gives negative thermal expansion.
+In order to describe the thermal expansion within DFT, one needs to go beyond the harmonic approximation that is used to calculate the phonon frequency as we discussed in \autoref{chap:3}. Harmonic approximation gives infinite thermal conductivity, infinite phonon lifetimes and temperature-independent vibrational and elastic properties, which are contradicted to experiment. Quasi-harmonic approximation (QHA)\cite{QHA1,QHA2,QHA3,Baroni39} is a way to include the approximated anharmonic effect through volume-dependent frequency within non-interacting phonons approximation. Although it is an implicitly inclusion of anharmonic effect, its dominant role in the thermal properties, that is two orders of magnitude larger than explicit anharmonic effect, make sure it can correctly describe the thermal properties up to melting point. Beyond this temperature, anharmonic effect will become important. QHA has been applied to a various compounds from semiconductors to metals and to Earth materials under extreme conditions\cite{QHA1,Grabowski2009,Karki2000} . In \autoref{fig:qha_gra}, the applications of QHA for graphite and graphene are shown. The agreement between experiment and QHA is good in a wide range of temperature up to 2000 K. Another interesting point is that the negative thermal expansion, where the $\alpha(T)$ is negative, is presented in both materials, especially, graphene persists such a feature up to 2000 K. This is a common character of layered materials where layers are weakly bonded. The origin of this related to the ZA mode in layered materials as discussed in \autoref{chap:3}. At low temperature, ZA mode will be excited and this out-of-plane vibration effectively shrinks the in-plane dimension of the materials thus gives negative thermal expansion.
 
 \begin{figure}[htbp!] 
 \centering
@@ -71,7 +71,7 @@ The sums  run over all q points and all bands of the whole Brillouin zone. Since
 \item[Simulation program:] VASP and Phonopy\cite{phonopy_code}
 \item[Energy cut-off:] 500 eV
 \item[Pseudopotentials:] PBE-GGA(PAW)
-\item[k points (Monkhorst-Pack):] 15$\times$11$\times$1 and 15$\times$15$\times$1 for black P and blue P, respectively 
+\item[k points ($Gamma$ centered):] 15$\times$11$\times$1 and 15$\times$15$\times$1 for black P and blue P, respectively 
 \item[Vacuum:] 25~\AA
 \item[Energy and force convergence criterion:] 10$^{-5}$ eV and 10$^{-7}$ eV/\AA, respectively
 \item[Supercell for phonon calculation:] 7$\times$3$\times$1 and 5$\times$5$\times$1 for black P and blue P, respectively
@@ -143,7 +143,7 @@ Piezoelectricity is the ability of some materials to generate internal electric 
 \caption{Mechanism of direct piezoelectric effect\label{fig:piezo}. Image source: \cite{piezo_fig}}
 \end{figure}
 
-To investigate the piezoelectric properties, we follow the same theoretical approach of Ref. \cite{Duerloo2012}. The piezoelectric tensor\cite{baroni,PhysRevB.72.035105}, $e_{ij}$, can be defined  in terms of the induced polarization in the  direction $i$ due to a strain ($\varepsilon_{j}$) change along the direction $j$ as follows
+%To investigate the piezoelectric properties, we follow the same theoretical approach of Ref. \cite{Duerloo2012}. The piezoelectric tensor\cite{baroni,PhysRevB.72.035105}, $e_{ij}$, can be defined  in terms of the induced polarization in the  direction $i$ due to a strain ($\varepsilon_{j}$) change along the direction $j$ as follows
 \begin{equation}
 e_{ij}=\partial P_{i}/\partial\varepsilon_{j}=\partial P_{i}/\partial\varepsilon_{j}\mid_u+\sum_k (\partial P_{i}/\partial u_{ik})(\partial u_{ik}/\partial\varepsilon_{j}). \label{eq:equ1}
 \end{equation}
@@ -170,7 +170,7 @@ For each applied strain, the ions are kept in their strained positions or allowe
 \item[Simulation program:] VASP
 \item[Energy cut-off:] 600 eV
 \item[Pseudopotentials:] PBE-GGA(PAW), HSE06
-\item[k points (Monkhorst-Pack):] 26$\times$26$\times$1
+\item[k points ($Gamma$ centered):] 26$\times$26$\times$1
 \item[Vacuum:] 15~\AA
 \item[Energy and force convergence criterion:] 10$^{-3}$ eV and 10$^{-7}$ eV/\AA, respectively
 \item[strain applied:] 1\% to -1\% in steps of 0.5\%
@@ -267,17 +267,18 @@ The usage of these 2D piezoelectric materials in ultra sensitive sensors, low-po
 
 \subsection{Introduction}
 
-Magnetic material is a key ingredient for the unprecedented progress that has been made in the modern information technology over the recent decades. The exploration in this direction also includes the discovery of new materials and the invention of new devices. Considering the very low spin-orbit coupling and long spin relaxation time in graphene-related 2D systems, substantial effort has been devoted to the induction of magnetism in these metal-free materials with the aim for future spintronic devices\cite{KAN2008,Kun2015}. Intrinsic magnetism in graphene is absent, but extrinsic magnetism has been achieved by means of partial hydrogenation\cite{Zhou2009,Eng2013}, foreign atom substitution\cite{Okada2001,Miao2016} and the introduction of defects\cite{Pereira2006,Yazyev2007}. 
+More and more novel two-dimensional (2D) crystal materials with distinct properties are predicted and synthesized. Especially, graphene\cite{Novoselov666,Geim2007} and its derivatives \cite{Vasilios2012,Inagaki2014} are under intensive research to either modify their known properties or to increase their functionality. Considering the very low spin-orbit coupling and long spin relaxation time in these systems, substantial effort has been devoted to the induction of magnetism in these metal-free materials with the aim for future spintronic devices\cite{KAN2008,Kun2015}. Intrinsic magnetism in graphene is absent, but extrinsic magnetism has been achieved by means of partial hydrogenation\cite{Zhou2009,Eng2013}, foreign atom substitution\cite{Okada2001,Miao2016} and the introduction of defects\cite{Pereira2006,Yazyev2007}. 
 
-Three types of orbital hybridization are usually found in carbon allotropes, namely $sp$, $sp^2$ and $sp^3$.  While graphene is made of a network of $sp^2$ hybridized atoms connected through $\sigma$ and $\pi$ bonds of $p_z$ orbitals, diamond is exclusively held together by $\sigma$ bonds between $sp^3$ bonded atoms. Another class of carbon allotropes is formed by the graphynes and graphdiynes
-\cite{Baughman1987,Ivanovskii20131}. These flat materials contain a mixture of $sp$ and $sp^2$ hybridized C atoms. Structures containing a mixture of $sp^2$ and $sp^3$ atoms, such as penta-graphene\cite{Zhang2015a}, have been studied\cite{Wang2016424,Yu2015,Berdiyorov2016} as well. This last structure contains a mixture of threefold and fourfold coordinated C atoms. This leads to a distorted structure with non-ideal bond angles that has higher formation energy than the non-distorted graphene and diamond crystals with their ideal planar and tetrahedral bonding geometry. Therefore, a system with a local bond structure resembling that of graphene or diamond will have lower energy. 
+Three types of orbital hybridization are usually found in carbon allotropes, namely $sp$, $sp^2$ and $sp^3$.  While graphene is made of a network of $sp^2$ hybridized atoms connected through $\sigma$ and $\pi$ bonds of $p_z$ orbitals, diamond is exclusively held together by $\sigma$ bonds between $sp^3$ bonded atoms. Another class of carbon allotropes is formed by the graphynes and graphdiynes\cite{Baughman1987,Ivanovskii20131}. These flat materials contain a mixture of $sp$ and $sp^2$ hybridized C atoms. Structures containing a mixture of $sp^2$ and $sp^3$ atoms, such as penta-graphene\cite{Zhang2015}, have been studied as well. This last structure contains a mixture of threefold and fourfold coordinated C atoms. This leads to a distorted structure with non-ideal bond angles that has higher formation energy than the non-distorted graphene and diamond crystals with their ideal planar and tetrahedral bonding geometry. Therefore, a system with a local bond structure resembling that of graphene or diamond will have lower energy. 
 
-None of the above mentioned materials are magnetic because they contain only paired electrons. Local magnetic moments usually originate from lone electrons that are not involved in chemical bonding. Single atomic defects such as vacancies break covalent bonds and create lone electrons that give rise to magnetism. It is interesting to investigate whether a structural modification with a proper mixing of three- and fourfold coordinated C atoms can lead to local magnetic moments in a stable crystalline structure.  In this work, we propose such a new type of 2D carbon allotrope with non-trivial magnetic properties. This structure is composed of a mixture of pentagonal and hexagonal rings of carbon atoms and will be called penta-hexa-graphene (ph-graphene), see \autoref{structure}. This new material has an antiferromagnetic (AFM) ground state that is higher in total energy as compared to the ferromagnetic (FM) state.
+None of the above mentioned materials are magnetic because they contain only paired electrons. Local magnetic moments usually originate from lone electrons that are not involved in chemical bonding. Single atomic defects such as vacancies break covalent bonds and create lone electrons that give rise to magnetism. It is interesting to investigate whether a structural modification with a proper mixing of three- and fourfold coordinated C atoms can lead to local magnetic moments in a stable crystalline structure.  In this paper we propose such a new type of 2D carbon allotrope with non-trivial magnetic properties. This structure is composed of a mixture of pentagonal and hexagonal rings of carbon atoms and will be called penta-hexa-graphene (ph-graphene). This new material has an antiferromagnetic (AFM) ground state which transforms to a ferromagnetic (FM) state under strain. The latter state is protected by a small strain-induced energy barrier. These findings can initiate further research to induce magnetism and spin-flip barriers through strain in other metal-free 2D materials.
+
+While finishing this manuscript, \citet{Zhang2016} reported our proposed structure in their supplementary materials. However, a detail study of the physical properties, especially the magnetic properties, of this structure was not reported. 
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\linewidth]{PG_structure.eps}%   
-\caption{ Atomic structure of a 2$\times$2 supercell of monolayer ph-graphene. (a) Top view with hexagonal and pentagonal rings marked with red and yellow color, respectively; (b) Side view of the buckled structure. \label{structure} (Visualisation using VESTA \cite{vesta})}
+\caption{Atomic structure of a 2$\times$2 supercell of monolayer ph-graphene. (a) Top view with hexagonal and pentagonal rings marked with red and yellow color, respectively; (b) Side view of the buckled structure. \label{structure} (Visualisation using VESTA \cite{vesta})}
 \end{figure}
 
 \subsection{Computational details}
@@ -286,7 +287,7 @@ None of the above mentioned materials are magnetic because they contain only pai
 \item[Simulation program:] VASP
 \item[Energy cut-off:] 500 eV
 \item[Pseudopotentials:] PBE-GGA(PAW)
-\item[k points (Monkhorst-Pack):] 15$\times$15$\times$1
+\item[k points ($Gamma$ centered):] 15$\times$15$\times$1
 \item[Vacuum:] 25~\AA
 \item[Energy and force convergence criterion:] 10$^{-8}$ eV and 10$^{-7}$ eV/\AA, respectively
 \item[Supercell for phonon calculation:] 3$\times$3$\times$1
@@ -296,57 +297,62 @@ None of the above mentioned materials are magnetic because they contain only pai
 
 \subsection{Bond hybirdization and magnetic moment \label{res}}
 
-The structure of the proposed 2D material is schematically shown in \autoref{structure}. It consists of hexagonal rings of C atoms surrounded by six pentagonal rings which share one edge with the hexagon and four with other pentagons. These hexagonal and pentagonal rings are arranged in a hexagonal lattice to form an infinite monolayer sheet. Considering the complex structure of this system, it is important to understand the hybridization of the electronic orbitals. For this, we calculate the hybridization index of the three C atoms that have a unique local environment, namely C1, C2 and C3 in \autoref{angle}, through Coulson's theorem as discussed in \autoref{sphyb}: $1+\sqrt{n_1n_2}~cos\theta_{12}=0$, where $\theta_{12}$ is the interorbital angle between orbital 1 and 2 (see \autoref{angle}) and $n$ is the hybridization index.  $n$ corresponds to the index in the $sp^n$ notation and determines the relative fraction of $p$ orbitals with respect to the $s$ orbital. The sum of the $s$ fractions in all hybridized orbitals should equal 1, while it should be 3 for the sum of the $p$ fractions. 
+The structure of the proposed 2D material is schematically shown in \autoref{structure}. It consists of hexagonal rings of C atoms surrounded by six pentagonal rings which share one edge with the hexagon and four with other pentagons. These hexagonal and pentagonal rings are arranged in a hexagonal lattice to form an infinite monolayer sheet. Considering the complex structure of this system, it is important to understand the hybridization of the electronic orbitals. For this, we calculate the hybridization index of the three C atoms that have a unique local environment, namely C1, C2 and C3 in \autoref{angle}, through Coulson's theorem: $1+\sqrt{n_1n_2}~cos\theta_{12}=0$, where $\theta_{12}$ is the interorbital angle between orbital 1 and 2 (see \autoref{angle}) and $n$ is the hybridization index.  $n$ corresponds to the index in the $sp^n$ notation and determines the relative fraction of $p$ orbitals with respect to the $s$ orbital. The sum of the $s$ fractions in all hybridized orbitals should equal 1, while it should be 3 for the sum of the $p$ fractions. 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\linewidth]{PG_bond.eps}%   
-\caption{ Bond angles in the unit cell of monolayer ph-graphene. \label{angle}}
+\includegraphics[width=\linewidth]{PG_bond-angle.eps}%   
+\caption{ (Color online) Bond angles in the unit cell of monolayer ph-graphene. \label{angle}}
 \end{figure}
   
 \begin{table}[htbp]
-\centering
 \caption{Orbital hybridization indices of the C atoms in ph-graphene. \label{hybrid}}
-\begin{tabularx}{0.5\linewidth}{XXXXX}
+\begin{tabular}{lcccc}
 \hline\hline
 Atom & $\varphi_1$ & $\varphi_2$ & $\varphi_3$ & $\varphi_4$  \\ \hline
 C1 & 2.00 & 2.00 & 2.72 & 14.58 \\
 C3 & 3.11 & 3.11 & 3.11 & 2.70 \\
 \hline\hline
-\end{tabularx}
+\end{tabular}
 \end{table}
+
+\begin{figure}[hbp]
+\centering
+\includegraphics[width=\linewidth]{PG_phonon.eps}%
+\caption{ (Color online) Phonon dispersion relation of monolayer ph-graphene. \label{phonon}}
+\end{figure}
+
+\begin{figure*}[htbp]
+  \centering
+  \begin{tabular}{cc}
+  \begin{subfigure}{0.5\textwidth}
+    \captionsetup{justification=justified, singlelinecheck=false}
+    \includegraphics[scale=0.3]{PG_band-AFM.eps}%   
+    \caption{AFM}
+  \end{subfigure} &
+  \begin{subfigure}{0.5\textwidth}
+    \captionsetup{justification=justified, singlelinecheck=false}
+    \includegraphics[scale=0.3]{PG_band-FM.eps}%
+    \caption{FM}
+  \end{subfigure}    
+  \end{tabular}
+\caption{ (Color online) Electronic band structure of monolayer ph-graphene. The charge densities at the VBM and CBM in the unit cell are shown as insets. The arrows on the atoms indicate the orientation of their magnetic moments.\label{electronic} }
+\end{figure*}
+
 
 In \autoref{hybrid}, we list the hybridization indices of the C1 and C3 orbitals, $\varphi$.  The C1 atom has two $sp^2$ orbitals with 120$^{\circ}$ interorbital angle and one $sp^{2.72}$. The latter gives rise to a partly buckled structure. The fourth C1 orbital has a large $p$ contribution, indicating that it is close to a $p_z$ orbital with little $s$ contribution, and induces $\pi$ bonding in the hexagonal rings. The C2 atoms have fourfold coordination and their hybridization should be close to $sp^3$. Due to geometric constraints, the bonds have strained angles\cite{coulson1949}. Finally, the C3 atom has four quasi-$sp^3$ orbitals of which three are used for nearest-neighbor $\sigma$ bonding. The electron in the fourth orbital remains unpaired and can give a local magnetic moment of 1 $\mu_B$ (Bohr magneton). There are two C3 atoms per unit cell which form a graphene-like subcrystal. The maximal magnetic moment per unit cell is therefore  2$\mu_B$ if the system is ferromagnetic. However, when we align these two magnetic moments antiparallel, the total energy is lowered by 12 meV per magnetic atom, which gives an AFM ground state. 
 
-In comparison to penta-graphene, ph-graphene has a 76 mev/atom lower formation energy. However, it is about 0.9 eV/atom higher than that of graphene. These results are consistent with the ones from \citet{Zhang2016}. The relatively high formation energy of ph-graphene as compared to graphene can be mainly attributed to the ``bent'' bonds of the C2 atoms due to geometric constraints. 
+In comparison to penta-graphene, ph-graphene has a 76 mev/atom lower formation energy. However, it is about 0.9 eV/atom higher than that of graphene. The relatively high formation energy of ph-graphene as compared to graphene can be mainly attributed to the ``bent'' bonds of the C2 atoms due to geometric constraints. 
 
-\subsection{Stability and electronic structure}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{PG_phonon.eps}%
-\caption{Phonon dispersion relation of monolayer ph-graphene. \label{phonon}}
-\end{figure}
 
 To check the dynamical stability of the ph-graphene structure we calculated its phonon spectrum (see \autoref{phonon}). Since there are no imaginary frequencies, we can conclude that the structure is dynamically stable.
 
 
-\begin{figure*}[htbp]
-  \centering
-  \begin{tabular}{lr}
-  \begin{subfigure}{0.45\linewidth}
-    \includegraphics[scale=0.235]{PG_AFM.eps}%   
-    \caption{AFM}
-  \end{subfigure} &
-  \begin{subfigure}{0.45\linewidth}
-    \includegraphics[scale=0.235]{PG_FM.eps}%
-    \caption{FM}
-  \end{subfigure}    
-  \end{tabular}
-\caption{ Electronic band structure of monolayer ph-graphene. The charge densities at the VBM and CBM in the unit cell are shown as insets. The arrows on the atoms indicate the orientation of their magnetic moments.\label{electronic} }
-\end{figure*}
+
 
 The electronic band structure and the charge densities at the valence band maximum (VBM) and conduction band minimum (CBM) are shown in \autoref{electronic}. Both the FM and AFM states exhibit indirect semiconducting character with a band gap (PBE) of 1.06 eV and 0.96 eV, respectively. The band edge states are mainly located on the magnetic atoms and the band gap separates states of opposite spin orientation. The hybridized $\varphi_4$ states (see above) on these atoms form a $\pi$ bonding network that resembles the $p_z$ $\pi$ bonding in graphene. For the FM state, the typical graphene-like band structure that results from this can be observed for the valence and conduction bands. These bands are separated due to the ferromagnetic exchange splitting in spin-up and spin-down states with a large gap in between. Note that the splitting between bonding and anti-bonding states at the $\Gamma$ point is strongly reduced with respect to graphene because of the larger interatomic distance separating the C3 atoms (3.1 {\AA} in ph-graphene \textit{vs} 1.4 {\AA} in graphene). Due to this increased bonding distance, the exchange interaction exceeds the bonding interaction and the system is magnetic in stark contrast to graphene where the $\pi$ bonding is much stronger.
+
 
 \subsection{Summary}
 In this work, we proposed a new type of stable monolayer carbon allotrope composed of pentagonal and hexagonal rings of carbon atoms. We explained the symmetry and the structure of the bonds that result in local magnetic moments. By comparing the total energy of the FM and AFM state, we conclude that the latter is the ground state. Our theoretical calculations give insight in the magnetic mechanism in this metal-free material, which can initiate further work on the exploration of magnetic properties of other 2D metal-free material. In the later chapter, we will see how strain can play an important role to modulate the magnetic ground state of this material.
@@ -359,34 +365,37 @@ Lithium ion batteries (LIBs) are widely used for the electrochemical energy stor
 
 Therefore, current interest has been directed towards heterostructured\cite{C5CS00937E,Pomerantseva_Gogotsi_2017} 2D materials. A plausible design of vertical heterostructures from different 2D materials is expected to be beneficial for providing rapid electron transport and the acceleration of cation transport in the electrodes, and thus expected to improve the rate performance in current battery technology\cite{Pomerantseva_Gogotsi_2017}. In addition, the negligible volumetric changes of in particular TMDCs and MXenes under lithiation/de-lithiation processes, such that there is only 5\% in-plane lattice expansion in the Mo$_2$C lattice caused by Li intercalation\cite{C6TA01918H}, can minimize the intrinsic volumetric changes during charging/discharging processes and prolongs cycling lifetime of the rechargeable batteries. Also, combining different 2D materials is a promising way to adjust the interlayer distance to accommodate much larger (Na$^{+}$) and more polarized (Mg$^{2+}$) ions. For instance, lithium-ion capacity in excess of 750 mAh g$^{-1}$\cite{CELC:CELC201600059} has already been demonstrated for the batteries with MXene flakes electrodes, optimized with CNTs.
 
-To this end, we  systematically investigated Li intercalation in vertical (van der Waals) heterostructures of MXenes and graphene for rechargeable battery applications. We only considered functionalized MXenes with  OH and O, since the experimentally synthesized MXenes are often functionalized with various radicals due to the mainly used chemical exfoliation process in synthesis. In addition, MXenes with low formula weights, such as Ti$_2$C, Nb$_2$C, V$_2$C and Sc$_2$C have been found to be most promising\cite{doi:10.1021/ja405735d} materials for battery allocations due to their theoretically stated gravimetric capacity, which represents the amount of charge that can be stored per gram of material. Therefore, we considered olnly M$_2$CX$_2$ (where M=Sc, Ti, V and X=OH, O) monolayers in this study. V$_2$CX$_2$ is particularly important since it shows the highest Li$^+$ capacity of all MXenes tested under similar conditions\cite{doi:10.1021/ja508154e}. Another advantageous is that, compared to bilayer M$_2$CX$_2$, M$_2$CX$_2$/graphene hetorostructure has much smaller weight, offering much larger storage capacity. 
+To this end, we systematically investigated Li intercalation in vertical (van der Waals) heterostructures of MXenes and graphene for rechargeable battery applications. We only considered functionalized MXenes with  OH and O, since the experimentally synthesized MXenes are often functionalized with various radicals due to the mainly used chemical exfoliation process in synthesis. In addition, MXenes with low formula weights, such as Ti$_2$C, Nb$_2$C, V$_2$C and Sc$_2$C have been found to be most promising\cite{doi:10.1021/ja405735d} materials for battery allocations due to their theoretically stated gravimetric capacity, which represents the amount of charge that can be stored per gram of material. Therefore, we considered olnly M$_2$CX$_2$ (where M=Sc, Ti, V and X=OH, O) monolayers in this study. V$_2$CX$_2$ is particularly important since it shows the highest Li$^+$ capacity of all MXenes tested under similar conditions\cite{doi:10.1021/ja508154e}. Another advantageous is that, compared to bilayer M$_2$CX$_2$, M$_2$CX$_2$/graphene hetorostructure has much smaller weight, offering much larger storage capacity. 
 
 We introduce the following nomenclatures in the following sections: M stands for the transition metal in MXenes; X stands for the functionalized group, i.e. OH or O; Gr stands for graphene; Li is intercalated Li atom (unless the concentration is stated it means only single Li atom intercalation); Monolayer and bilayer are denoted with mono- or bi- prefixes; For instance: bi-Ti$_2$CO$_2$+Li stands for bilayer Ti$_2$CO$_2$ with a single Li atom intercalation, and Ti$_2$CO$_2$+Gr+Li stands for heterostructure of Ti$_2$CO$_2$ on graphene with a single Li atom intercalation. 
 
 \subsection{Computational details}
-The physical properties of the considered systems were obtained by Density Functional Theory based simulations as implemented in the Vienna $ab$ $initio$ Simulation Package (VASP) \cite{VASP1,VASP2,VASP3,VASP4}. In these simulations, a plane-wave basis set with a 500 eV energy cut-off, the projected augmented wave (PAW) potentials\cite{PAW1,PAW2} with the generalized gradient approximation (GGA) within the Perdew-Burke-Ernzerhof (PBE) formulation \cite{GGA-PBE1,GGA-PBE2}, and a 7$\times$7$\times$1 up to 11$\times$11$\times$1 \textbf{k}-points mesh were used depending on the size of the supercell. Since we dealt with weakly interacting systems, weak van der Waals interactions were taken into account using DFT-D3 method \citet{Grimme2011} including Becke-Jonson damping. Lattice vectors perpendicular to the 2D plane were fixed as 30 {\AA} for all the simulations. A $10^{-5}$ eV energy and a $10^{-3}$ eV/{\AA} force convergence criteria were set to achieve the ground state structure and its energy. Charge transfer between Li  atom and the host systems were calculated via Bader analysis \cite{Bader1,Bader2,Bader3,Bader4}. 
+\begin{footnotesize}
+\begin{description}
+\item[Simulation program:] VASP
+\item[Energy cut-off:] 500 eV
+\item[Pseudopotentials:] PBE-GGA(PAW)
+\item[k points ($\Gamma$ centered):] 7$\times$7$\times$1 to 11$\times$11$\times$1
+\item[Vacuum:] 30~\AA
+\item[Energy and force convergence criterion:] 10$^{-5}$ eV and 10$^{-3}$ eV/\AA, respectively
+\item[vdW interactions:] DFT-D3 method \citet{Grimme2011} including Becke-Jonson damping
+\item[Charge analysis:] Bader analysis \cite{Bader1,Bader2,Bader3,Bader4}
+\end{description}
+\end{footnotesize}
+In addition, we calculated diffusion barriers for Li ions using the climbing-image nudge elastic (cNEB) method as implemented in the VASP transition state tools\cite{c-neb1,c-neb2}. The cNEB method is an efficient method to determine the minimum energy diffusion path between two given positions. We used at least 7 images, including initial and final positions, for cNEB calculations. The atomic positions and energy of the images were then relaxed until the largest norm of the force orthogonal to the path is smaller than 0.01 eV/{\AA}. 
 
-We calculated diffusion barriers for Li ions using the climbing-image nudge elastic (cNEB) method as implemented in the VASP transition state tools\cite{c-neb1,c-neb2}. The cNEB method is an efficient method to determine the minimum energy diffusion path between two given positions. We used at least 7 images, including initial and final positions, for cNEB calculations. The atomic positions and energy of the images were then relaxed until the largest norm of the force orthogonal to the path is smaller than 0.01 eV/{\AA}. 
-
-\subsection{Results}
-\subsubsection{heterostructure stacking types}
+\subsection{heterostructure stacking types}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\linewidth]{stacking.eps}%
-\caption{An example structure of mono-Ti$_2$CO$_2$ presenting in (a) top view, (b) side view and (c) tilted view. (d)  Simplied example structure of M$_2$CX$_2$+Gr heterostructure in ground state stacking. \label{stacking}}
+\caption{An example structure of mono-Ti$_2$CO$_2$ presenting in (a) top view, (b) side view and (c) tilted view. (d)  Simplied example structure of M$_2$CX$_2$+Gr heterostructure in ground state stacking. \label{Li_stacking}}
 \end{figure}
-
-First of all, we need to construct the heterostructure. To minimize the lattice mismatch between layers, we constructed the heterostructures with a 3$\times$3 supercell of Sc$_2$CO$_2$ or Sc$_2$C(OH)$_2$ with a 4$\times$4 supercell of graphene, a  4$\times$4 supercell of Ti$_2$CO$_2$ or Ti$_2$C(OH)$_2$ with a 5$\times$5 supercell of graphene, and a 5$\times$5 supercell of V$_2$CO$_2$ or V$_2$C(OH)$_2$ with a 6$\times$6 supercell of graphene, see Fig. \ref{stacking} as a representative example. In order to find out the ground state stacking type of M$_2$CX$_2$+Gr heterostructures, we calculated the binding energy of possible stacking configurations by shifting the M$_2$CX$_2$ layer over the unit cell of graphene on a uniform mesh, see the supplementary materials$^\dag$ for details. In the course of these simulations, each layer in the heterostructure is regarded rigid where only the interlayer distance is allowed to relax. The regarded binding energy per atom, $E_b$ was calculated as follows:
-\begin{equation}
-E_b=\frac{1}{N}[E(\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr})-E(\mathrm{M}_2\mathrm{C}\mathrm{X}_2)-E(\mathrm{Gr})]
-\end{equation}
-where $E$(M$_2$CX$_2$+Gr), $E$(M$_2$CX$_2$) and $E$(Gr) are the total energies of M$_2$CX$_2$+Gr, mono-M$_2$CX$_2$ and Gr, respectively. $N$ is the total number of atoms in the system. In Table~\ref{tableI}, the calculated $E_b$ and the interlayer distance for M$_2$CX$_2$+Gr are given, and they are system dependent. The results for graphene bilayer are also given for a reference. The interlayer binding energy and the distance of bilayer graphene are 20 meV/atom and 3.325 {\AA}, respectively. Our calculations agree very well with a recent work in which quantum Monte Carlo simulations predicted a 17.8 meV/atom binding energy and 3.384 {\AA} interlayer separation for bilayer graphene\cite{PhysRevLett.115.115501}.  The calculated binding energies (i.e. $E_b$) are negative for all the considered heterostructures, demonstrating the stability of each system against the phase separation. The magnitudes of the $E_b$ for the ground states stacking in MXene oxides/graphene are comparable to that of bilayer graphene, whereas the hydroxides/graphene are slightly stronger bonded due to the extra hydrogen bonds. The differences in the binding energies among different MXenes that have the same functionalized group are negligible. 
 
 \begin{table}[htb]
 \centering
 \caption{A comparison of different MXenes systems: monolayer, bilayer, heterostructure. $d$ is the interlayer distance and is defined as shown in Fig. \ref{inter-dist}. $E_b$ is binding energy of the system with respect to its components, e.g bilayer with respect to monolayers. Only the ground state stacking of M$_2$CX$_2$+Gr is reported.} 
 \label{tableI}
-\begin{tabularx}{\linewidth}{XXXX}
+\begin{tabularx}{0.8\linewidth}{XXXX}
 \hline
 Material      & Structure                         & $d$               & $E_b$               \\
               &                                    & \AA                & eV/atom \\ \hline
@@ -412,13 +421,21 @@ Material      & Structure                         & $d$               & $E_b$   
 \end{tabularx}
 \end{table}
 
+First of all, we need to construct the heterostructure. To minimize the lattice mismatch between layers, we constructed the heterostructures with a 3$\times$3 supercell of Sc$_2$CO$_2$ or Sc$_2$C(OH)$_2$ with a 4$\times$4 supercell of graphene, a  4$\times$4 supercell of Ti$_2$CO$_2$ or Ti$_2$C(OH)$_2$ with a 5$\times$5 supercell of graphene, and a 5$\times$5 supercell of V$_2$CO$_2$ or V$_2$C(OH)$_2$ with a 6$\times$6 supercell of graphene, see Fig. \ref{Li_stacking} as a representative example. In order to find out the ground state stacking type of M$_2$CX$_2$+Gr heterostructures, we calculated the binding energy of possible stacking configurations by shifting the M$_2$CX$_2$ layer over the unit cell of graphene on a uniform mesh, see the supplementary materials$^\dag$ for details. In the course of these simulations, each layer in the heterostructure is regarded rigid where only the interlayer distance is allowed to relax. The regarded binding energy per atom, $E_b$ was calculated as follows:
+\begin{equation}
+E_b=\frac{1}{N}[E(\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr})-E(\mathrm{M}_2\mathrm{C}\mathrm{X}_2)-E(\mathrm{Gr})]
+\end{equation}
+where $E$(M$_2$CX$_2$+Gr), $E$(M$_2$CX$_2$) and $E$(Gr) are the total energies of M$_2$CX$_2$+Gr, mono-M$_2$CX$_2$ and Gr, respectively. $N$ is the total number of atoms in the system. In Table~\ref{tableI}, the calculated $E_b$ and the interlayer distance for M$_2$CX$_2$+Gr are given, and they are system dependent. The results for graphene bilayer are also given for a reference. The interlayer binding energy and the distance of bilayer graphene are 20 meV/atom and 3.325 {\AA}, respectively. Our calculations agree very well with a recent work in which quantum Monte Carlo simulations predicted a 17.8 meV/atom binding energy and 3.384 {\AA} interlayer separation for bilayer graphene\cite{PhysRevLett.115.115501}.  The calculated binding energies (i.e. $E_b$) are negative for all the considered heterostructures, demonstrating the stability of each system against the phase separation. The magnitudes of the $E_b$ for the ground states stacking in MXene oxides/graphene are comparable to that of bilayer graphene, whereas the hydroxides/graphene are slightly stronger bonded due to the extra hydrogen bonds. The differences in the binding energies among different MXenes that have the same functionalized group are negligible. 
+
+
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\linewidth]{inter_dist.eps}%
 \caption{The optimized locations of single Li atoms in different structures and the definition of interlayer distance $d$, which ignores the Li atom layer.\label{inter-dist}.}
 \end{figure}
 
-\subsubsection{Single Li intercalation and its binding energy}
+\subsection{Single Li intercalation and its binding energy}
 
 \begin{figure}[htb]
 \centering
@@ -446,11 +463,12 @@ The following findings are concluded from the results:
 (4) mono-M$_2$CO$_2$+Li,  bi-M$_2$CX$_2$+Li and M$_2$CX$_2$+Gr+Li exhibit the strongest adsorption for Li atoms. The calculated $E_{b}^{Li}$ value at the largest binding energy site is -1.87 eV/atom for the mono-Ti$_2$CO$_2$ and -2.97 eV/atom for the mono-V$_2$CO$_2$. In the case of M$_2$CX$_2$+Gr+Li, we observed that $E_{b}^{Li}$ slightly decreases for M=Ti and V and X=O.  This may be correlated to the reduced van der Waals interaction with respect to the pristine bilayers due to the increase in interlayer separation.  
 (5) We have identified three promising candidates with large Li atom adsorption energy, namely Sc$_2$C(OH)$_2$+Gr+Li, Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li. Therefore, for the rest of the paper, we will focus on these three systems and will study the kinetics of Li diffusion. 
 
-\begin{table*}[ht]
+\begin{table*}[htbp]
+{\footnotesize
 \centering
 \caption{A comparison of different MXenes systems: monolayer, bilayer, heterostructure with Li intercalation. $d$ is the interlayer distance and is defined as shown in Fig. \ref{inter-dist}. $E_b^{Li}$ is the binding energy of a single Li atom. Only the largest binding energy of Li atom is reported, i.e. ground state adsorption site. $L_{min}$ is the shortest bond length of a Li atom with others. $e$ is the charge transfer from a Li atom to a heterostructure. For the consistence of the Li concentrations, all monolayer and bilayer system use the same dimensions as in the corresponding heterostructures. Three different size of bi-Gr are presented to compare with the hereostructures with corresponding size of Gr.} 
 \label{my-label}
-\begin{tabularx}{\textwidth}{XXXXXX}
+\begin{tabularx}{\textwidth}{llcccc}
 \hline
 Material      & Structure                         & $d$                & $E_b^{Li}$               & $L_{min}$ & Li charge transfer   \\
               &                                   & \AA                       & eV/atom                             & \AA                       & e                \\ \hline
@@ -483,10 +501,11 @@ Material      & Structure                         & $d$                & $E_b^{L
               &bi-V$_2$C(OH)$_2$+Li                                                 & 0.395                   & -1.336                         & 1.995                     & 0.878                        \\
               &V$_2$C(OH)$_2$+Gr+Li                                                 & 2.080                  & -0.304                         & 1.912                     & 0.878  \\ \hline                     
 \end{tabularx}
+}
 \end{table*}
 
 
-\subsubsection{Effect of Li concentration}
+\subsection{Effect of Li concentration}
 
 As a next step, we investigated the effect of the Li ion concentration on the physical properties of M$_2$CX$_2$+Gr+Li heterostructures. Here, the concentration is defined as the ratio of the number of Li atoms and the number of formula unit of M$_2$CX$_2$ in the heterostructures (e.g. 100\% corresponds to one Li atom for each formula unit). Fig. \ref{concenration}(a) shows the variation of average $E_{b}^{Li}$ as a function of concentration of the Li ions (i.e. $x$). As the number of intercalated Li increases,  average $E_{b}^{Li}$ decreases gradually. The reduction in binding energy is due to two main factors; One is the weak electrostatic attraction between M$_2$CX$_2$+Gr host and Li cations, and the other one is the enhanced Li-Li repulsion at high Li concentrations. The former is correlated with the reduction of charge transfer from the Li atom to M$_2$CX$_2$+Gr complex at high concentrations, as shown in Fig. \ref{concenration}(b). Similarly, the latter is due to the reduction of interatomic distances between positively charged Li ions. Above a critical concentration value, namely 80\%,  $E_{b}^{Li}$ becomes positive for Sc$_2$C(OH)$_2$+Gr+Li, making this system energetically unstable for further Li insertion.  $E_{b}^{Li}$ is always negative for Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li, suggesting that these heterostructures are stable against Li intercalation, and thus we can safely disregard the phase separation into individual monolayers and bulk Li at high concentrations. In other words, the Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li structures has high stability even with high Li concentration. For V$_2$CO$_2$+Gr+Li (Ti$_2$CO$_2$+Gr+Li), $E_{b}^{Li}$ may vary by about 1 (0.5) eV as a function of Li concentration. Recently, Sun $et$ $al.$ \citet{doi:10.1021/acsami.5b03863}reported that V$_2$CO$_2$ undergoes a reversible structural transformation during the adsorption of Li. We also checked the possibility of such structural transformation for V$_2$CO$_2$+Gr bilayer and we found that presence of graphene prevents the transformation of V$_2$CO$_2$. Our results clearly demonstrated that Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li can be utilized as an anode material for high capacity Li ion batteries.
 
@@ -496,13 +515,13 @@ Li-O bond length decreases at most 3\% with increasing Li concentration.
 It is also found that Li intercalation slightly enlarges and later reduces the interlayer separation as Li concentration increased. The calculated interlayer separations suggested that we can have at most 0.5 {\AA} expansion as a result of Li intercalation. 
 These results clearly suggest that we can have a reversible reaction that is requested for rechargeable ion batteries. Thus, the layered M$_2$CX$_2$+Gr heterostructures can effectively defy the volume expansion problem faced by the electrode materials. However, Sc$_2$C(OH)$_2$+Gr is unstable against Li loading to higher concentration. 
 
-\begin{figure*}[htb]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{Li_con.eps}%
+\includegraphics[width=0.7\linewidth]{Li_con.png}%
 \caption{The average binding energy (a) and the average charge transger (b) of Li atoms and the voltage profile of M$_2$CX$_2$+Gr heterostructure as a function of Li concentration. \label{concenration}}
-\end{figure*}
+\end{figure}
 
-\subsubsection{Electrochemical properties}
+\subsection{Electrochemical properties}
 
 In order to gain insight into the electrochemical properties of the Li intercalation process into M$_2$CX$_2$+Gr heterostructure, the open-circuit-voltage was obtained by calculating the averaged half cell voltage over a range of metal ion concentrations $x$, where $x_1\leq x\leq x_2$, using,
 \begin{equation}
@@ -511,33 +530,30 @@ V\approx\frac{E_{\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr}+\mathrm{x_1Li}}-
 where $E_{\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr}+\mathrm{Li}_{x_1}}$ and $E_{\mathrm{M}_2\mathrm{C}\mathrm{X}_2+\mathrm{Gr}+\mathrm{Li}_{x_2}}$ are the total energies of M$_2$CX$_2$+Gr heterostructure with $x_1$ and $x_2$ Li intercalated, respectively.  $E_{\mathrm{Li}}$ is the total energy of bulk bcc Li.  First of all, our calculations showed that the charging voltage for Li intercalation decreases with increase of Li atoms, as clearly seen in Fig. \ref{concenration}(c). The calculated average voltage corresponding to Sc$_2$C(OH)$_2$+Gr+Li is negative for the Li ion concentration $x$ larger than 55\%. As mentioned above, a phase transition should be expected for the concentrations larger than this critical value. Our results are consistent with a recent work reporting that H and/or OH should be avoided if possible since they result in a lower capacity and negative cell voltage\cite{Xie2014,Tang2012}. On the other hand, the available intercalation sites in Ti$_2$CO$_2$+Gr+Li and V$_2$CO$_2$+Gr+Li composites can be fully occupied.
 As we increase the Li concentration from $x$=50\% to 100\%, the open-circuit voltage decreases from 1.59 (1.94) V to 1.13 (1.38) V for Ti$_2$CO$_2$+Gr+Li (V$_2$CO$_2$+Gr+Li). The binding energy change (i.e $E_{b}^{Li}$) during Li intercalation can be correlated with the voltage value. Since V$_2$CO$_2$+Gr+Li has the largest Li binding energy, the calculated voltage value is also the largest. The calculated average voltage profile is 1.49 V for Ti$_2$CO$_2$+Gr+Li and 1.93 V for V$_2$CO$_2$+Gr+Li, which are higher than those of Mo$_2$C\cite{C6TA01918H}, graphite\cite{ceder4} and TiO$_2$ electrode \cite{tio2-voltage} and lower than phosphorene\cite{doi:10.1021/nl504336h}. Experimentally measured maximum voltages for pure V$_2$CO$_2$ and Ti$_2$CO$_2$ anodes are 3.0 V and 2.5 V, respectively\cite{doi:10.1021/ja405735d,gdgdgd}. Combining graphene with V$_2$CO$_2$ or Ti$_2$CO$_2$ reduces maximum voltages by around 0.5 V.  Approximately 50\% of capacity of V$_2$CO$_2$+Gr+Li (Ti$_2$CO$_2$+Gr+Li) is intercalated above 2 (1.6) V, with the rest intercalating at lower voltages. Our results clearly demonstrate that Ti$_2$CO$_2$+Gr+Li can be exploited in low voltage applications and V$_2$CO$_2$+Gr+Li are suitable for high charging voltage applications.
 
-\subsubsection{Diffusion properties}
+\subsection{Diffusion properties}
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{sites_path.eps}%
 \caption{Initial guessed and final resulted Lithium diffusion paths between Ti$_2$CO$_2$+G heterostructure as an example. }
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\linewidth]{path.eps}%
+\includegraphics[width=0.8\linewidth]{path.eps}%
 \caption{The top view and the side view of Li diffusion paths along the lowest energy diffusion paths in Ti$_2$CO$_2$ related systems as examples. \label{path}}
 \end{figure}
 
-\begin{figure*}
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{Li_barrier.png}%
+\includegraphics[width=0.7\linewidth]{Li_barrier.png}%
 \caption{Energy profiles of the Li diffusions in different systems composed of (a) Sc$_2$C(OH)$_2$, (b) Ti$_2$CO$_2$ and (c) V$_2$CO$_2$ along the lowest energy diffusion paths as indicated in Fig. \ref{path}. \label{barrier}}
-\end{figure*}
+\end{figure}
 
 A low diffusion barrier and high mobility are the requirements of an efficient electrode material. In particular, the mobility of a metal atom on an electrode material is a key factor determining the rate performance during charging and discharging of a battery. Following the thermodynamic consideration of Li intercalation, we investigated the single Li kinetics on mono-M+Li, within bi-M+Li and within M+Gr+Li heterostructures, where here M=(Sc$_2$C(OH)$_2$,Ti$_2$CO$_2$,V$_2$CO$_2$), by calculating the lowest energy Li atom diffusion path connecting two adjacent binding sites using cNEB method, see Fig. \ref{path}. The determined energy profiles of the paths are shown in Fig. \ref{barrier}. 
 Compared to the bilayer systems, Li displays relatively smaller diffusion barriers on the pristine monolayers. In other words, energy barriers of Li ions in M$_2$CX$_2$+Gr+Li heterostructure are always higher than those of monolayers. For instance, while energy barriers is calculated as 0.16 eV on the mono-V$_2$CO$_2$+Li, it is obtained as 0.6 eV for bi-V$_2$CO$_2$+Li and V$_2$CO$_2$+Gr+Li heterestructure. Since the multilayer system has the advantage of having higher capacity than the single monolayer system in given volume, and also the synthesized M$_2$CX$_2$+Gr will mostly be multilayered, we believe that the monolayer structures represent the lower limit for energy barriers. However, to obtain realistic kinetics properties we should consider diffusion of ions between layers not only on isolated monolayers. Another important point is that surface functionalization increases the barrier remarkably\cite{doi:10.1021/jp504493a}. Interestingly, energy barriers for Ti based systems are similar, varying in the range of 0.22-032 eV.  Our calculated energy barriers for mono-Ti$_2$CO$_2$+Li is consistent with a recent work\cite{doi:10.1021/jp504493a}. Energy barriers for Ti-based systems are lower than that of graphite (0.5 eV)\cite{Thinius2014} and high-capacity bulk silicon anode materials with a diffusion barrier around 0.57 eV, comparable to the commercially used anode materials based on TiO$_2$ with a barrier of 0.35-0.65 eV\cite{tio2-barrier,tio2-barrier-4,tio2-barrier-3}, suggesting that heterostructures of Ti-based MXenes with graphene are promising candidates for electrode materials in battery applications. The diffusion barriers can be reduced by weakening the interaction of Li ions with the constituent layers. This can be achieved by fabricated pillar structures in which the interlayer distance of graphene and MXenes is enlarged by the help of intercalated molecules \cite{Luo2017}. This method can also improve the storage capacity by multilayer absorption between the layers. 
 
 
 
-\subsection{Conclusion}
+\subsection{Summary}
 We carried out first-principles calculations to systematically investigate the Li atoms intercalation in MXenes/graphene vertical bilayer heterostructure for Li battery application. Six members in Mxenes family were chosen to form heterostructures with graphene: M$_2$CX$_2$+Gr (where M=Sc, Ti, V and X=OH, O). The ground state stacking types of bilayer and the strongest binding sites of Li atoms are determined first. The strength of the binding of bilayer heterostructure is comparable to that of bilayer graphene, and it is stronger than MXenes bilayers. Due to a finite mismatch of lattice constant of MXenes and graphene, relative motion of bilayer in heterostructure require less energy as compared with the other two cases and giving low fiction between them. We identified two promising heterostructure for Li intercalation: Ti$_2$CO$_2$+Gr and V$_2$CO$_2$+Gr. The stability of the heterostructure upon Li intercalation is confirmed through 1) small variations of the structural parameters , e.g. in-plane lattice parameters ($<$1\%) and interlayer separation ($<$0.5 {\AA}); 2) Large negative binding energies of Li atoms, e.g. larger than that in bilayer graphene; 3) Li atom donates a significant amount of charge to the host materials and exists in the cationic state. We found that all possible Li absorption sites can be occupied without destroying stability, namely 100\% Li intercalation, leading an average open circuit voltage of 1.49 V for Ti$_2$CO$_2$+Gr and 1.93 V for V$_2$CO$_2$+Gr. Especially, Ti$_2$CO$_2$ MXene offers a compromise between capacity and kinetics since the calculated diffusion barriers are the lowest among other systems studied and lower than that of graphene.  It is suggested from the study that a balance between the storage capacity and kinetics for practical applications should be made when selecting a promising candidate. Due to their lower molecular weights as compared to bare MXenes bilayers,  MXene+Gr heterostructure offer higher storage density, they also have the advantage of their good electrical conductivity which is an essential property for a proper operation of a battery. 
-
-\subsection{Principle of Lithium battery}
-\subsection{Key quantities and their modelling}

@@ -94,7 +94,7 @@ E_{XC}^{GGA}[n]=\int \epsilon_{XC}[n(\vec{r}),\nabla n(\vec{r})]d\vec{r}.
 In contrast to LDA, there is no unique input for $\epsilon_{XC}[n(\vec{r}),\nabla n(\vec{r})]$. Different constructions for GGA usually named with the corresponding authors, e.g. PW91-GGA stands for Perdew and Wang's GGA construction in 1991\cite{Perdew1991,Perdew1992} and PBE-GGA stands for \citet{GGA-PBE2}'s construction. They are the most popular GGA approximations for solid state systems. 
 \subsubsection{Jacob's ladder}
 Jacob's ladder is a ladder connecting earth and heaven that biblical Patriarch Jacob dreamed about. Professor John P. Perdew, who is known for profound contribution to DFT and XC functionals, used it analogously to describe the hierarchy of density functional approximations in terms of their accuracies, see \autoref{fig:dft_jl}.  
-\begin{figure}[htbp!] 
+\begin{figure}[htb] 
 \centering  
 \includegraphics[width=0.7\textwidth]{jacobs.png}
 \caption[Jacob's ladder for DFT approximations]{ Jacob's ladder for DFT approximations. Image source: Ref. \cite{Peng2016}}  
@@ -116,12 +116,12 @@ where $\beta$ is the mixing parameter and $\omega$ is the parameter to control t
 \label{fig:dft_ex}
 \end{figure} 
 The highest ranked funcional is the double hybrid which includes the unoccupied orbitals as well, e.g. Random Phase Approximation\cite{Langreth1980}. 
-\footnotetext[1]{The SC40 test set is a collections of 40 elementary and binary solid compounds of various structures with a wide range of band gaps}
 \subsubsection{Band gap problem}
 As shown in \autoref{fig:dft_ex}, band gap estimated in LDA and GGA is quite poor. This can be attributed to the highly non-analytical and non-local behaviours of the XC energy functional. To understand this, let's look at the definition of the band gap $E_{g}$:
 \begin{equation}
 E_{g}=I-A=\varepsilon_{N+1}^{KS,HOMO}-\varepsilon_N^{KS,HOMO},
 \end{equation}
+\footnotetext[1]{The SC40 test set is a collections of 40 elementary and binary solid compounds of various structures with a wide range of band gaps}
 where $I$ is the ionization energy, which is the energy change by removing one valence electron. $A$ is the electron affinity, which is the energy change by adding one electron to a neutral system. $\varepsilon_N^{KS}$ is the Kohn-Sham orbital energy for N-electron system. $HOMO$ and $LUMO$ stand for the highest and the lowest occupied molecular orbital, respectively. For a non-interacting Kohn-Sham system, $E_{g}^{KS}$ can be calculated as follows:
 \begin{equation}
 E_{g}^{KS}=\varepsilon_{N}^{KS,LUMO}-\varepsilon_{N}^{KS,HOMO}.
