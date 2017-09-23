@@ -1062,20 +1062,20 @@ wish to left align your text}
 % ******************************* Nomenclature *********************************
 \RequirePackage[intoc]{nomencl}
 \makenomenclature
-\renewcommand{\nomgroup}[1]{%
-\ifthenelse{\equal{#1}{A}}{\item[\textbf{Roman Symbols}]}{%
-\ifthenelse{\equal{#1}{G}}{\item[\textbf{Greek Symbols}]}{%
-\ifthenelse{\equal{#1}{Z}}{\item[\textbf{Acronyms / Abbreviations}]}{%
-\ifthenelse{\equal{#1}{R}}{\item[\textbf{Superscripts}]}{%
-\ifthenelse{\equal{#1}{S}}{\item[\textbf{Subscripts}]}{%
-\ifthenelse{\equal{#1}{X}}{\item[\textbf{Other Symbols}]}
-{}
-}% matches mathematical symbols > X
-}% matches Subscripts           > S
-}% matches Superscripts         > R
-}% matches Abbreviations        > Z
-}% matches Greek Symbols        > G
-}% matches Roman Symbols        > A
+%\renewcommand{\nomgroup}[1]{%
+%\ifthenelse{\equal{#1}{A}}{\item[\textbf{Roman Symbols}]}{%
+%\ifthenelse{\equal{#1}{G}}{\item[\textbf{Greek Symbols}]}{%
+%\ifthenelse{\equal{#1}{Z}}{\item[\textbf{Acronyms / Abbreviations}]}{%
+%\ifthenelse{\equal{#1}{R}}{\item[\textbf{Superscripts}]}{%
+%\ifthenelse{\equal{#1}{S}}{\item[\textbf{Subscripts}]}{%
+%\ifthenelse{\equal{#1}{X}}{\item[\textbf{Other Symbols}]}
+%{}
+%}% matches mathematical symbols > X
+%}% matches Subscripts           > S
+%}% matches Superscripts         > R
+%}% matches Abbreviations        > Z
+%}% matches Greek Symbols        > G
+%}% matches Roman Symbols        > A
 
 % To add nomenclature in the header
 \renewcommand{\nompreamble}{\markboth{\nomname}{\nomname}}

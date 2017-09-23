@@ -83,7 +83,7 @@ n(\vec{r})=\sum_\alpha^{occ.}\sum_\sigma|\mathit{\psi}_\alpha(\vec{r}\sigma)|^2.
 \end{equation}
 This can be solved self-consistently. An initial guess of the density $n(\vec{r})$ determines the effective potential $V_{KS}(\vec{r})$, then the wave functions $\mathit{\psi}_\alpha(\vec{r}\sigma)$ can be calculated from \autoref{eq:1}, a new density is calculated through \autoref{eq:2}. This procedure is repeated until self-consistency is reached. 
 \subsection{Exchange-correlation functional}
-The XC energy functional is not known exactly and therefore needs to be approximated. The choice of it directly influences the accuracy of the results. This is because, although it is often a small fraction of the total energy, its contribution to the chemical bonding and the formation energy is relatively important. For the XC approximation, the generalized gradient approximation (GGA) has become popular in solid state calculations. It is a further upgrade of its previous version, the local density approximation (LDA). The LDA has the following form:
+The XC energy functional is not known exactly and therefore needs to be approximated. The choice of it directly influences the accuracy of the results. This is because, although it is often a small fraction of the total energy, its contribution to the chemical bonding and the formation energy is relatively important. For the XC approximation, the GGA has become popular in solid state calculations. It is a further upgrade of its previous version, the LDA. The LDA has the following form:
 \begin{equation}
 E_{XC}^{LDA}[n]=\int n(\vec{r})\epsilon_{XC}[n(\vec{r})]d\vec{r}.
 \end{equation}
@@ -100,15 +100,15 @@ Jacob's ladder is a ladder connecting earth and heaven that biblical Patriarch J
 \caption[Jacob's ladder for DFT approximations]{ Jacob's ladder for DFT approximations. Image source: Ref. \cite{Peng2016}}  
 \label{fig:dft_jl}
 \end{figure} 
-Each rung is a level of approximation constructed with different formalisms. From LDA and GGA as mentioned before to meta-GGA which includes the Kohn-Sham kinetic energy density. Next method higher in the ladder is the hybrid functionals which incorporates a part of the exact exchange from Hatree-Fock (HF) theory. For example, the PBE0 functional\cite{Carlo1999} has the following definition:
+Each rung is a level of approximation constructed with different formalisms. From LDA and GGA as mentioned before to meta-GGA which includes the Kohn-Sham kinetic energy density. Next method higher in the ladder is the hybrid functionals which incorporates a part of the exact exchange from HF theory. For example, the PBE0 functional\cite{Carlo1999} has the following definition:
 \begin{equation}
 E_{XC}^{PBE0}=\frac{1}{4}E_X^{HF}+\frac{3}{4}E_X^{PBE}+E_C^{PBE},
 \end{equation}
-and the HSE06 (Heyd-Scuseria-Ernzerhof)\cite{Jochen2003} takes into account the screened Coulomb potential for the exact part:
+and the HSE06\cite{Jochen2003} takes into account the screened Coulomb potential for the exact part:
 \begin{equation}
 E_{XC}^{HSE}=\beta E_X^{HF,SR}(\omega)+(1-beta)E_X^{PBE,SR}(\omega)+E_X^{PBE,LR}(\omega)+E_C^{PBE},
 \end{equation}
-where $\beta$ is the mixing parameter and $\omega$ is the parameter to control the screening range which defines the short-range, SR, and long-range, LR, parts. The values of $\beta=1/4$ and $\omega=0.2$ corresponding to HSE06 functional which gives accurate band gaps and lattice constants, see the mean absolute error (MAE) of different functionals in \autoref{fig:dft_ex}. 
+where $\beta$ is the mixing parameter and $\omega$ is the parameter to control the screening range which defines the short-range, SR, and long-range, LR, parts. The values of $\beta=1/4$ and $\omega=0.2$ corresponding to HSE06 functional which gives accurate band gaps and lattice constants, see the MAE of different functionals in \autoref{fig:dft_ex}. 
 \begin{figure}[htbp!] 
 \centering  
 \includegraphics[width=0.9\textwidth]{lat_ex.eps}
@@ -179,4 +179,4 @@ where $\tilde{p}_i$ is the projector functions that capture the character of tru
 \end{equation}
 The PAW method expresses the true all-electron wave functions with smooth functions that can be easily implemented and perform more efficiently as compared to the all-electron wave functions, moreover the accuracy of the calculations are comparable to that for the all-electron ones.
 \subsection{Software Packages}
-There are more than 70 different software packages capable of performing density functional theory calculations according to Wikipedia\cite{dft_sws}. They mainly differ in the type of pseudopotentials if there is any, the type of basis set is used to expand the wave function, in which programming language it is written and whether or not it is free or commercial etc. \citet{Lejaeghereaad3000} have compared 40 different implementations and their accuracy by comparing their results to a highly accurate all-electron method. They concluded that all codes or methods yield generally consistent results. The accuracy of the codes which were developed in the recent years is higher than the earlier ones. The Vienna $Ab$ $initio$ Simulation Package (VASP) \cite{VASP1,VASP2} with its PAW method is one of the most accurate codes those are concluded from this study. Its well-optimized performance on supercomputers gives good results in less time as compared with the others. This code will be used as the main tool for all the calculations done in this thesis.
+There are more than 70 different software packages capable of performing density functional theory calculations according to Wikipedia\cite{dft_sws}. They mainly differ in the type of pseudopotentials if there is any, the type of basis set is used to expand the wave function, in which programming language it is written and whether or not it is free or commercial etc. \citet{Lejaeghereaad3000} have compared 40 different implementations and their accuracy by comparing their results to a highly accurate all-electron method. They concluded that all codes or methods yield generally consistent results. The accuracy of the codes which were developed in the recent years is higher than the earlier ones. The VASP\cite{VASP1,VASP2} with its PAW method is one of the most accurate codes those are concluded from this study. Its well-optimized performance on supercomputers gives good results in less time as compared with the others. This code will be used as the main tool for all the calculations done in this thesis.
