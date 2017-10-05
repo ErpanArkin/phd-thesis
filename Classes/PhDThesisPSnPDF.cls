@@ -905,7 +905,7 @@ wish to left align your text}
 \newcommand{\advisor}[1]{\renewcommand{\@advisor}{#1}\PHD@advisortrue}
 
 % Advisor Title (Advisor - Default, can be changed)
-\newcommand{\@advisorrole}{Advisor: }
+\newcommand{\@advisorrole}{Advisors: }
 \newcommand{\advisorrole}[1]{\renewcommand{\@advisorrole}{#1}}
 
 % Advisor width to align
@@ -979,7 +979,8 @@ wish to left align your text}
 	\vspace{.15\PHD@titlepagespacing}
 \fi
 
-
+% Submission Text
+{\usebox{\PHD@submission}}
 
 % Author
 {\usebox{\PHD@author}}
@@ -1000,9 +1001,6 @@ wish to left align your text}
 % Department and University
 {\usebox{\PHD@dept}}
 \vspace{.05\PHD@titlepagespacing}
-
-% Submission Text
-{\usebox{\PHD@submission}}
 
 % College and degree date
 \vfill
@@ -1171,11 +1169,12 @@ wish to left align your text}
 \newsavebox{\PHD@Title}
 \begin{lrbox}{\PHD@Title}
   \begin{minipage}[c]{0.98\textwidth}
-    \centering \LARGE \bfseries{\@title}
+    \centering \Large \bfseries{\@title}
     \ifthenelse{\equal{\@subtitle}{}}{
       % subtitle is not defined
     }{
       \\
+      \rule{0.7\textwidth}{0.2pt}\\
       \centering \Large {\@subtitle}
     } % subtitle is defined
   \end{minipage}
@@ -1194,6 +1193,17 @@ wish to left align your text}
   \else
     % College shield is undefined
   \fi
+\end{lrbox}
+
+% Submission Box
+\newsavebox{\PHD@submission}
+\begin{lrbox}{\PHD@submission}
+  \begin{minipage}[c]{\textwidth}
+    \begin{center}
+      \large \submissiontext \par
+      \large \textit {\@degreetitle} \par
+    \end{center}
+  \end{minipage}
 \end{lrbox}
 
 % Author Box
@@ -1249,16 +1259,7 @@ wish to left align your text}
   \end{minipage}
 \end{lrbox}
 
-% Submission Box
-\newsavebox{\PHD@submission}
-\begin{lrbox}{\PHD@submission}
-  \begin{minipage}[c]{\textwidth}
-    \begin{center}
-      \large \submissiontext \par
-      \large \textit {\@degreetitle} \par
-    \end{center}
-  \end{minipage}
-\end{lrbox}
+
 
 % College and Date Box
 \newsavebox{\PHD@collegedate}
