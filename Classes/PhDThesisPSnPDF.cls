@@ -958,14 +958,14 @@ wish to left align your text}
 \begin{center}
 
 % University Crest Long if college crest is defined
-\ifPHD@collegeshield%
+%\ifPHD@collegeshield%
 	{\usebox{\PHD@crest}}
 	\vspace{.15\PHD@titlepagespacing}
-\fi
+%\fi
 
 % Title
 {\usebox{\PHD@Title}} % subtitle is defined
-
+\vspace{.2\PHD@titlepagespacing}
 
 % Crest
 
@@ -973,14 +973,15 @@ wish to left align your text}
 	\vspace{.15\PHD@titlepagespacing}
 	{\usebox{\PHD@collegecrest}}
 	\vspace{.1\PHD@titlepagespacing}
-\else
-	\vspace{.25\PHD@titlepagespacing}
-	{\usebox{\PHD@crest}}
-	\vspace{.15\PHD@titlepagespacing}
+%\else
+%	\vspace{.25\PHD@titlepagespacing}
+%	{\usebox{\PHD@crest}}
+%	\vspace{.15\PHD@titlepagespacing}
 \fi
 
 % Submission Text
 {\usebox{\PHD@submission}}
+\vspace*{1em}
 
 % Author
 {\usebox{\PHD@author}}
@@ -995,12 +996,11 @@ wish to left align your text}
 % Advisor
 \ifPHD@advisor%
 {\usebox{\PHD@advisor}}
-\vspace*{1em}
+\vspace*{2.5em}
 \fi
 
 % Department and University
 {\usebox{\PHD@dept}}
-\vspace{.05\PHD@titlepagespacing}
 
 % College and degree date
 \vfill
@@ -1168,16 +1168,19 @@ wish to left align your text}
 % Title Box
 \newsavebox{\PHD@Title}
 \begin{lrbox}{\PHD@Title}
+  \renewcommand\baselinestretch{1.0}
   \begin{minipage}[c]{0.98\textwidth}
     \centering \Large \bfseries{\@title}
     \ifthenelse{\equal{\@subtitle}{}}{
       % subtitle is not defined
     }{
-      \\
-      \rule{0.7\textwidth}{0.2pt}\\
+      \vspace{0.05pt}
+      \rule{0.7\textwidth}{1pt}
+      \vspace{0.05pt}
       \centering \Large {\@subtitle}
     } % subtitle is defined
   \end{minipage}
+  \renewcommand\baselinestretch{1.2}
 \end{lrbox}
 
 % University Crest Box
@@ -1200,8 +1203,8 @@ wish to left align your text}
 \begin{lrbox}{\PHD@submission}
   \begin{minipage}[c]{\textwidth}
     \begin{center}
-      \large \submissiontext \par
-      \large \textit {\@degreetitle} \par
+      \normalsize \submissiontext \par
+      \normalsize \textit {\@degreetitle} \par
     \end{center}
   \end{minipage}
 \end{lrbox}
