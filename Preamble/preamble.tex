@@ -87,8 +87,7 @@
 % *************************** circel numbers in Ca(OH)2 paper *****************************
 \usepackage{tikz}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=0.2 pt] (char) {#1};}}
-       
+            \node[shape=circle,draw,inner sep=0.2 pt] (char) {#1};}}       
 % *************************** Graphics and figures *****************************
 
 %\usepackage{rotating}
@@ -148,16 +147,17 @@
 
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
-\RequirePackage[backend=biber, backref, sorting=none, style=phys, natbib=true,isbn=false,url=false,eprint=false,defernumbers=true, giveninits=true, maxbibnames=5, biblabel=brackets]{biblatex}
+\RequirePackage[backend=biber, backref, sorting=none, style=phys, natbib=true,isbn=false,url=false,eprint=false,defernumbers=true, giveninits=true, maxcitenames=2, backrefstyle=two, biblabel=brackets]{biblatex}
+
 %\bibliography{References/references} %Location of references.bib only for biblatex
 \addbibresource{References/references.bib}
 \fi
-
 
 % changes the default name `Bibliography` -> `References'
 %\renewcommand{\bibname}{References}
 % line break for long url link
 \setcounter{biburlnumpenalty}{8000}
+
 % ******************************************************************************
 % ************************* User Defined Commands ******************************
 % ******************************************************************************
