@@ -33,7 +33,7 @@ Black phosphorene (black P) is a single atomic layer of black phosphorus and has
 
 Triggered by its experimental realization, various physical properties of phosphorene have been explored. Electronically, black P is a semiconductor with a direct band gap at the $\Gamma$ point\cite{Zhu2014,deniz3}. Experimentally, photoluminescence excitation spectroscopy measured a quasi-particle band gap of 2.2 eV\cite{bp-ex-3}, which is larger than its bulk band gap, i.e. 0.31-0.33 eV\cite{Maruyama198199,Narita1983422}. Due to its electronic structure, black P has been proposed as a potential novel material in nanoelectronics and optoelectronics, especially in the infrared regime. High performance black P based transistors with a mobility up to 1000 cm$^2$/V$\cdot$s and an on/off ratio up to 10$^4$ at room temperature have been reported\cite{Li2014,Han2014}. Similar to black P, blue P was predicted to be a semiconductor material with an indirect band gap around 2.00 eV\cite{Zhu2014}. Therefore, it can be potentially used for field-effect transistor applications. The high mobility and tunable finite band gap of phosphorene, among other promising properties\cite{Jain2015,Wei2014,Kou2014,Tahir2015,zhou2014}, make it an interesting new member of the 2D materials. Despite the mentioned studies that aimed to explore the physical properties of phosphorene, a more comprehensive knowledge of finite temperature effects on their properties has not been reported. Given the fact that this knowledge could contribute to the acceleration in the progress towards its proposed applications, this study\cite{Aierken2015.thermalP} is urgently needed. To this end, here we explore the thermal properties of black p and blue p, their temperature-dependent lattice constant, thermal expansion coefficient (TEC), free energy and specific heat.
 
-\subsection{Thermal expansion and QHA}
+\subsection{Thermal expansion and quasi-harmonic approximation}
 
 \begin{figure}[htbp!] 
 \centering
@@ -291,11 +291,11 @@ While finishing this work, \citet{Zhang2016} reported our proposed structure in 
 \item[Vacuum:] 25~\AA
 \item[Energy and force convergence criterion:] 10$^{-8}$ eV and 10$^{-7}$ eV/\AA, respectively
 \item[Supercell for phonon calculation:] 3$\times$3$\times$1
-\item[phonon calculation:] DFPT
+\item[phonon calculation:] Density functional perturbation theory (DFPT)
 \end{description}
 \end{footnotesize}
 
-\subsection{Bond hybirdization and magnetic moment \label{res}}
+\subsection{Bond hybridization and magnetic moment \label{res}}
 
 The structure of the proposed 2D material is schematically shown in \autoref{structure}. It consists of hexagonal rings of C atoms surrounded by six pentagonal rings which share one edge with the hexagon and four with other pentagons. These hexagonal and pentagonal rings are arranged in a hexagonal lattice to form an infinite monolayer sheet. Considering the complex structure of this system, it is important to understand the hybridization of the electronic orbitals. For this, we calculate the hybridization index of the three C atoms that have a unique local environment, namely C1, C2 and C3 in \autoref{angle}, through Coulson's theorem: $1+\sqrt{n_1n_2}~cos\theta_{12}=0$, where $\theta_{12}$ is the interorbital angle between orbital 1 and 2 (see \autoref{angle}) and $n$ is the hybridization index.  $n$ corresponds to the index in the $sp^n$ notation and determines the relative fraction of $p$ orbitals with respect to the $s$ orbital. The sum of the $s$ fractions in all hybridized orbitals should equal 1, while it should be 3 for the sum of the $p$ fractions. 
 
@@ -307,7 +307,7 @@ The structure of the proposed 2D material is schematically shown in \autoref{str
   
 \begin{table}[htb]
 \centering
-\caption{Orbital hybridization indices of the C atoms in ph-graphene. \label{hybrid}}
+\caption{Orbital hybridization indices $n$ for four orbitals $\varphi$ of the C atoms in ph-graphene. \label{hybrid}}
 \begin{tabular}{lcccc}
 \hline\hline
 Atom & $\varphi_1$ & $\varphi_2$ & $\varphi_3$ & $\varphi_4$  \\ \hline
@@ -372,7 +372,7 @@ We introduce the following nomenclatures in the following sections: M stands for
 \item[k points ($\Gamma$ centered):] 7$\times$7$\times$1 to 11$\times$11$\times$1
 \item[Vacuum:] 30~\AA
 \item[Energy and force convergence criterion:] 10$^{-5}$ eV and 10$^{-3}$ eV/\AA, respectively
-\item[vdW interactions:] DFT-D3 method \citet{Grimme2011} including Becke-Jonson damping
+\item[vdW interactions:] DFT-D3 method \citet{Grimme2011} including Becke-Johnson damping
 \item[Charge analysis:] Bader analysis \cite{Bader1,Bader2,Bader3,Bader4}
 \end{description}
 \end{footnotesize}
@@ -450,7 +450,7 @@ E_{b}^{Li}=\frac{1}{x}[E(\mathrm{with~}x\mathrm{Li})-E(\mathrm{without~Li})-xE(\
 \end{equation}
 	where $E(\mathrm{with~}x\mathrm{Li})$ and $E(\mathrm{without~Li})$ are the total energies of system with and without $x$ Li atoms, respectively. $E(\mathrm{Li})$ is the total energy of a Li atom in its most stable bcc bulk structure. Here, a more negative binding energy indicates a more favourable exothermic binding of Li.
 
-In \autoref{my-label}, the results for different are shown for materials in three promising systems. For comparison, we also calculated Li intercalation in AA and AB stacked graphene bilayers. While the latter is more stable than the former for the pristine systems, the former is energetically more favorable for Li intercalation, which is consistent with previous calculations\cite{PhysRevB.93.245438}, see \autoref{my-label}.  The LiC$_{64}$ (4$\times$4 bilayer graphene) in AA configuration is energetically favorable to accommodate single Li between bilayer, while the Li atom will not bind at all in the AB stack bilayer configuration. However, the magnitude of the binding energy generally is small as compared to the heterostructure due to the strong interaction of Li with the M$_2$CO$_2$ layer.
+In \autoref{my-label}, the results for three different promising systems are shown. For comparison, we also calculated Li intercalation in AA and AB stacked graphene bilayers. While the latter is more stable than the former for the pristine systems, the former is energetically more favorable for Li intercalation, which is consistent with previous calculations\cite{PhysRevB.93.245438}, see \autoref{my-label}.  The LiC$_{64}$ (4$\times$4 bilayer graphene) in AA configuration is energetically favorable to accommodate single Li between bilayer, while the Li atom will not bind at all in the AB stack bilayer configuration. However, the magnitude of the binding energy generally is small as compared to the heterostructure due to the strong interaction of Li with the M$_2$CO$_2$ layer.
 
 
 Our results can be summarized as follows: 		

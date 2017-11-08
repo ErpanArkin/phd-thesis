@@ -1175,7 +1175,7 @@ wish to left align your text}
       % subtitle is not defined
     }{
       \vspace{0.05pt}
-      \rule{0.7\textwidth}{1pt}
+      \rule{0.9\textwidth}{1pt}
       \vspace{0.05pt}
       \centering \Large {\@subtitle}
     } % subtitle is defined
