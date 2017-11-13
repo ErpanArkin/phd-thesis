@@ -179,7 +179,7 @@
 % *************************** Pre-defined Options ******************************
 
 % Font Size
-\newcommand\PHD@ptsize{12pt} %Set Default Size as 12
+\newcommand\PHD@ptsize{11pt} %Set Default Size as 12
 
 \DeclareOption{10pt}{
   \ClassWarning{PhDThesisPSnPDF}{The University of Cambridge PhD thesis guidelines
