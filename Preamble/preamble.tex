@@ -159,6 +159,15 @@
 % line break for long url link
 \setcounter{biburlnumpenalty}{8000}
 
+
+% *********** footcite has square braket for the label ************
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \printtext[brackets]{\usebibmacro{cite:init}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
 % ******************************************************************************
 % ************************* User Defined Commands ******************************
 % ******************************************************************************

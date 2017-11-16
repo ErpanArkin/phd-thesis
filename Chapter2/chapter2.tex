@@ -116,13 +116,13 @@ where $\beta$ is the mixing parameter and $\omega$ is the parameter to control t
 \caption[The MAE of the equilibrium lattice constant and band gap of different functionals]{ MAE of the equilibrium lattice constants and band gaps of different functionals on SC40 solid test set\protect\footnotemark[1]. Data source: \cite{Lucero2012}}  
 \label{fig:dft_ex}
 \end{figure} 
+\footnotetext[1]{The SC40 test set is a collection of 40 elementary and binary solid compounds of various structures having a wide range of band gaps.}
 The highest ranked funcional is the double hybrid which includes the unoccupied orbitals as well, e.g. Random Phase Approximation\cite{Langreth1980}. 
 \subsubsection{Band gap problem}
 As shown in \autoref{fig:dft_ex}, band gaps estimated in LDA and GGA are quite poor. This can be attributed to the highly non-analytical and non-local behaviour of the XC energy functional. To understand this, let's look at the definition of the band gap $E_{g}$:
 \begin{equation}
 E_{g}=I-A=\varepsilon_{N+1}^{KS,HOMO}-\varepsilon_N^{KS,HOMO},
 \end{equation}
-\footnotetext[1]{The SC40 test set is a collection of 40 elementary and binary solid compounds of various structures having a wide range of band gaps.}
 where $I$ is the ionization energy, which is the energy change by removing one valence electron. $A$ is the electron affinity, which is the energy change by adding one electron to a neutral system. $\varepsilon_N^{KS}$ is the Kohn-Sham orbital energy for N-electron system. $HOMO$ and $LUMO$ stand for the highest and the lowest occupied molecular orbital, respectively. For a non-interacting Kohn-Sham system, $E_{g}^{KS}$ can be calculated as follows:
 \begin{equation}
 E_{g}^{KS}=\varepsilon_{N}^{KS,LUMO}-\varepsilon_{N}^{KS,HOMO}.
